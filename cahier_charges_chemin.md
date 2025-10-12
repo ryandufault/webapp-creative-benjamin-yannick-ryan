@@ -2,13 +2,13 @@
 
 ## 📌 Informations du Projet
 
-*Nom du projet:* [Nom de votre musée]  
-*Nom de l'équipe:* [Nom de votre équipe]  
+*Nom du projet:* Le serment de la Lune
+*Nom de l'équipe:* Les 3 Mousquetaires
 *Membres:*
 
-- [Ryan Dufault] - Chef de projet / [Rôle principal]
-- [Yannick Chamberland] - [Rôle principal]
-- [Benjamin Ferland] - [Rôle principal]
+- [Ryan Dufault] - Chef de projet / [Architecture]
+- [Yannick Chamberland] - [Données + système + animations]
+- [Benjamin Ferland] - [Narration + design]
 
 *Date de début:* [10/11/2025]  
 *Date de livraison finale:* [10/12/2025]  
@@ -26,21 +26,17 @@
 
 Décrivez en 2-3 paragraphes le concept de votre histoire interactive:
 
-- Fantastique, tragique, romantique.
-- Quelle est l'histoire principale?
-- [Qui est le personnage principal?]
-- Décisions morales et émotionnelles.
+Le Serment de la Lune est une histoire interactive où le joueur incarne Agnès, un prince déchiré entre son devoir envers le royaume et son amour pour Aurore, une femme mystérieuse liée à une ancienne malédiction. Autrefois, les rois ont juré aux dieux de enchaîner la Lune pour que le Soleil règne à jamais. Mais cette promesse a transformé la Lune en humaine, condamnée à vivre cachée.
 
-*Exemple (interdit de prendre l'exemple comme histoire pour votre projet):*
-> "Les Échos du Temps" est une histoire interactive de science-fiction où le joueur incarne un scientifique qui découvre une machine à voyager dans le temps. Chaque décision modifie le cours de l'histoire et peut créer des paradoxes temporels. L'utilisateur doit faire des choix difficiles qui influencent non seulement sa propre destinée, mais aussi celle de l'humanité. Le système de branches permet 6 fins différentes selon les décisions prises.
+En rencontrant Aurore, Agnès découvre la vérité : chaque instant passé avec elle affaiblit le Soleil et menace l’équilibre du royaume. Le joueur devra faire des choix difficiles entre amour et responsabilité, menant à plusieurs fins possibles selon les décisions prises.
 
 
 ### 1.2 Public cible
 
-- *Âge:* [ex: 16-35 ans]
-- *Profil:* [ex: Amateurs de récits interactifs, fans de sci-fi]
-- *Niveau technique:* [ex: Utilisateurs grand public]
-- *Temps de lecture estimé:* [ex: 20-45 minutes pour une partie complète]
+- *Âge:* [13-35 ans]
+- *Profil:* [Amateurs de récits intéractifs, de contes fantastiques, d'histoires tragico-romantiques et de dilemmes moraux.]
+- *Niveau technique:* [Utilisateurs grand public]
+- *Temps de lecture estimé:* [ex: 20-45 minutes pour une partie complète --- À voir selon architecture narrative]
 
 ### 1.3 Objectifs du projet
 
