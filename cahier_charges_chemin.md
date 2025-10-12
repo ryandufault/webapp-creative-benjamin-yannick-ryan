@@ -18,12 +18,6 @@
 ## 🎯 1. Présentation du Projet
 
 ### 1.1 Concept général
-
-!!! tip "Phase de création"
-    (Ce paragraphe "Conseil" devra être retiré du Cahier de charge final)
-    Pour développer votre concept général, vous devez faire une session de remue-méninges (*brainstorm*) en équipe via *Figjam* avec une carte conceptuelle (*mindmap*) ou encore par la création collaborative et spontanée via des *post-it* individuels et groupés. Il est possible d'utiliser d'autres procédés de création. Vous devrez partager votre processus de création (*brainstorm*) avec votre enseignante. Si c'est virtuel, partagez le lien. Si c'est papier ou sur tableau blanc, veuillez partager une ou des photographie(s) de votre processus.
-
-
 Décrivez en 2-3 paragraphes le concept de votre histoire interactive:
 
 Le Serment de la Lune est une histoire interactive où le joueur incarne Agnès, un prince déchiré entre son devoir envers le royaume et son amour pour Aurore, une femme mystérieuse liée à une ancienne malédiction. Autrefois, les rois ont juré aux dieux de enchaîner la Lune pour que le Soleil règne à jamais. Mais cette promesse a transformé la Lune en humaine, condamnée à vivre cachée.
@@ -46,7 +40,6 @@ En rencontrant Aurore, Agnès découvre la vérité : chaque instant passé avec
 - [ ] Démontrer la maîtrise de Vue.js, GSAP et Pinia
 - [ ] Créer une interface accessible et responsive
 - [ ] [Autre objectif spécifique]
-
 
 
 ## 📖 2. Architecture Narrative
@@ -111,42 +104,37 @@ Listez toutes les fins de votre histoire (minimum 3, idéal 4-6):
 | Le Peuple   | Ensemble                                  | Réactions, émeutes, fidélité variable                     | 5-9      |
 
 
-2.6 Système de conséquences
+### 2.6 Système de conséquences
 
-Métriques (internes / visibles) :
+**Métriques (internes / visibles) :**  
 
-Jauge Soleil (0–100) : représente la force du soleil / prospérité. Diminue à chaque nuit prolongée avec Aurore ou rituel pour la libérer.
+- **Jauge Soleil (0–100)** : représente la force du soleil / prospérité du royaume. Diminue à chaque moment prolongé avec Aurore (chap.4) ou lors de choix risqués pour la libérer (chap.7).  
+- **Loyauté / Soutien (0–100)** : confiance envers Agnès. Baisse si Agnès cache la vérité ou favorise Aurore (chap.3, 5, 6) ; augmente s’il agit pour le bien du peuple.  
+- **Secret / Connaissance (flags)** : marque si la cour ou un témoin (le Chasseur) connaît la vérité sur Aurore et le serment (chap.3). Débloque certaines options dans les chapitres suivants.  
 
-Loyauté / Soutien (0–100) : représente la confiance du peuple et du conseil envers Agnès. Baisse si il cache la vérité ou favorise Aurore ; augmente s’il aide le peuple.
+**Influence sur le récit :**
 
-Secret / Connaissance (flags) : marque si la cour ou la prêtresse connaissent la vérité ; débloque options de rituel.
+- **Effet immédiat** : certains choix provoquent des changements visibles directement (ex : -15 Soleil, +10 Affection pour Aurore). Ces effets se traduisent par des scènes différentes (pénuries, émeutes, réactions du roi ou du peuple).  
+- **Effet cumulatif** : les métriques s’additionnent pour déterminer la disponibilité de certaines actions (ex : certaines options du chapitre 6 ne sont possibles que si Loyauté > 30) et conditionnent les fins (ex : fin « Sacrifice solaire » possible si Loyauté élevée et Soleil < 40).  
+- **Flags narratifs** : révélations sur Aurore (Secret=true) ouvrent des dialogues supplémentaires et influencent le chapitre 7 et l’épilogue.  
 
-Comment ça influence le récit :
+**Feedback pour le joueur :**  
+- Affichage discret de la jauge Soleil et de l’indicateur de Loyauté pour montrer les conséquences sans spoiler les résultats finaux.  
+- Les actions dans les chapitres 3–6 sont perceptibles dans le monde (p. ex. émeutes si Soleil bas, baisse de confiance si Loyauté faible).
 
-Effet immédiat : quelques choix provoquent changements visibles (p.ex. -20 Soleil, +15 Affection). Ces effets provoquent scènes différentes (p.ex. pénuries, émeutes, convocations).
-
-Effet cumulatif : les métriques s’additionnent et déterminent la disponibilité de certaines actions (ex : rituel dangereux seulement si Loyauté >30) et conditionnent les fins (ex : Sacrifice possible si Loyauté élevée et Soleil <40).
-
-Flags narratifs : révélations (si Secret=true) ouvrent dialogues premium et fins secrètes.
-
-Feedback pour le joueur : afficher une jauge simple (Soleil) et un indicateur discret de Loyauté pour rendre les conséquences palpables sans spoiler.
-
-Exemples concrets :
-
-Choisir «Rester toute la nuit» à plusieurs reprises → Soleil -15 chaque fois ; Aurore + affection ; déclenche émeutes si Soleil <50.
-
-Mentir au conseil → Loyauté -20 ; mais préserve Secret.
-
-Briser le serment via rituel → Soleil chute fortement mais débloque fin «Lune libérée» ; peut aussi déclencher «Compromis» si joueur a acquis le Rituel alternatif (quête).
+**Exemples concrets :**  
+- Choisir « Rester toute la nuit » (chapitre 4) → **Soleil -15**, **Affection +10** ; déclenche émeutes si Soleil <50.  
+- Choisir de mentir au roi ou au conseil (chapitre 5) → **Loyauté -20**, mais préserve le Secret.  
+- Choisir « Libérer la Lune » (chapitre 7) → **Soleil chute fortement**, débloque la fin **La Lune libérée**, modifie le chapitre 8 et l’épilogue.
 
 *Mécanisme choisi:*
 
-- [ ] *Système de karma/moralité* (points bons/mauvais)
-- [ ] *Stats du personnage* (courage, intelligence, empathie)
-- [ ] *Inventaire d'objets* (collecte d'items)
-- [ ] *Relations avec personnages* (affinités)
-- [ ] *Flags de choix* (choix X débloque scène Y)
-- [ ] *Combinaison de plusieurs systèmes*
+- [ ] Système de karma/moralité (points bons/mauvais)
+- [ ] Stats du personnage (courage, intelligence, empathie)
+- [ ] Inventaire d'objets (collecte d'items)
+- [ ] Relations avec personnages (affinités)
+- [ ] Flags de choix (choix X débloque scène Y)
+- [ ] Combinaison de plusieurs systèmes
 
 *Exemple de tracking:*
 ```javascript
