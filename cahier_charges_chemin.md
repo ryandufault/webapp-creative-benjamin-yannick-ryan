@@ -53,7 +53,9 @@ En rencontrant Aurore, Agnès découvre la vérité : chaque instant passé avec
 
 ### 2.1 Synopsis détaillé
 
-Racontez votre histoire en 1-2 paragraphes (sans spoiler les fins):
+Agnès, prince héritier d’un royaume éternellement ensoleillé, découvre Aurore, une femme maudite : elle n’existe pleinement que sous la lumière de la lune. Autrefois, les rois ont juré aux dieux d’enchaîner la Lune pour assurer un soleil sans fin. Ce serment a transformé la Lune en humaine et assuré la prospérité du royaume, au prix d’un cycle naturel brisé. En la rencontrant, Agnès tombe amoureux, et chaque moments passé avec elle affaiblit le Soleil et menace la survie du royaume.
+
+Le joueur guide Agnès à travers 8–10 scènes où ses choix moraux et émotionnels pèsent sur l’équilibre du monde. Certains choix protègent le peuple au détriment de l’amour, d’autres sauvent Aurore mais accélèrent la chute du régime solaire. L’histoire mise sur dilemmes clairs, tension tragique et conséquences visibles, menant à plusieurs fins distinctes (sacrifice, libération, tyrannie, compromis).
 
 [Écrivez votre synopsis ici]
 
@@ -63,25 +65,11 @@ Dessinez ou décrivez l'arbre de décisions de votre histoire:
 
 *Structure globale:*
 
-- *Acte 1:* Introduction (1-2 chapitres linéaires)
-- *Acte 2:* Développement avec choix (4-6 chapitres avec branches)
-- *Acte 3:* Climax et résolution (2-3 fins différentes)
+- *Acte 1* — Intro (chap. 1–2) : Mise en place du royaume, du serment, rencontre avec Aurore. Linéaire pour ancrer le contexte.
 
-*Exemple de structure:*
+- *Acte 2* — Développement (chap. 3–7) : Apparition de choix récurrents (2–3 options max), conséquences cumulatives visibles (mètre de Soleil / Loyauté / Secret). Branches convergent parfois mais conservent impacts.
 
-```
-Chapitre 1 (Intro) → Linéaire
-    ↓
-Chapitre 2 (Premier choix)
-    ↓                    ↓
-Branche A            Branche B
-    ↓                    ↓
-Chapitre 3A          Chapitre 3B
-    ↓                    ↓
-Choix majeur         Choix majeur
-    ↓       ↓           ↓       ↓
-Fin 1    Fin 2        Fin 3    Fin 4
-```
+- *Acte 3* — Climax & résolution (chap. 8–10) : Choix finaux déterminant une des 3–5 fins. Dénouements émotionnels et symboliques.
 
 ### 2.3 Liste des chapitres/scènes
 
@@ -89,46 +77,67 @@ Minimum 8 niveaux (chapitres/scènes). Listez-les avec leurs informations:
 
 <small>(les noms des chapitres énoncés ici ne sont que des exemples)</small>
 
-| # | Nom du chapitre | Type | Description courte | Choix proposés | Conséquences |
-|---|----------------|------|-------------------|----------------|--------------|
-| 1 | [Le Réveil] | Linéaire | Introduction du personnage et du contexte | Aucun (intro) | N/A |
-| 2 | [La Découverte] | Choix | Découverte de la machine temporelle | 2 choix: "Activer" ou "Rapporter" | Branche A ou B |
-| 3A | [Premier Voyage] | Choix | Voyage dans le passé | 3 choix d'époque | Impact sur suite |
-| 3B | [L' Enquête] | Linéaire | Investigation scientifique | Aucun | Progression histoire |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
+| #  | Nom du chapitre              | Type           | Description courte                                                                | Choix proposés (2–3)                                                                                                      | Conséquences principales                                                 |
+| -- | ---------------------------- | -------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 1  | L’aube parfaite              | Linéaire       | Introduction du royaume de Solaria et du serment solaire.                         | Aucun                                                                                                                     | Contexte + déclencheurs (set flags)                                      |
+| 2  | La tour oubliée              | Linéaire       | Agnès découvre Aurore cachée dans une ancienne tour.                              | Aucun (rencontre)                                                                                                         | Établit lien affectif, révélation sur la malédiction           |
+| 3  | Le premier secret            | Choix          | Un chasseur surprend Agnès et Aurore ensemble dans la tour.                             | 1. Le supplier de garder le secret / 2. Le convaincre avec une récompense / 3. L’effrayer pour le faire taire                                                                                    | Affecte Loyauté (peuple/cour) et Secret (connaissance)                   |
+| 4  | Nuit volée                   | Choix          | Agnès passe sa première nuit entière avec Aurore.                                 | 1. Rester toute la nuit / 2. Partir au lever / 3. Chercher un compromis (risque minime)                                   | Diminue la jauge Soleil, augmente Affection, baisse confiance du conseil |
+| 5  | Le Conseil du Roi            | Choix          | Le père convoque Agnès ; rumeurs sur l’affaiblissement du Soleil.                 | 1. Mentir / 2. Avouer (en partie) / 3. Détourner la faute                                                                 | Affects : Loyauté du peuple, sanction possible, déclenche enquêtes       |
+| 6  | Les blessures du sol         | Choix          | Apparition de conséquences : récoltes moins abondantes, émeutes. Agnès doit agir. | 1. Aider le peuple (priorité) / 2. Protéger Aurore (secret) / 3. Trouver un remède (quête)                                | Impact direct sur survie/populaire; change options futures               |
+| 7  | Le jour de l’éclipse         | Choix majeur   | Le royaume subit une crise : le Soleil faiblit fortement.                         | 1. Sacrifier l’amour (séparer) / 2. Libérer la Lune (rupture complète) / 3. Prendre le trône et forcer un nouveau serment | Majeur pour détermination de la fin                                      |
+| 8  | La nuit promise              | Linéaire/Choix | Dénouement immédiat selon choix 8 : scènes émotionnelles finales.                 | 1–2 options mineures pour nuance                                                                                          | Détermine épilogue émotionnel                                            |
+| 9 | Épilogue                     | Linéaire       | Montage final : état du royaume et conséquences pour Agnès et Aurore.             | Aucun                                                                                                                     | Fin choisie s’affiche                                                    |
+
 
 ### 2.4 Fins possibles
 
 Listez toutes les fins de votre histoire (minimum 3, idéal 4-6):
 
-<small>(les noms des fins énoncées ici ne sont que des exemples)</small>
-
-| # | Nom de la fin | Condition pour l'atteindre | Type (bonne/mauvaise/neutre) |
-|---|--------------|---------------------------|------------------------------|
-| 1 | [Fin Héroïque] | Avoir fait 3+ choix altruistes | Bonne |
-| 2 | [Fin Sombre] | Avoir fait 3+ choix égoïstes | Mauvaise |
-| 3 | [Fin Paradoxale] | Avoir créé un paradoxe temporel | Neutre/Spéciale |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
+| # | Nom de la fin                  | Condition pour l'atteindre                                                                                           | Type                                                                        |
+| - | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| 1 | **Sacrifice solaire**          | Priorité au royaume : plusieurs choix en faveur du peuple, séparation d’avec Aurore, rituel pour restaurer le Soleil | Tragique / «bonne» pour le royaume                                          |
+| 2 | **La Lune libérée**            | Accumulation de choix pro-Aurore, brisure du serment, Soleil s’effondre mais cycle naturel revient                   | Romantique / ambiguë (bon pour l’équilibre naturel, mauvais matériellement) |
+| 3 | **Le Roi de cendres**          | Agnès choisit le pouvoir, impose un nouveau serment, emprisonne Aurore ; règne dur pour maintenir la lumière        | Mauvaise / tyrannique                                                       |
 
 ### 2.5 Personnages principaux
 
-| Nom | Rôle | Description | Apparaît dans |
-|-----|------|-------------|---------------|
-| [Ex: Dr. Sarah Chen] | Protagoniste | Scientifique brillante mais impulsive | Tous les chapitres |
-| [Ex: Marcus] | Mentor | Professeur sage et prudent | Chapitres 1, 2, 5 |
-| [Ex: L'IA CHRONOS] | Antagoniste | Intelligence artificielle de la machine | Chapitres 3+, certaines fins |
-| | | | |
-| | | | |
+| Nom         | Rôle                                      | Description                                               | Apparaît dans           |
+| ----------- | ----------------------------------------- | --------------------------------------------------------- | ----------------------- |
+| Agnès       | Protagoniste                              | Prince réputé, déchiré entre devoir et amour.          | Tous                    |
+| Aurore      | Intérêt amoureux / incarnation de la Lune | Femme-mystère, fragile au jour.                          | Tous (surtout chap.2–8) |
+| Roi         | Père / antagoniste moral                  | Roi fidèle au serment, veut garder la prospérité.         | 1,5,8                   |
+| Le Chasseur | Témoin accidentel                        | Villageois ayant surpris Agnès et Aurore, moteur des rumeurs. | 3                  |
+| Le Peuple   | Ensemble                                  | Réactions, émeutes, fidélité variable                     | 5-9      |
 
-### 2.6 Système de conséquences
 
-Comment les choix influencent l'histoire?
+2.6 Système de conséquences
+
+Métriques (internes / visibles) :
+
+Jauge Soleil (0–100) : représente la force du soleil / prospérité. Diminue à chaque nuit prolongée avec Aurore ou rituel pour la libérer.
+
+Loyauté / Soutien (0–100) : représente la confiance du peuple et du conseil envers Agnès. Baisse si il cache la vérité ou favorise Aurore ; augmente s’il aide le peuple.
+
+Secret / Connaissance (flags) : marque si la cour ou la prêtresse connaissent la vérité ; débloque options de rituel.
+
+Comment ça influence le récit :
+
+Effet immédiat : quelques choix provoquent changements visibles (p.ex. -20 Soleil, +15 Affection). Ces effets provoquent scènes différentes (p.ex. pénuries, émeutes, convocations).
+
+Effet cumulatif : les métriques s’additionnent et déterminent la disponibilité de certaines actions (ex : rituel dangereux seulement si Loyauté >30) et conditionnent les fins (ex : Sacrifice possible si Loyauté élevée et Soleil <40).
+
+Flags narratifs : révélations (si Secret=true) ouvrent dialogues premium et fins secrètes.
+
+Feedback pour le joueur : afficher une jauge simple (Soleil) et un indicateur discret de Loyauté pour rendre les conséquences palpables sans spoiler.
+
+Exemples concrets :
+
+Choisir «Rester toute la nuit» à plusieurs reprises → Soleil -15 chaque fois ; Aurore + affection ; déclenche émeutes si Soleil <50.
+
+Mentir au conseil → Loyauté -20 ; mais préserve Secret.
+
+Briser le serment via rituel → Soleil chute fortement mais débloque fin «Lune libérée» ; peut aussi déclencher «Compromis» si joueur a acquis le Rituel alternatif (quête).
 
 *Mécanisme choisi:*
 
