@@ -6,8 +6,8 @@
 *Nom de l'équipe:* [Nom de votre équipe]  
 *Membres:*
 
-- [Nom] - Chef de projet / [Rôle principal]
-- [Nom] - [Rôle principal]
+- [Ryan Dufault] - Chef de projet / [Rôle principal]
+- [Yannick Chamberland] - [Rôle principal]
 - [Nom] - [Rôle principal]
 
 *Date de début:* [10/11/2025]  
