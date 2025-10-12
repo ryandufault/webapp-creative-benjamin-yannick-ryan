@@ -8,7 +8,7 @@
 
 - [Ryan Dufault] - Chef de projet / [Rôle principal]
 - [Yannick Chamberland] - [Rôle principal]
-- [Nom] - [Rôle principal]
+- [Benjamin Ferland] - [Rôle principal]
 
 *Date de début:* [10/11/2025]  
 *Date de livraison finale:* [10/12/2025]  
