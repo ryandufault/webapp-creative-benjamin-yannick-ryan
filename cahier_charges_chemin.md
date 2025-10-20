@@ -167,25 +167,24 @@ playerState: {
 
 *Couleurs par ambiance/chapitre:*
 
-- *Chapitres introduction:* [#XXXXXX] - Tons neutres
-- *Chapitres tension:* [#XXXXXX] - Tons sombres/dramatiques
-- *Chapitres espoir:* [#XXXXXX] - Tons clairs/lumineux
-- *Chapitres danger:* [#XXXXXX] - Rouge/orange
+- *Ambiance tension:* [#1F1B33] - Tons sombres/dramatiques
+- *Ambiance romance:* [#E7DF8B] - Tons clairs/lumineux
+- *Ambiance neutre:* [#291C50] - Mauve/sombre
 
 *Couleurs système:*
 
-- Primaire (actions principales): [#XXXXXX]
-- Secondaire (choix): [#XXXXXX]
-- Succès: [#10B981]
-- Danger: [#EF4444]
-- Neutre: [#6B7280]
+- Background : [#1F1B33]
+- Backgrond2 : [#291C50]
+- Highlight : [#F9F9F9]
+- Highlight2: [#E7DF8B]
+- UI (bordures, ombrages, contours, séparateurs, hovers, etc..) : [#303140]
 
 ### 3.3 Typographie
 
-- *Titres narratifs:* [Nom de la police] - [Lien Google Fonts]
-- *Texte de narration:* [Nom de la police] - Lisible, serif ou sans-serif
-- *Dialogues:* [Nom de la police] - Différencié du texte narratif
-- *Boutons de choix:* [Nom de la police] - Bold, impactant
+- *Titres narratifs:* [Monstean] - [[Lien](https://www.fontspace.com/mostean-font-f127985)]
+- *Texte de narration:* [Rough typewriter] - Lisible, serif ou sans-serif
+- *Dialogues:* [Bohemian typewriter] - Différencié du texte narratif
+- *Boutons de choix:* [Bohemian typewriter] - Bold, impactant
 
 ### 3.4 Style visuel
 
