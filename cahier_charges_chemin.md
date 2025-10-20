@@ -157,13 +157,11 @@ playerState: {
 
 ### 3.1 Moodboard
 
-Insérez ici 3-5 images d'inspiration (ou liens):
-
-- [Image 1: Ambiance générale]
-- [Image 2: Style visuel des personnages]
-- [Image 3: Palette de couleurs]
-- [Image 4: Typographie inspirante]
-- [Image 5: Animations de référence]
+![Moodboard global](./assets/3mb-1.png)
+![Image moodboard](./assets/3mb-2.png)
+![Image moodboard](./assets/3mb-3.png)
+![Image moodboard](./assets/3mb-4.png)
+![Image moodboard](./assets/3mb-5.png)
 
 ### 3.2 Palette de couleurs
 
@@ -194,8 +192,8 @@ Insérez ici 3-5 images d'inspiration (ou liens):
 Choisissez un ou plusieurs styles:
 
 - [ ] Cinématique (film noir, thriller)
-- [ ] Illustratif (dessins, concept art)
-- [ ] Minimaliste (focus sur le texte)
+- [X] Illustratif (dessins, concept art)
+- [X] Minimaliste (focus sur le texte)
 - [ ] Immersif (photos, ambiances réalistes)
 - [ ] Stylisé (flat design, géométrique)
 
