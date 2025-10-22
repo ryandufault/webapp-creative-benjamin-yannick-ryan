@@ -1,16 +1,16 @@
-Titre de votre projet : Le serment de la Lune
+# Le serment de la Lune
 <br><br>
-Option choisie : Trace ton chemin
+**Option choisie :** Trace ton chemin (B)
 <br><br>
-Membre de l'équipe et les rôles de chacun :
+**Membre de l'équipe et les rôles de chacun :**
 <br><br>
-Ryan Dufault : Chef de projet /Architecture
+**Ryan Dufault :** Chef de projet /Architecture
 <br><br>
-Yannick Chamberland : Données + système + animations
+**Yannick Chamberland :** Données + système + animations
 <br><br>
-Benjamin Ferland : Narration + design
+**Benjamin Ferland :** Narration + design
 <br><br>
-Brainstorm :
+**Brainstorm :**
 <br><br>
 histoire médiévale classique chevalier avec princesse avec twist super originale + art abstrait "expérimental?"
 pour se dissocier de l'idée stéréotypée qu'on a quand on pense à un visuel sur le thème du "médiévale" "moyen age" 
