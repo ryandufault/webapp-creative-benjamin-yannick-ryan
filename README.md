@@ -6,7 +6,7 @@ Membre de l'équipe et les rôles de chacun :
 <br><br>
 Ryan Dufault : Chef de projet /Architecture
 <br><br>
-Yannick Chamberland] : Données + système + animations
+Yannick Chamberland : Données + système + animations
 <br><br>
 Benjamin Ferland : Narration + design
 <br><br>
