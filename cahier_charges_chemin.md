@@ -90,7 +90,7 @@ Listez toutes les fins de votre histoire (minimum 3, idéal 4-6):
 | # | Nom de la fin                  | Condition pour l'atteindre                                                                                           | Type                                                                        |
 | - | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | 1 | **Sacrifice solaire**          | Priorité au royaume : plusieurs choix en faveur du peuple, séparation d’avec Aurore, rituel pour restaurer le Soleil | Tragique / «bonne» pour le royaume                                          |
-| 2 | **La Lune libérée**            | Accumulation de choix pro-Aurore, brisure du serment, Soleil s’effondre mais cycle naturel revient                   | Romantique / ambiguë (bon pour l’équilibre naturel, mauvais matériellement) |
+| 2 | **La Lune libérée**            | Accumulation de choix pro-Aurore, brisure du serment, Soleil s’effondre mais cycle naturel revient, royaume en cendres à cause du serment                   | Romantique / ambiguë (bon pour l’équilibre naturel, mauvais matériellement) |
 | 3 | **Le Roi de cendres**          | Agnès choisit le pouvoir, impose un nouveau serment, emprisonne Aurore ; règne dur pour maintenir la lumière        | Mauvaise / tyrannique                                                       |
 
 ### 2.5 Personnages principaux
