@@ -1,9 +1,9 @@
 <template>
   <div class="choice-panel">
-    <div class="choice">
+    <div class="choix">
       Choix 1
     </div>
-    <div class="choice">
+    <div class="choix">
       Choix 2
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
   border-radius: 10px;
 }
 
-.choice {
+.choix {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
@@ -39,8 +39,7 @@ export default {
   transition: 0.3s;
 }
 
-.choice:hover {
+.choix:hover {
   color:rgb(251, 255, 146);
-  transform: scale(1.1);
 }
 </style>
