@@ -6,7 +6,7 @@
         <p> sauvegarde #3</p>
     </div>
 
-    <button class="btn-menu" @click="goBack">
+    <button class="btn-menu">
       Retour au menu
     </button>
   </div>
