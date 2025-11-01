@@ -544,17 +544,17 @@ Comment stockez-vous les chapitres et choix?
 
 ### 6.1 Lien vers les maquettes Figma
 
-*Lien:* [Insérez votre lien Figma]
+*Lien:* [[Figma](https://www.figma.com/design/ikszxBVEsDPQzowvWjxWxo/projet-integrateur-web-5?node-id=1-3&t=w82PhDzhr6wOadB6-1)]
 
 ### 6.2 Écrans principaux à maquetter
 
-- [ ] Menu principal (nouvelle partie, charger, options)
-- [ ] Écran de chapitre avec texte narratif
-- [ ] Panel de choix (2-4 options)
-- [ ] Inventaire/Stats (si applicable)
-- [ ] Écran de fin avec récapitulatif
-- [ ] Gestion des sauvegardes (3 slots)
-- [ ] Version mobile d'au moins 2-3 écrans
+- [X] Menu principal (nouvelle partie, charger, options)
+- [X] Écran de chapitre avec texte narratif
+- [X] Panel de choix (2-4 options)
+- [X] Inventaire/Stats (si applicable)
+- [X] Écran de fin avec récapitulatif
+- [X] Gestion des sauvegardes (3 slots)
+- [X] Version mobile d'au moins 2-3 écrans
 
 ### 6.3 Interactions clés à maquetter
 
@@ -571,10 +571,9 @@ Comment stockez-vous les chapitres et choix?
 
 | Membre | Rôle principal | Responsabilités |
 |--------|----------------|-----------------|
-| [Nom] | Chef de projet + Architecture Vue | Coordination, Vue Router, stores Pinia, structure de l'histoire |
-| [Nom] | Design + Animations | CSS, design visuel, animations GSAP, transitions |
-| [Nom] | Contenu + Narration | Écriture des chapitres, création de l'arbre narratif, dialogues |
-| [Nom] | Données + Système | Gestion des sauvegardes, LocalStorage, logique de choix, stats |
+| [Ryan Dufault] | Chef de projet + Architecture Vue | Coordination, Vue Router, stores Pinia, structure de l'histoire, gestion sauvegardes, localstorage |
+| [Yannick Chamberland] | Design + Animations | CSS, design visuel, animations GSAP, transitions |
+| [Benjamin Ferland] | Contenu + Narration | Écriture des chapitres, création de l'arbre narratif, dialogues |
 
 *Note:* Tous participent au développement, mais chacun a sa spécialité.
 
@@ -590,12 +589,12 @@ Comment stockez-vous les chapitres et choix?
 
 ### 7.3 Outils de collaboration
 
-- *Git/GitHub:* [Lien du repo]
-- *Gestion de projet:* [Trello / Word / GitHub Projects]
+- *Git/GitHub:* [[Lien du repo](https://github.com/ryandufault/webapp-creative-benjamin-yannick-ryan)]
+- *Gestion de projet:* [[Trello](https://trello.com/invite/b/68e66eab99c6fadf2dfd0b0e/ATTI462100c8687fe844207d6b55662fb307F98AACF9/projet-integrateur-web-5)]
 - *Communication:* [Teams]
-- *Design:* [Figma]
-- *Documentation:* [Word / Google Docs / README.md]
-- *Écriture collaborative:* [Google Docs / Word]
+- *Design:* [[Figma](https://www.figma.com/design/ikszxBVEsDPQzowvWjxWxo/projet-integrateur-web-5?node-id=1-3&t=w82PhDzhr6wOadB6-1)]
+- *Documentation:* [Word]
+- *Écriture collaborative:* [Word/Teams]
 
 
 ## 🚀 8. Critères de Succès
