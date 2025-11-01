@@ -72,14 +72,14 @@ Minimum 8 niveaux (chapitres/scènes). Listez-les avec leurs informations:
 
 | #  | Nom du chapitre              | Type           | Description courte                                                                | Choix proposés (2–3)                                                                                                      | Conséquences principales                                                 |
 | -- | ---------------------------- | -------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| 1  | L’aube parfaite              | Linéaire       | Introduction du royaume de Solaria et du serment solaire.                         | Aucun                                                                                                                     | Contexte + déclencheurs (set flags)                                      |
-| 2  | La tour oubliée              | Linéaire       | Agnès découvre Aurore cachée dans une ancienne tour.                              | Aucun (rencontre)                                                                                                         | Établit lien affectif, révélation sur la malédiction           |
-| 3  | Le premier secret            | Choix          | Un chasseur surprend Agnès et Aurore ensemble dans la tour.                             | 1. Le supplier de garder le secret / 2. Le convaincre avec une récompense / 3. L’effrayer pour le faire taire                                                                                    | Affecte Loyauté (peuple/cour) et Secret (connaissance)                   |
-| 4  | Nuit volée                   | Choix          | Agnès passe sa première nuit entière avec Aurore.                                 | 1. Rester toute la nuit / 2. Partir au lever / 3. Chercher un compromis (risque minime)                                   | Diminue la jauge Soleil, augmente Affection, baisse confiance du conseil |
-| 5  | Le Conseil du Roi            | Choix          | Le père convoque Agnès ; rumeurs sur l’affaiblissement du Soleil.                 | 1. Mentir / 2. Avouer (en partie) / 3. Détourner la faute                                                                 | Affects : Loyauté du peuple, sanction possible, déclenche enquêtes       |
-| 6  | Les blessures du sol         | Choix          | Apparition de conséquences : récoltes moins abondantes, émeutes. Agnès doit agir. | 1. Aider le peuple (priorité) / 2. Protéger Aurore (secret) / 3. Trouver un remède (quête)                                | Impact direct sur survie/populaire; change options futures               |
-| 7  | Le jour de l’éclipse         | Choix majeur   | Le royaume subit une crise : le Soleil faiblit fortement.                         | 1. Sacrifier l’amour (séparer) / 2. Libérer la Lune (rupture complète) / 3. Prendre le trône et forcer un nouveau serment | Majeur pour détermination de la fin                                      |
-| 8  | La nuit promise              | Linéaire/Choix | Dénouement immédiat selon choix 8 : scènes émotionnelles finales.                 | 1–2 options mineures pour nuance                                                                                          | Détermine épilogue émotionnel                                            |
+| 1  | L’aube parfaite              | Linéaire       | Introduction du royaume de Solaria et du serment solaire.                         | Aucun                                                                                                                     | Contexte                                      |
+| 2  | La tour oubliée              | Linéaire       | Agnès découvre Aurore cachée dans une ancienne tour.                              | Aucun (rencontre)                                                                                                         | Révélation sur la malédiction           |
+| 3  | Le premier secret            | Choix          | Un chasseur surprend Agnès et Aurore ensemble dans la tour.                             | 1. Le supplier de garder le secret / 2. Le convaincre avec une récompense /   | Affecte sys conséquences royaume, soleil et aurore                   |
+| 4  | L’ombre du serment                   | Choix          | Agnès en apprend plus sur le serment. Le soleil, cependant, semble perdre de sa lueur.                                 | 1. Rester avec Aurore / 2. Quitter pour vérifier l'état du Royaume  | Affecte sys conséquences royaume, soleil et aurore  |
+| 5  | Le Conseil du Roi            | Choix          | Le père convoque Agnès ; rumeurs sur l’affaiblissement du Soleil.                 | 1. Mentir / 2. Avouer                                                                 | Affecte sys conséquences royaume, soleil et aurore       |
+| 6  | Les blessures du sol         | Choix majeur          | Apparition de conséquences : récoltes moins abondantes, panique au sein des citoyens. Agnès doit agir. | 1. Aider le peuple / 2. Protéger Aurore    | Affecte sys conséquences (cette fois-ci très décisif, presque game changer) royaume, soleil et aurore               |
+| 7  | Le jour de l’éclipse         | Choix décisif selon route   | Le royaume subit une crise : le Soleil faiblit fortement.                         | 1. Rester avec Aurore / 2. Sauver le royaume | Majeur pour détermination de la fin                                      |
+| 8  | La nuit promise              | Linéaire | Dénouement immédiat selon choix 8 : scènes émotionnelles finales.   | Aucun  | Détermine épilogue émotionnel                                            |
 | 9 | Épilogue                     | Linéaire       | Montage final : état du royaume et conséquences pour Agnès et Aurore.             | Aucun                                                                                                                     | Fin choisie s’affiche                                                    |
 
 
@@ -104,35 +104,62 @@ Listez toutes les fins de votre histoire (minimum 3, idéal 4-6):
 | Le Peuple   | Ensemble                                  | Réactions, émeutes, fidélité variable                     | 5-9      |
 
 
-### 2.6 Système de conséquences
+## 2.6 — Système de conséquences (Nouveau)
 
-**Métriques (internes / visibles) :**  
+Chaque choix influence trois jauges (**Aurore**, **Soleil**, **Royaume**) qui déterminent :
+- le déroulement de certains dialogues ou scènes,
+- l’état du monde (climat, peuple, lumière),
+- et surtout l’une des trois fins possibles (chapitre 9 / épilogue).
 
-- **Jauge Soleil (0–100)** : représente la force du soleil / prospérité du royaume. Diminue à chaque moment prolongé avec Aurore (chap.4) ou lors de choix risqués pour la libérer (chap.7).  
-- **Loyauté / Soutien (0–100)** : confiance envers Agnès. Baisse si Agnès cache la vérité ou favorise Aurore (chap.3, 5, 6) ; augmente s’il agit pour le bien du peuple.  
-- **Secret / Connaissance (flags)** : marque si la cour ou un témoin (le Chasseur) connaît la vérité sur Aurore et le serment (chap.3). Débloque certaines options dans les chapitres suivants.  
+---
 
-**Influence sur le récit :**
+#### Les trois jauges principales (0 à 100)
 
-- **Effet immédiat** : certains choix provoquent des changements visibles directement (ex : -15 Soleil, +10 Affection pour Aurore). Ces effets se traduisent par des scènes différentes (pénuries, émeutes, réactions du roi ou du peuple).  
-- **Effet cumulatif** : les métriques s’additionnent pour déterminer la disponibilité de certaines actions (ex : certaines options du chapitre 6 ne sont possibles que si Loyauté > 30) et conditionnent les fins (ex : fin « Sacrifice solaire » possible si Loyauté élevée et Soleil < 40).  
-- **Flags narratifs** : révélations sur Aurore (Secret=true) ouvrent des dialogues supplémentaires et influencent le chapitre 7 et l’épilogue.  
+| Jauge      | Représentation                                                                                  | Ce qui l'augmente                                                                                   | Ce qui la diminue                                                                                 |
+|------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Aurore** | Lien affectif, confiance, attachement entre Agnès et Aurore.                                    | Moments partagés, protéger Aurore, s’opposer au roi pour elle.                                       | La trahir, la cacher sans la voir, prioriser le peuple.                                           |
+| **Soleil** | Force du Soleil, stabilité du serment ancestral, bénédiction divine.                            | Respect du serment, obéissance au roi, éloignement d’Aurore.                                         | Rester avec Aurore, retarder les rituels, briser le serment.                                     |
+| **Royaume**| Santé du peuple, stabilité politique, confiance de la cour et des villageois envers Agnès.      | Protéger le peuple, dire la vérité au roi, accomplir son devoir.                                     | Mentir, chaos, famine, nuit prolongée, affaiblissement du Soleil.                               |
 
-**Feedback pour le joueur :**  
-- Affichage discret de la jauge Soleil et de l’indicateur de Loyauté pour montrer les conséquences sans spoiler les résultats finaux.  
-- Les actions dans les chapitres 3–6 sont perceptibles dans le monde (p. ex. émeutes si Soleil bas, baisse de confiance si Loyauté faible).
+---
+**Effet immédiat**
+Chaque choix modifie l’une ou plusieurs jauges.  
+Exemples :
+- *« Rester avec Aurore »* → **Aurore +15**, **Soleil -10**, **Royaume -15**
+- *« Mentir au roi »* → **Aurore +15**, **Royaume -15**
+Les conséquences sont visibles par le joueur à travers :
+- le ciel (lumière faible, nuages, nuit prolongée),
+- les dialogues (méfiance, admiration, colère),
+- les réactions du peuple (émeutes, prières, silence).
 
-**Exemples concrets :**  
-- Choisir « Rester toute la nuit » (chapitre 4) → **Soleil -15**, **Affection +10** ; déclenche émeutes si Soleil <50.  
-- Choisir de mentir au roi ou au conseil (chapitre 5) → **Loyauté -20**, mais préserve le Secret.  
-- Choisir « Libérer la Lune » (chapitre 7) → **Soleil chute fortement**, débloque la fin **La Lune libérée**, modifie le chapitre 8 et l’épilogue.
+---
+
+**Fins selon jauges**
+| # | Nom de la fin             | Condition                                                                 |
+| - |---------------------------|---------------------------------------------------------------------------|
+| 1 | **Sacrifice solaire**     | **Royaume ≥ 70** et **Soleil < 60**                                       |
+| 2 | **La Lune libérée**       | **Aurore ≥ 70**                                                          |
+| 3 | **Le Roi de cendres**     | **Soleil ≥ 60** et **Royaume ≥ 50**                                      |
+
+---
+
+**Exemples concrets**
+| Choix du joueur                                          | Aurore | Soleil | Royaume | Conséquence visible                                                            |
+|----------------------------------------------------------|--------|--------|---------|--------------------------------------------------------------------------------|
+| Rester auprès d’Aurore toute la nuit                    | +15    | -10    | -5      | Soleil vacille, murmures dans le château.                                      |
+| Mentir au roi                                            | +5     | 0      | -15     | Méfiance de la cour, rumeurs dans le peuple.                                   |
+| Aider le village affamé                                 | -5     | +5     | +20     | Peuple reconnaissant, Agnès épuisé.                                            |
+| Refuser le rituel du Soleil (chapitre 7)                | +20    | -25    | -20     | Début de l’effondrement du serment, colère divine.                             |
+
+---
+
 
 *Mécanisme choisi:*
 
 - [ ] Système de karma/moralité (points bons/mauvais)
 - [ ] Stats du personnage (courage, intelligence, empathie)
 - [ ] Inventaire d'objets (collecte d'items)
-- [ ] Relations avec personnages (affinités)
+- [X] Relations avec personnages (affinités)
 - [ ] Flags de choix (choix X débloque scène Y)
 - [ ] Combinaison de plusieurs systèmes
 
@@ -198,13 +225,19 @@ Choisissez un ou plusieurs styles:
 
 ### 3.5 Éléments visuels par chapitre
 
-| Chapitre | Image de fond | Effets visuels | Sons/musique |
-|----------|---------------|----------------|--------------|
-| 1 | [Description ou lien] | Fade in progressif | Musique douce, intro |
-| 2 | | | |
-| 3 | | | |
-| ... | | | |
+### 3.5 — Éléments visuels par chapitre
 
+| Chapitre | Image de fond (description) | Effets visuels | Sons / musique |
+|----------|------------------------------|----------------|----------------|
+| **1 – L’aube parfaite** | Palais en hauteur, lumière dorée sur Solaria, ciel clair. Style pixel rétro | **Fade-in** lent, halo solaire doux, particules de poussière lumineuse. | Musique douce, ambiance paisible. |
+| **2 – La tour oubliée** | Intérieur de tour abandonnée, pierres froides, vitraux cassés, lumière lunaire. Style pixel rétro | Légère brume, poussière en suspension. Fade-in/fade-out. | vent qui souffle, silence pesant. |
+| **3 – Le premier secret** | Forêt au crépuscule ou intérieur de la tour avec tension. Style pixel rétro | Ombres mouvantes, rayons de de lumières. Fade-in/fade-out. | Bruits de forêt, tension grave, battements de cœur en fond. |
+| **4 – L’ombre du serment** | Ciel voilé, lumière du Soleil affaiblie depuis les remparts du palais. Style pixel rétro | Fade-in/fade-out. | Ambiance inquiétante, murmures lointains, clochettes lointaines du temple solaire. |
+| **5 – Le Conseil du Roi** | Salle du trône : grande pièce de marbre, vitraux dorés, lumière froide. Style pixel rétro | Poussière particules, Fade-in/fade-out. | chuchottements, bruits de pas. |
+| **6 – Les blessures du sol** | Villages en crise : champs secs, puits vides, foule inquiète. Style pixel rétro | distorsion légère pour représenter la fatigue. Fade-in/fade-out. | Cris du peuple, cloche d’alerte, ambiance dramatique, souffle du vent asséché. |
+| **7 – Le jour de l’éclipse** | Ciel noirci, Soleil presque éteint, torches allumées dans la ville. Style pixel rétro | Fade-in/fade-out. | Dramatique |
+| **8 – La nuit promise** | Variante selon la route : tour sombre (Aurore) ou palais désert (Agnès) Style pixel rétro. | Fade-in/fade-out. | Silence pesant, musique très douce ou inexistante, seuls bruits de pas. |
+| **9 – Épilogue** | Diffère selon la fin : **ruines sous les étoiles (Lune libérée)**, **palais froid et silencieux (Roi de cendres)**, **royaume éclairé (Sacrifice solaire)**. Style pixel rétro | Fade-in/fade-out. | Musique finale correspondant à la fin : tragique, romantique, ou solennelle. Sons du vent, cloches, ou silence complet. |
 
 ## 💻 4. Spécifications Techniques
 
@@ -222,8 +255,8 @@ Choisissez un ou plusieurs styles:
 *Librairies additionnelles envisagées:*
 
 - [ ] VueUse (composables utilitaires)
-- [ ] Typed.js (effet de machine à écrire)
-- [ ] Howler.js (gestion audio avancée)
+- [X] Typed.js (effet de machine à écrire)
+- [X] Howler.js (gestion audio avancée)
 - [ ] [Autre]
 
 ### 4.2 Architecture des composants
@@ -240,20 +273,16 @@ Listez vos composants Vue principaux:
 
 - `ChapterView.vue` - Vue d'un chapitre/scène
 - `NarrativeText.vue` - Affichage du texte narratif
-- `DialogueBox.vue` - Boîte de dialogue pour personnages
-- `ChoiceButton.vue` - Bouton de choix interactif
 - `ChoicePanel.vue` - Panel contenant tous les choix
 
 *Composants système:*
 
-- `InventoryDisplay.vue` - Affichage de l'inventaire
 - `StatsPanel.vue` - Affichage des stats du joueur
 - `EndingScreen.vue` - Écran de fin avec récapitulatif
 - `Modal.vue` - Fenêtre modale (sauvegarde, options)
 
 *Composants UI:*
 
-- `ButtonPrimary.vue` - Bouton principal
 - `LoadingSpinner.vue` - Indicateur de chargement
 - `AudioController.vue` - Contrôle de la musique/sons
 
