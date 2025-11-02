@@ -515,7 +515,7 @@ Comment stockez-vous les chapitres et choix?
 
 ### 6.1 Lien vers les maquettes Figma
 
-*Lien:* [Insérez votre lien Figma]
+[Fichier Figma](https://www.figma.com/design/ikszxBVEsDPQzowvWjxWxo/projet-integrateur-web-5?node-id=0-1&t=JprmHNREdA3jTDza-1)
 
 ### 6.2 Écrans principaux à maquetter
 
@@ -625,7 +625,7 @@ Comment stockez-vous les chapitres et choix?
 
 - Rédaction du cahier de charges
 - Écriture de l'arbre narratif complet
-- Design: Création des maquettes Figma
+- Design: Création des maquettes Figma - [Fichier Figma](https://www.figma.com/design/ikszxBVEsDPQzowvWjxWxo/projet-integrateur-web-5?node-id=0-1&t=JprmHNREdA3jTDza-1)
 - Définition de l'architecture technique
 - Setup du projet (Vite + Vue + dépendances)
 
