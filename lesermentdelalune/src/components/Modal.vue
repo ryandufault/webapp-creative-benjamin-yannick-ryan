@@ -17,7 +17,7 @@
   <script>
   
   export default {
-    name: 'EndingScreen',
+    name: 'Modal',
     components: {
       NarrativeText,
       ChoicePanel
