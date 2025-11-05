@@ -2,63 +2,49 @@
   <div class="app-wrapper">
     <h1>Le serment de la lune</h1>
     <div class="btn-container">
-    <div class="btn">
-      Commencer
+      <p class="btn">Commencer</p>
+      <p class="btn">Continuer</p>
+      <p class="btn">Sauvegardes</p>
+      <p class="btn">Options</p>
     </div>
-    <div class="btn">
-      Continuer
-    </div>
-     <div class="btn">
-      Sauvegardes
-    </div>
-       <div class="btn">
-      Options
-    </div>
-      </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AppHeader',
-  data() {
-    return {
-      
-    }
-  }
+  name: 'AppHeader'
 }
 </script>
 
 <style scoped>
 .app-wrapper {
-  width: 100%; /* 1/3 de l'écran */
-  height: 100%; /* 1/6 de l'écran */
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 
-h1{
+h1 {
+  padding-top: 5vw;
   text-align: center;
 }
 
-.btn-container{
+.btn-container {
+  padding-top: 5vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: left;
-  padding-left: 100px;
+  align-items: flex-start;
+  padding-left: 15vw;
 }
 
 .btn {
-  color: white;
+  color: black;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 10px 20px;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .btn:hover {
-  color:rgb(251, 255, 146);
+  color: rgb(139, 139, 139);
 }
-
-
 </style>

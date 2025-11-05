@@ -1,16 +1,16 @@
 <template>
     <div id="app">
-      <ChapterView />
+      <AppHeader />
     </div>
   </template>
   
   <script>
-  import ChapterView from './components/ChapterView.vue'
+  import AppHeader from './components/AppHeader.vue'
   
   export default {
     name: 'App',
     components: {
-      ChapterView
+      AppHeader
     }
   }
   </script>
