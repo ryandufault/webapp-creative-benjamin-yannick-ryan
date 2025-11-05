@@ -1,35 +1,41 @@
 <template>
-    <div class="save-container">
+  <div class="save-container">
     <div class="save-box">
-        <p> sauvegarde #1</p>
-        <p> sauvegarde #2</p>
-        <p> sauvegarde #3</p>
+      <div class="save-slot">
+        <h2>Sauvegarde 1</h2>
+        <p class="save-date">Dernière sauvegarde : 11 nov 2025</p>
+      </div>
+      
+      <div class="save-slot">
+        <h2>Sauvegarde 2</h2>
+        <p class="save-date">Dernière sauvegarde : 23 oct 2025</p>
+      </div>
+      
+      <div class="save-slot">
+        <h2>Sauvegarde 3</h2>
+        <p class="save-date">Dernière sauvegarde : 5 nov 2025</p>
+      </div>
     </div>
 
     <button class="btn-menu">
       Retour au menu
     </button>
   </div>
-  </template>
-  
-  <script>
-  
-  export default {
-    name: 'SaveSlotManager',
-    components: {
-      NarrativeText,
-      ChoicePanel
-    },
-    data() {
-      return {
-        
-      }
+</template>
+
+<script>
+export default {
+  name: 'SaveSlotManager',
+  data() {
+    return {
+      
     }
   }
-  </script>
-  
-  <style scoped>
-  .save-container {
+}
+</script>
+
+<style scoped>
+.save-container {
   width: 100%;
   height: 93vh;
   display: flex;
@@ -42,56 +48,42 @@
 }
 
 .save-box {
-  padding: 40px 100px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
 }
 
-.save-item {
-  font-size: 2rem;
-  margin: 12px 0;
+.save-slot {
+  width: 33%;
+  height: 16vh;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
-.save-item:hover {
-  opacity: 0.7;
+.save-slot:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.active {
-  font-weight: bold;
-}
-
-.slot-prefix {
-  margin-right: 10px;
-}
-
-.save-line {
-  position: relative;
-  font-size: 2rem;
-  margin: 15px 0;
-  cursor: pointer;
+.save-slot h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   color: #fff6b3;
-  transition: 0.25s;
-  padding-left: 25px; /* espace pour le tiret */
 }
 
-/* Tiret avant le texte */
-.save-line::before {
-  content: "-";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff6b3;
-  opacity: 0;
-  transition: 0.25s;
+.save-date {
+  font-size: 0.9rem;
+  color: rgba(255, 246, 179, 0.6);
+  font-style: italic;
 }
-
-/* Hover : le tiret apparaît */
-.save-line:hover::before {
-  opacity: 1;
-}
-
 
 .btn-menu {
   margin-top: 60px;
@@ -106,4 +98,4 @@
 .btn-menu:hover {
   opacity: 0.7;
 }
-  </style>
+</style>
