@@ -42,8 +42,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #0c0920; /* Violet très foncé */
-  color: #fff6b3; /* Jaune/beige pâle */
+  background: #0c0920;
+  color: #fff6b3;
   font-family: 'Courier New', monospace;
 }
 
