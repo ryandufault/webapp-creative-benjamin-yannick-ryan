@@ -34,12 +34,12 @@
   .modal-container {
   width: 100%;
   height: 93vh;
-  background: #0c0920; /* Violet très foncé */
+  background: #0c0920;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 10vw;
-  color: #fff6b3; /* Jaune/beige pâle */
+  color: #fff6b3; 
   font-family: 'Courier New', monospace;
 }
 
@@ -120,7 +120,6 @@
   color: #fff6b3;
 }
 
-/* Apparition fluide de la flèche au hover */
 .btn-menu:hover::before {
   opacity: 1;
   transform: translateX(0);

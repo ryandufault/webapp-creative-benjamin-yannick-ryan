@@ -1,23 +1,25 @@
 <template>
   <div class="choice-history">
     <h2>Récapitulatif des choix</h2>
-    <div class="choix"> 
-     <p> Choix : Titre du choix </p>
-    </div>
-    <div class="choix none"> 
-     <p> Choix : Titre du choix </p>
-    </div>
-    <div class="choix"> 
-     <p> Choix : Titre du choix </p>
-    </div>
-    <div class="choix none"> 
-     <p> Choix : Titre du choix </p>
-    </div>
-    <div class="choix"> 
-     <p> Choix : Titre du choix </p>
-    </div>
-    <div class="choix none"> 
-     <p> Choix : Titre du choix </p>
+    <div class="choice-container">
+      <div class="choix"> 
+        <p>Choix : Titre du choix</p>
+      </div>
+      <div class="choix none"> 
+        <p>Choix : Titre du choix</p>
+      </div>
+      <div class="choix"> 
+        <p>Choix : Titre du choix</p>
+      </div>
+      <div class="choix none"> 
+        <p>Choix : Titre du choix</p>
+      </div>
+      <div class="choix"> 
+        <p>Choix : Titre du choix</p>
+      </div>
+      <div class="choix none"> 
+        <p>Choix : Titre du choix</p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,29 +37,39 @@ export default {
 
 <style scoped>
 .choice-history {
-  width: 33%; /* 1/3 de l'écran */
-  height: 16%; /* 1/6 de l'écran */
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: black;
+}
+
+.choice-history h2 {
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.choice-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.choix{
-  width: 2vw;
-  border-width: 2px;
-  border-style: solid;
-  border-color: red;
+.choix {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 15vw;
 }
 
-.choix.none{
-  width: 2vw;
-  border-width: 2px;
-  border-style: solid;
-  border-color: red;
-  opacity: 50%;
+.choix.none {
+  opacity: 0.4;
+}
+
+.choix p {
+  margin: 0;
 }
 
 </style>
