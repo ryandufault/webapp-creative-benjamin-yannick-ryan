@@ -1,21 +1,18 @@
 <template>
-    <div id="app">
-      <AppHeader />
-    </div>
-  </template>
+  <div id="app">
+      <!-- Les liens vers les différentes Views (pages) via <router-link> -->
+      <router-link to="/">🏠 Accueil</router-link>
+      <router-view />
+  </div>
+</template>
   
-  <script>
-  import AppHeader from './components/AppHeader.vue'
-  
-  export default {
-    name: 'App',
-    components: {
-      AppHeader
-    }
-  }
-  </script>
-  
-  <style>
+<script>
+export default {
+  name: 'App',
+}
+</script>
+
+<style>
   #app {
     width: 100%;
     height: 100vh;
@@ -23,4 +20,4 @@
     justify-content: center;
     align-items: center;
   }
-  </style>
+</style>

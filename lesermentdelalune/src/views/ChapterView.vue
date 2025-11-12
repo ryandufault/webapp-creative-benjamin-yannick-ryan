@@ -1,22 +1,25 @@
 <template>
-    <div class="ending-container">
-      <div class="ending-header">
-        <h1>Fin</h1>
-        <h2>Nom de la fin</h2>
+    <div class="chapitre-container">
+      <div class="chapitre-header">
+        <h1>Chapitre 1</h1>
+        <h2>L'appel de l'aube</h2>
       </div>
   
-      <div class="fin-contenu">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="chapitre-contenu">
+        <NarrativeText />
+        <ChoicePanel />
       </div>
   
-      <button class="btn-menu">Retourner au menu</button>
+      <button class="btn-continuer">Continuer</button>
     </div>
   </template>
   
   <script>
+  import NarrativeText from '../components/NarrativeText.vue'
+  import ChoicePanel from '../components/ChoicePanel.vue'
   
   export default {
-    name: 'EndingScreen',
+    name: 'ChapterView',
     components: {
       NarrativeText,
       ChoicePanel
@@ -30,7 +33,7 @@
   </script>
   
   <style scoped>
-  .ending-container {
+  .chapitre-container {
     width: 100%;
     height: 93vh; /* 93% de l'écran */
     background-color: white;
@@ -41,25 +44,25 @@
     align-items: center;
   }
   
-  .ending-header {
+  .chapitre-header {
     position: absolute;
     top: 20px;
-    right: 30px;
+    left: 30px;
   }
   
-  .ending-header h1 {
+  .chapitre-header h1 {
     font-size: 2rem;
     margin-bottom: 5px;
     color: #333;
   }
   
-  .ending-header h2 {
+  .chapitre-header h2 {
     font-size: 1.3rem;
     font-weight: 400;
     color: #666;
   }
   
-  .fin-contenu {
+  .chapitre-contenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,10 +70,10 @@
     gap: 20px;
   }
   
-  .btn-menu {
+  .btn-continuer {
     position: absolute;
     bottom: 20px;
-    left: 30px;
+    right: 30px;
     background: none;
     border: none;
     font-size: 1.1rem;
