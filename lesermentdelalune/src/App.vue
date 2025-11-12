@@ -1,7 +1,6 @@
 <template>
   <div id="app">
       <!-- Les liens vers les différentes Views (pages) via <router-link> -->
-      <router-link to="/">🏠 Accueil</router-link>
       <router-view />
   </div>
 </template>
