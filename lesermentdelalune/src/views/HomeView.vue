@@ -47,4 +47,8 @@ h1 {
 .btn:hover {
   color: rgb(139, 139, 139);
 }
+
+a.btn {
+  text-decoration: none; /* pour enlever les styles du router-link */
+}
 </style>
