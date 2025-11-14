@@ -43,13 +43,13 @@
   .modal-container {
   width: 100%;
   height: 93vh;
-  background: #0c0920;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 10vw;
   color: #fff6b3; 
-  font-family: 'Courier New', monospace;
+  z-index: 500;
 }
 
 .menu {
@@ -61,7 +61,6 @@
 .title {
   font-size: 4rem;
   font-weight: bold;
-  letter-spacing: 4px;
   margin-bottom: 3rem;
   color: #fff6b3;
   text-shadow: 0 0 20px rgba(255, 246, 179, 0.15);
@@ -81,7 +80,6 @@
   border: 2px solid rgba(255, 246, 179, 0.2);
   color: #fff6b3;
   font-size: 1.5rem;
-  letter-spacing: 2px;
   padding: 1rem 2rem;
   width: 340px;
   text-align: left;
@@ -120,7 +118,7 @@
 }
 
 .btn-menu::before {
-  content: "←";
+  content: "-";
   position: absolute;
   left: -20px;
   opacity: 0;
