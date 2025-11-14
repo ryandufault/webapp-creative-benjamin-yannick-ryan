@@ -41,8 +41,11 @@
   
   <style scoped>
   .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 93vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: flex-start;
@@ -50,6 +53,7 @@
   padding-left: 10vw;
   color: #fff6b3; 
   z-index: 500;
+  backdrop-filter: blur(2px);
 }
 
 .menu {
