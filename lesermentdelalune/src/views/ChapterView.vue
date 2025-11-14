@@ -1,10 +1,7 @@
 <template>
   <div class="chapitre-container">
-    <!-- chargement -->
-    <div v-if="storyStore.isLoading">Chargement...</div>
-
-    <!-- affiche -->
-    <div v-else-if="storyStore.currentChapter">
+    <!-- Affichage du chapitre -->
+    <div v-if="storyStore.currentChapter">
       <div class="chapitre-header">
         <h1>Chapitre {{ storyStore.currentChapter.id }}</h1>
         <h2>{{ storyStore.currentChapter.titre }}</h2>
@@ -20,11 +17,6 @@
       </div>
 
       <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
-    </div>
-
-    <!-- erreur -->
-    <div v-else-if="storyStore.error">
-      <p>Erreur : {{ storyStore.error }}</p>
     </div>
   </div>
 </template>
@@ -42,37 +34,59 @@ export default {
     NarrativeText,
     ChoicePanel
   },
+  
+  data() {
+    return {
+      chapitreId: null
+    }
+  },
 
   computed: {
     // Mapper le store complet
-    // Cela donne accès à : storyStore.state, storyStore.getters, storyStore.actions
     ...mapStores(useStoryStore)
   },
 
-  async mounted() {
+  mounted() {
+    // Récup l'id du chapitre avec l'url (paramètres)
+    this.chapitreId = this.$route.params.id;
+    
     // Charger les chapitres si pas encore chargés
     if (!this.storyStore.hasChapters) {
-      await this.storyStore.loadChapters();
+      // fetch pour recup les données du json
+      fetch('/src/assets/chapitres.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur lors du chargement du fichier JSON");
+          }
+          return response.json();
+        })
+        .then(data => {
+          // stock les chapitres dans le store
+          this.storyStore.setChapters(data.chapitres);
+          // load les données du chapitre actuel
+          this.storyStore.setCurrentChapter(this.chapitreId);
+        })
+        .catch(error => {
+          console.error('Erreur lors du chargement du JSON :', error);
+        });
+    } else {
+      // Si déjà chargé, juste définir le chapitre actuel
+      this.storyStore.setCurrentChapter(this.chapitreId);
     }
-
-    // Définir le chapitre actuel depuis l'URL
-    const chapitreId = this.$route.params.id;
-    this.storyStore.setCurrentChapter(chapitreId);
   },
 
   methods: {
     handleChoice(choixNumber) {
-      // Accès aux actions via storyStore
-      const chapitreId = this.storyStore.currentChapter.id;
-      this.storyStore.saveChoice(chapitreId, choixNumber);
-      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${chapitreId}`);
+      // Enregistre le choix dans le store
+      this.storyStore.saveChoice(this.chapitreId, choixNumber);
+      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${this.chapitreId}`);
     },
 
     goToNextChapter() {
-      // Accès au state via storyStore
-      const nextChapterId = this.storyStore.currentChapter.id + 1;
+      // Convert l'id en int et rajoute 1
+      const nextChapterId = parseInt(this.chapitreId) + 1;
       
-      // Navigation vers le chapitre suivant
+      // Navigation programmatique vers chap suivant
       this.$router.push({ 
         name: 'chapitre', 
         params: { id: nextChapterId } 
@@ -81,8 +95,9 @@ export default {
   },
 
   watch: {
-    // Réagit aux changements d'URL
+    // Changement params url
     '$route.params.id'(newId) {
+      this.chapitreId = newId;
       this.storyStore.setCurrentChapter(newId);
     }
   }

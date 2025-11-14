@@ -4,8 +4,6 @@ export const useStoryStore = defineStore('story', {
   state: () => ({
     chapitres: [], // Tous les chapitres du JSON
     currentChapter: null, // Chapitre actuel
-    isLoading: false,
-    error: null,
     playerChoices: {} // Choix du joueur {chapitreId: choixNumber}
   }),
 
@@ -23,27 +21,12 @@ export const useStoryStore = defineStore('story', {
   },
 
   actions: {
-    // Charge les chapitres depuis le JSON
-    async loadChapters() {
-      this.isLoading = true;
-      this.error = null;
-      
-      try {
-        const response = await fetch('/src/assets/chapitres.json');
-        if (!response.ok) {
-          throw new Error("Erreur lors du chargement du fichier JSON");
-        }
-        const data = await response.json();
-        this.chapitres = data.chapitres;
-      } catch (error) {
-        console.error('Erreur lors du chargement du JSON :', error);
-        this.error = error.message;
-      } finally {
-        this.isLoading = false;
-      }
+    // Définit les chapitres dans le tableau this.chapitres
+    setChapters(chapitres) {
+      this.chapitres = chapitres;
     },
 
-    // Modifie le chapitre actuel à afficher
+    // Modifie le chapitre actuel à afficher (storé dans this.currentChapter)
     setCurrentChapter(id) {
       this.currentChapter = this.getChapterById(id);
     },
