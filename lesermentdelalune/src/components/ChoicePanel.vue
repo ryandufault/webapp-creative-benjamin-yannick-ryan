@@ -1,10 +1,10 @@
 <template>
-  <div class="choice-panel">
-    <div class="choix">
-      Choix 1
+  <div class="choice-panel" v-if="choix1 || choix2">
+    <div class="choix" v-if="choix1">
+      {{ choix1 }}
     </div>
-    <div class="choix">
-      Choix 2
+    <div class="choix" v-if="choix2">
+      {{ choix2 }}
     </div>
   </div>
 </template>
@@ -12,6 +12,16 @@
 <script>
 export default {
   name: 'ChoicePanel',
+  props: {
+    choix1: {
+      type: String,
+      default: null
+    },
+    choix2: {
+      type: String,
+      default: null
+    }
+  },
   data() {
     return {
       

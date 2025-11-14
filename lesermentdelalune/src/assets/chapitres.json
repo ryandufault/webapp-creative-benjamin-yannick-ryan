@@ -10,22 +10,40 @@
     {
       "id": 2,
       "titre": "La tour oubliée",
-      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod nunc at tincidunt volutpat."
+      "texte": "Le vent se fait entendre parmi les arbres environnant les montagnes. Agnès avance, en quête de réponses en rapport aux paroles de son père. Une tour semble apparaître progressivement parmi les grands arbres. Aucune lumière ne semble y pénétrer, comme si le Soleil détournait les yeux. ////  À l'intérieur, tout sent l'abandon. Chaque pas fait écho dans le vide de la grande tour, tandis que Agnès approche les murs de celle-ci. Des dessins anciens révèlent ce qui semble être deux astres enlacés. Soudainement, une voix se fait entendre derrière une pile de pierres effondrées.  //// - « Tu n'aurais pas dû venir » //// Agnès recule. Une fille apparaît, le visage pâle, presque transparent sous la lueur. Ses cheveux ont la couleur de la nuit. //// - Qui es-tu ? demanda Agnès //// - On m'appelait Aurore, avant que la tour ne devienne oubliée. //// Un silence s'installe. Aurore fixe la lanterne d'Agnès. //// - Cette lumière te brûlera, elle brûle tout ce qu'elle touche. - Je ne comprends pas, répond Agnès. Que veux-tu dire? //// - Le serment n'était pas une bénédiction des Dieux. C'était une chaîne. Le Soleil voulait être seul à briller. ///// Agnès sentit son cœur se resserrer. Le doute devient certitude. Son père, grand roi du royaume, lui a menti.",
+      "choix1": null,
+      "choix2": null
     },
     {
       "id": 3,
       "titre": "Le premier secret",
-      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac metus ut risus fermentum lacinia."
+      "texte": "Agnès, craignant pour la sécurité de Aurore, décida de converser avec elle pour quelques heures. La lumière du Soleil semble moins étincelante que d'habitude. La tour, gardant encore l'écho de leurs voix, semble plus vivante qu'elle l'était avant. Tout semble paisible jusqu'à ce qu'un craquement se fasse entendre derrière la porte. Agnès sursaute, la main sur la lanterne. //// Un homme vêtu de cuir entre, son arc pendant à son épaule. - Par les dieux… qu'est-ce qui se passe? - Attendez ! Ce n'est pas ce que vous croyez, dit Agnès, visiblement nerveux. //// Le chasseur le reconnaît aussitôt. //// - Le prince de Solaria? Ici ? Avec… une ombre? Je pensais que nous nous étions débarrassés d'eux! Si ça se sache, le roi enverra les chevalier brûler cette tour. //// Agnès, la gorge nouée, essaye de garder son calme. Si quelqu'un découvre Aurore, elle sera condamnée. Il faut agir.",
+      "choix1": "Le supplier de garder le secret",
+      "choix2": "Le convaincre avec une récompense",
+      "textepostchoix1" : "Agnès s'avance, la voix tremblante, suppliant l'homme de ne rien dire. Mais la peur du chasseur est trop forte. Il quitte la tour, décidé à rapporter ce qu'il a vu au Roi.",
+      "textepostchoix2" : "Agnès tente de garder son calme pour parler avec l'autorité du prince qu'il est. /// « Si tu gardes le silence, je veillerai à ce que ta famille ne manque de rien. Tu auras ma reconnaissance, et celle de Solaria. » //// Le chasseur hésite, puis hoche lentement la tête avant de disparaître dans la lumière blanche."
     },
     {
       "id": 4,
       "titre": "L'ombre du serment",
-      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo arcu ac odio fringilla accumsan."
+      "texte": "Le Soleil est toujours haut, mais sa lumière semble vaciller pour la première fois. Agnès et Aurore sont encore dans la tour, leurs voix se perdent dans la poussière et la chaleur. //// - « Quand la Lune fut enchaînée, dit Aurore, le Soleil promit de ne jamais faiblir. Mais il mentait. Chaque instant que je vis en contact avec une personne du serment affaiblit sa lueur. Le monde réclame son équilibre. » //// Agnès se sentit trahis. Tout ce qu'on lui racontait depuis son enfance s'effondre : Le serment, la gloire du royaume, la lumière éternelle... Il sent pourtant une légère paix dans cette clarté qu'Aurore expliqua. //// - « Si je reste ici, le royaume souffrira », murmure-t-il. - « Et si tu pars, le mensonge continuera. » répond Aurore. /// Le silence retombe. Seule la lumière du Soleil, plus faible qu'avant, remplit la pièce. Agnès doit choisir : sauver ce qu'il est destiné ou ce qu'il ressent.",
+      "choix1": "Rester auprès d'Aurore pour en apprendre davantage sur le serment",
+      "choix2": "Quitter la tour pour vérifier l'état du royaume",
+      "textepostchoix1" : "Agnès s'assoit près d'elle. Leurs voix s'entremêlent, parlant du serment et du royaume. //// Mais dehors, les oiseaux se taisent. //// Des ombres surgissent pour la première fois depuis une décennie.",
+      "textepostchoix2" : "Agnès se lève. - « Je reviendrai. Je te le promets. » //// La lumière du Soleil faiblit."
     },
     {
       "id": 5,
       "titre": "Le Conseil du Roi",
-      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel orci non justo pretium sagittis."
+      "texte": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » //// Il obéit. Derrière lui, les membres du conseil se taisaient.",
+      
+      "textepostchoix1chap3": "- « Des rumeurs circulent, dit le Roi. » - « On dit que la lumière décline depuis ta dernière chasse. » - « Que tu aurais menti. » - « Que quelque chose s’est passé dans la forêt. » //// Le roi se retourna. - « Dis-moi la vérité, fils. Que s’est-il vraiment passé là-bas ? »",
+      "textepostchoix2chap3": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » //// Il obéit. Derrière lui, les membres du conseil se taisaient.",
+
+      "choix1": "Mentir - Protéger le secret jusqu'au bout.",
+      "choix2": "Avouer - Dire la vérité en espérant que le Roi soit compréhensif.",
+      "textepostchoix1" : "- « Rien ne s’est produit, père. Nous avons chassé et ramené ce que nous pouvions. » //// Le roi soupira. //// - « Tu jures sur la flamme du Royaume ? » - « Je jure. » //// Le silence est long. Le roi finit par hocher la tête. //// - « Va. Mais souviens-toi : le Soleil ne ment jamais… et ce qui l’éteint finit toujours par brûler. »",
+      "textepostchoix2" : "Agnès baissa les yeux. //// - « Père… un incident s’est produit. Je me suis lié d’amitié avec une ombre dans la vallée. J’ai voulu contenir le mal, mais… quelque chose s’est échappé. » //// Les conseillers murmurèrent, paniqués. Le roi serra les poings. //// - « Une ombre, dis-tu ? » - « Oui, elle se nourrit du Soleil, je crois. » Le roi resta immobile un moment, puis posa une main lourde sur son épaule. - « Tu as bien fait de parler. Garde cela pour nous seuls. Le peuple ne doit rien savoir… pas encore. » Le prince acquiesça. Dans son regard, la peur se ressentit. //// Les voix de plus en plus fortes du peuple se firent entendre depuis l’extérieur. La panique semble s’installer progressivement. //// Agnès décida de retourner voir Aurore trouver une solution."
     },
     {
       "id": 6,
