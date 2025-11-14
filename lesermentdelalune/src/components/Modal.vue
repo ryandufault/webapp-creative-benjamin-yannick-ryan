@@ -26,15 +26,15 @@
       return {
         
       }
-    }
+    },
     methods: {
     btnMenu() {
       // navigation programmatique vers menu
       this.$router.push({ name: 'home' });
-    }
+    },
     btnContinuer() {
       // ferme le modal.
-    }
+    },
     btnRecommencer() {
       // navigation programmatique vers chapitre selon id; recommence le chapitre dont tu est déja dessus en ce moment
       this.$router.push({ name: 'chapitre/:id' });
