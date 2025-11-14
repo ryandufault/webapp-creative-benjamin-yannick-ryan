@@ -4,8 +4,8 @@
       <h1 class="title">Le serment de la lune</h1>
 
       <ul class="menu-options">
-        <li><button class="btn">Continuer</button></li>
-        <li><button class="btn"> Recommencer</button></li>
+        <li><button class="btn" @click="btnContinuer">Continuer</button></li>
+        <li><button class="btn" @click="btnRecommencer"> Recommencer</button></li>
         <li><button class="btn">Paramètres</button></li>
       </ul>
 
@@ -27,14 +27,18 @@
     btnMenu() {
       // navigation programmatique vers menu
       this.$router.push({ name: 'home' });
-    }/*,
+    },
     btnContinuer() {
-      // ferme le modal.
+      this.$emit('close');
     },
     btnRecommencer() {
-      // navigation programmatique vers chapitre selon id; recommence le chapitre dont tu est déja dessus en ce moment
-      this.$router.push({ name: 'chapitre/:id' });
-    }*/
+      // recup l'id actuel du chap avec l'url
+      /* NE MARCHE PAS :const currentChapterId = this.$route.params.id;
+      this.$router.push({ name: 'chapitre', params: { id: currentChapterId } });*/
+
+      //alternative
+      window.location.reload();
+    }
   }
   }
   </script>

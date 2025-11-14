@@ -17,8 +17,8 @@
       </div>
       <button class="btn-modal" @click="modal = true">MODAL</button>
       <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
-      <!-- ouvre le modal quand true -->
-      <Modal v-if="modal" />
+      <!-- ouvre le modal quand true, le ferme quand false dans la component modal -->
+      <Modal v-if="modal" @close="modal = false" />
     </div>
   </div>
 </template>
