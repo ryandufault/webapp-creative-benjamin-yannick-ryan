@@ -9,7 +9,7 @@
         <li><button class="btn">Paramètres</button></li>
       </ul>
 
-      <button class="btn-menu">Menu principal</button>
+      <button class="btn-menu" @click="btnMenu">Menu principal</button>
     </div>
   </div>
   </template>
@@ -27,6 +27,19 @@
         
       }
     }
+    methods: {
+    btnMenu() {
+      // navigation programmatique vers menu
+      this.$router.push({ name: 'home' });
+    }
+    btnContinuer() {
+      // ferme le modal.
+    }
+    btnRecommencer() {
+      // navigation programmatique vers chapitre selon id; recommence le chapitre dont tu est déja dessus en ce moment
+      this.$router.push({ name: 'chapitre/:id' });
+    }
+  }
   }
   </script>
   
