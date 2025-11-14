@@ -1,45 +1,46 @@
 {
-    "chapitres": [
-      {
-        "id": 1,
-        "titre": "L'aube parfaite",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus ligula sit amet massa luctus, at sagittis elit dictum."
-      },
-      {
-        "id": 2,
-        "titre": "La tour oubliée",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod nunc at tincidunt volutpat."
-      },
-      {
-        "id": 3,
-        "titre": "Le premier secret",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac metus ut risus fermentum lacinia."
-      },
-      {
-        "id": 4,
-        "titre": "L'ombre du serment",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo arcu ac odio fringilla accumsan."
-      },
-      {
-        "id": 5,
-        "titre": "Le Conseil du Roi",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel orci non justo pretium sagittis."
-      },
-      {
-        "id": 6,
-        "titre": "Les blessures du sol",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla sem sed justo finibus tristique."
-      },
-      {
-        "id": 7,
-        "titre": "Le jour de l'éclipse",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat urna vel lorem vestibulum, a pharetra nulla accumsan."
-      },
-      {
-        "id": 8,
-        "titre": "La nuit promise",
-        "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet mauris eu eros fermentum scelerisque."
-      }
-    ]
-  }
-  
+  "chapitres": [
+    {
+      "id": 1,
+      "titre": "L'aube parfaite",
+      "texte": "Le soleil se levait sur Solaria comme chaque matin. Les rayons jaunâtres frappaient les tours du palais, les vitraux et les champs aux alentours. Depuis vingt ans, le jour ne s'était jamais couché. //// Agnès, prince héritier, observait la plaine depuis la haute terrasse. En bas de celle-ci, le peuple s'activait déjà, priant le Soleil avant d'ouvrir les commerces. Tout semblait parfait, mais cette perfection pesait. L'air manquait de souffle. Les fleurs fanées depuis des années décoraient encore le sol. Le monde était figé. //// Le Roi entra dans la salle du trône pour commencer la cérémonie du serment. Chaque matin, il récitait les mêmes paroles : « Que le Soleil règne, et que la lune demeure enchaînée, pour la gloire de Solaria. » //// Agnès répéta les mots, le coeur serré. Depuis son enfance il n'avait jamais appris ce que ceux-ci signifiaient, seulement qu'ils étaient nécessaires. //// - « Mon fils, dit le Roi d'une voix grave, souviens-toi que notre lumière est digne de force. La moindre ombre est un signe de faiblesse. » //// - « Oui, père. Mais... et si la lumière nous brûlait? De telle sorte qu'elle le fait aux fleurs fanées du jardin… » //// Le roi le fixa, surpris, avant de détourner le regard. //// Agnès sentit encore une fois le poids du serment. Pourquoi craindre tant la nuit? Pourquoi ce silence par rapport à l'ombre? //// Alors que le Soleil atteignait le sommet du ciel, des voix se firent entendre depuis le bas de la terrasse : dans les forêts environnantes les montagnes, on aurait aperçu des éclats de lumière inconnus...",
+      "choix1": null,
+      "choix2": null
+    },
+    {
+      "id": 2,
+      "titre": "La tour oubliée",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod nunc at tincidunt volutpat."
+    },
+    {
+      "id": 3,
+      "titre": "Le premier secret",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac metus ut risus fermentum lacinia."
+    },
+    {
+      "id": 4,
+      "titre": "L'ombre du serment",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo arcu ac odio fringilla accumsan."
+    },
+    {
+      "id": 5,
+      "titre": "Le Conseil du Roi",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel orci non justo pretium sagittis."
+    },
+    {
+      "id": 6,
+      "titre": "Les blessures du sol",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla sem sed justo finibus tristique."
+    },
+    {
+      "id": 7,
+      "titre": "Le jour de l'éclipse",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat urna vel lorem vestibulum, a pharetra nulla accumsan."
+    },
+    {
+      "id": 8,
+      "titre": "La nuit promise",
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet mauris eu eros fermentum scelerisque."
+    }
+  ]
+}

@@ -2,11 +2,11 @@
     <div class="chapitre-container">
       <div class="chapitre-header">
         <h1>Chapitre {{ chapitreId }}</h1>
-        <h2>L'appel de l'aube</h2>
+        <h2>{{ chapitreTitre }}</h2>
       </div>
   
       <div class="chapitre-contenu">
-        <NarrativeText />
+        <NarrativeText :texte="chapitreTexte" />
         <ChoicePanel />
       </div>
   
@@ -26,14 +26,43 @@ export default {
   },
   data() {
     return {
-      chapitreId: null
+      chapitreId: null,
+      chapitreTitre: '',
+      chapitreTexte: '',
+      chapitres: [] // tableau qui contiendra les données du JSON
     }
   },
-  created() {
+  mounted() {
     // Récup l'id du chapitre avec l'url (paramètres)
     this.chapitreId = this.$route.params.id;
+    
+    // fetch pour recup les données du json
+    fetch('/src/assets/chapitres.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Erreur lors du chargement du fichier JSON");
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.chapitres = data.chapitres; // stock les chapitres dans le tableau
+        this.loadChapterData(); // load les données du chapitre actuel
+      })
+      .catch(error => {
+        console.error('Erreur lors du chargement du JSON :', error);
+      });
   },
   methods: {
+    loadChapterData() {
+      // boucle pour chaque chapitres du tableau
+      this.chapitres.forEach(chapitre => {
+      // si l'id correspond à l'id du chapitre actuel
+        if (chapitre.id === parseInt(this.chapitreId)) {
+          this.chapitreTitre = chapitre.titre;
+          this.chapitreTexte = chapitre.texte;
+        }
+      });
+    },
     goToNextChapter() {
       // Convert l'id en int et rajoute 1
       const nextChapterId = parseInt(this.chapitreId) + 1;
@@ -46,9 +75,10 @@ export default {
     }
   },
   watch: {
-    // Changenment params url
+    // Changement params url
     '$route.params.id'(newId) {
       this.chapitreId = newId;
+      this.loadChapterData(); // Recharge les données du nouveau chapitre
     }
   }
 }
