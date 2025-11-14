@@ -15,8 +15,10 @@
           @choice-selected="handleChoice"
         />
       </div>
-
+      <button class="btn-modal" @click="modal = true">MODAL</button>
       <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
+      <!-- ouvre le modal quand true -->
+      <Modal v-if="modal" />
     </div>
   </div>
 </template>
@@ -24,6 +26,7 @@
 <script>
 import NarrativeText from '../components/NarrativeText.vue'
 import ChoicePanel from '../components/ChoicePanel.vue'
+import Modal from '../components/Modal.vue'
 import { useStoryStore } from '../stores/useStoryStore'
 import { mapStores } from 'pinia'
 
@@ -31,13 +34,15 @@ export default {
   name: 'ChapterView',
   
   components: {
+    Modal,
     NarrativeText,
     ChoicePanel
   },
   
   data() {
     return {
-      chapitreId: null
+      chapitreId: null,
+      modal: false
     }
   },
 
@@ -91,7 +96,7 @@ export default {
         name: 'chapitre', 
         params: { id: nextChapterId } 
       });
-    }
+    },
   },
 
   watch: {
