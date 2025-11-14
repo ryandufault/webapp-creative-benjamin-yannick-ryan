@@ -2,7 +2,7 @@
   <div class="app-wrapper">
     <h1>Le serment de la lune</h1>
     <div class="btn-container">
-      <router-link class="btn" to="/chapter/1">Commencer</router-link>
+      <p class="btn" @click="startAdventure">Commencer</p>
       <p class="btn">Continuer</p>
       <p class="btn">Sauvegardes</p>
       <p class="btn">Options</p>
@@ -12,7 +12,15 @@
 
 <script>
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  methods: {
+    startAdventure() {
+      this.$router.push({ 
+        name: 'chapitre', 
+        params: { id: '1' } 
+      });
+    }
+  }
 }
 </script>
 
