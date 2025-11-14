@@ -1,144 +1,145 @@
 <template>
   <div class="chapitre-container">
-    <div class="chapitre-header">
-      <h1>Chapitre {{ chapitreId }}</h1>
-      <h2>{{ chapitreTitre }}</h2>
+    <!-- chargement -->
+    <div v-if="storyStore.isLoading">Chargement...</div>
+
+    <!-- affiche -->
+    <div v-else-if="storyStore.currentChapter">
+      <div class="chapitre-header">
+        <h1>Chapitre {{ storyStore.currentChapter.id }}</h1>
+        <h2>{{ storyStore.currentChapter.titre }}</h2>
+      </div>
+
+      <div class="chapitre-contenu">
+        <NarrativeText :texte="storyStore.currentChapter.texte" />
+        <ChoicePanel 
+          :choix1="storyStore.currentChapter.choix1" 
+          :choix2="storyStore.currentChapter.choix2"
+          @choice-selected="handleChoice"
+        />
+      </div>
+
+      <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
     </div>
 
-    <div class="chapitre-contenu">
-      <NarrativeText :texte="chapitreTexte" />
-      <ChoicePanel :choix1="chapitreChoix1" :choix2="chapitreChoix2" />
+    <!-- erreur -->
+    <div v-else-if="storyStore.error">
+      <p>Erreur : {{ storyStore.error }}</p>
     </div>
-
-    <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
   </div>
 </template>
 
 <script>
 import NarrativeText from '../components/NarrativeText.vue'
 import ChoicePanel from '../components/ChoicePanel.vue'
+import { useStoryStore } from '../stores/useStoryStore'
+import { mapStores } from 'pinia'
 
 export default {
-name: 'ChapterView',
-components: {
-  NarrativeText,
-  ChoicePanel
-},
-data() {
-  return {
-    chapitreId: null,
-    chapitreTitre: '',
-    chapitreTexte: '',
-    chapitreChoix1: null,
-    chapitreChoix2: null,
-    chapitres: [] // tableau qui contiendra les données du JSON
-  }
-},
-mounted() {
-  // Récup l'id du chapitre avec l'url (paramètres)
-  this.chapitreId = this.$route.params.id;
+  name: 'ChapterView',
   
-  // fetch pour recup les données du json
-  fetch('/src/assets/chapitres.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Erreur lors du chargement du fichier JSON");
-      }
-      return response.json();
-    })
-    .then(data => {
-      this.chapitres = data.chapitres; // stock les chapitres dans le tableau
-      this.loadChapterData(); // load les données du chapitre actuel
-    })
-    .catch(error => {
-      console.error('Erreur lors du chargement du JSON :', error);
-    });
-},
-methods: {
-  loadChapterData() {
-    // boucle pour chaque chapitres du tableau
-    this.chapitres.forEach(chapitre => {
-    // si l'id correspond à l'id du chapitre actuel
-      if (chapitre.id === parseInt(this.chapitreId)) {
-        this.chapitreTitre = chapitre.titre;
-        this.chapitreTexte = chapitre.texte;
-        this.chapitreChoix1 = chapitre.choix1;
-        this.chapitreChoix2 = chapitre.choix2;
-      }
-    });
+  components: {
+    NarrativeText,
+    ChoicePanel
   },
-  goToNextChapter() {
-    // Convert l'id en int et rajoute 1
-    const nextChapterId = parseInt(this.chapitreId) + 1;
-    
-    // Navigation programmatique vers chap suivant
-    this.$router.push({ 
-      name: 'chapitre', 
-      params: { id: nextChapterId } 
-    });
+
+  computed: {
+    // Mapper le store complet
+    // Cela donne accès à : storyStore.state, storyStore.getters, storyStore.actions
+    ...mapStores(useStoryStore)
+  },
+
+  async mounted() {
+    // Charger les chapitres si pas encore chargés
+    if (!this.storyStore.hasChapters) {
+      await this.storyStore.loadChapters();
+    }
+
+    // Définir le chapitre actuel depuis l'URL
+    const chapitreId = this.$route.params.id;
+    this.storyStore.setCurrentChapter(chapitreId);
+  },
+
+  methods: {
+    handleChoice(choixNumber) {
+      // Accès aux actions via storyStore
+      const chapitreId = this.storyStore.currentChapter.id;
+      this.storyStore.saveChoice(chapitreId, choixNumber);
+      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${chapitreId}`);
+    },
+
+    goToNextChapter() {
+      // Accès au state via storyStore
+      const nextChapterId = this.storyStore.currentChapter.id + 1;
+      
+      // Navigation vers le chapitre suivant
+      this.$router.push({ 
+        name: 'chapitre', 
+        params: { id: nextChapterId } 
+      });
+    }
+  },
+
+  watch: {
+    // Réagit aux changements d'URL
+    '$route.params.id'(newId) {
+      this.storyStore.setCurrentChapter(newId);
+    }
   }
-},
-watch: {
-  // Changement params url
-  '$route.params.id'(newId) {
-    this.chapitreId = newId;
-    this.loadChapterData(); // Recharge les données du nouveau chapitre
-  }
-}
 }
 </script>
 
 <style scoped>
 .chapitre-container {
-width: 100%;
-height: 93vh;
-background-color: white;
-position: relative;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  height: 93vh;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .chapitre-header {
-position: absolute;
-top: 20px;
-left: 30px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
 
 .chapitre-header h1 {
-font-size: 2rem;
-margin-bottom: 5px;
-color: #333;
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 .chapitre-header h2 {
-font-size: 1.3rem;
-font-weight: 400;
-color: #666;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #666;
 }
 
 .chapitre-contenu {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .btn-continuer {
-position: absolute;
-bottom: 20px;
-right: 30px;
-background: none;
-border: none;
-font-size: 1.1rem;
-color: #333;
-cursor: pointer;
-transition: 0.3s;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn-continuer:hover {
-color: rgb(255, 251, 171);
+  color: rgb(255, 251, 171);
 }
 </style>

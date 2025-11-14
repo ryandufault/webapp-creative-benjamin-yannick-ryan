@@ -38,7 +38,7 @@
       "texte": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » //// Il obéit. Derrière lui, les membres du conseil se taisaient.",
       
       "textepostchoix1chap3": "- « Des rumeurs circulent, dit le Roi. » - « On dit que la lumière décline depuis ta dernière chasse. » - « Que tu aurais menti. » - « Que quelque chose s’est passé dans la forêt. » //// Le roi se retourna. - « Dis-moi la vérité, fils. Que s’est-il vraiment passé là-bas ? »",
-      "textepostchoix2chap3": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » //// Il obéit. Derrière lui, les membres du conseil se taisaient.",
+      "textepostchoix2chap3": "- « Des rumeurs circulent, dit le Roi. » - « Je crains bien que la lumière de notre Soleil s’affaiblit. » - « Nous cherchons toutes explications, en aurait-tu ? »",
 
       "choix1": "Mentir - Protéger le secret jusqu'au bout.",
       "choix2": "Avouer - Dire la vérité en espérant que le Roi soit compréhensif.",
@@ -48,7 +48,15 @@
     {
       "id": 6,
       "titre": "Les blessures du sol",
-      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla sem sed justo finibus tristique."
+      "texte": "Depuis le retour d’Agnès, le ciel semblait s’alourdir chaque heure qui passait. Le soleil n’était plus qu’une sphère pâle vacillante. Ironiquement, sur les terres de Solaria, la sécheresse se fit encore plus ressentir, le tout à une vitesse surnaturelle. Les paysans creusaient la terre craquelée, priant pour qu’elle garde vie. Mais la lumière déclinait…",
+
+      "textepostchoix1chap5": "X- « Des rumeurs circulent, dit le Roi. » - « On dit que la lumière décline depuis ta dernière chasse. » - « Que tu aurais menti. » - « Que quelque chose s’est passé dans la forêt. » //// Le roi se retourna. - « Dis-moi la vérité, fils. Que s’est-il vraiment passé là-bas ? »",
+      "textepostchoix2chap5": "X- « Des rumeurs circulent, dit le Roi. » - « Je crains bien que la lumière de notre Soleil s’affaiblit. » - « Nous cherchons toutes explications, en aurait-tu ? »",
+
+      "choix1": "XMentir - Protéger le secret jusqu'au bout.",
+      "choix2": "XAvouer - Dire la vérité en espérant que le Roi soit compréhensif.",
+      "textepostchoix1" : "X- « Rien ne s’est produit, père. Nous avons chassé et ramené ce que nous pouvions. » //// Le roi soupira. //// - « Tu jures sur la flamme du Royaume ? » - « Je jure. » //// Le silence est long. Le roi finit par hocher la tête. //// - « Va. Mais souviens-toi : le Soleil ne ment jamais… et ce qui l’éteint finit toujours par brûler. »",
+      "textepostchoix2" : "XAgnès baissa les yeux. //// - « Père… un incident s’est produit. Je me suis lié d’amitié avec une ombre dans la vallée. J’ai voulu contenir le mal, mais… quelque chose s’est échappé. » //// Les conseillers murmurèrent, paniqués. Le roi serra les poings. //// - « Une ombre, dis-tu ? » - « Oui, elle se nourrit du Soleil, je crois. » Le roi resta immobile un moment, puis posa une main lourde sur son épaule. - « Tu as bien fait de parler. Garde cela pour nous seuls. Le peuple ne doit rien savoir… pas encore. » Le prince acquiesça. Dans son regard, la peur se ressentit. //// Les voix de plus en plus fortes du peuple se firent entendre depuis l’extérieur. La panique semble s’installer progressivement. //// Agnès décida de retourner voir Aurore trouver une solution."
     },
     {
       "id": 7,
