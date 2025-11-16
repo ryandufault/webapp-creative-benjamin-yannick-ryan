@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
+import chaptersData from '../assets/chapitres.json';
 
 export const useStoryStore = defineStore('story', {
   state: () => ({
-    chapitres: [], // Tous les chapitres du JSON
+    chapitres: chaptersData.chapitres, // Tous les chapitres du JSON
     currentChapter: null, // Chapitre actuel
     playerChoices: {} // Choix du joueur {chapitreId: choixNumber}
   }),
@@ -21,11 +22,6 @@ export const useStoryStore = defineStore('story', {
   },
 
   actions: {
-    // Définit les chapitres dans le tableau this.chapitres
-    setChapters(chapitres) {
-      this.chapitres = chapitres;
-    },
-
     // Modifie le chapitre actuel à afficher (storé dans this.currentChapter)
     setCurrentChapter(id) {
       this.currentChapter = this.getChapterById(id);

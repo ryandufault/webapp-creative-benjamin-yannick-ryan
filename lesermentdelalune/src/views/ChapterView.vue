@@ -55,29 +55,8 @@ export default {
     // Récup l'id du chapitre avec l'url (paramètres)
     this.chapitreId = this.$route.params.id;
     
-    // Charger les chapitres si pas encore chargés
-    if (!this.storyStore.hasChapters) {
-      // fetch pour recup les données du json
-      fetch('/src/assets/chapitres.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Erreur lors du chargement du fichier JSON");
-          }
-          return response.json();
-        })
-        .then(data => {
-          // stock les chapitres dans le store
-          this.storyStore.setChapters(data.chapitres);
-          // load les données du chapitre actuel
-          this.storyStore.setCurrentChapter(this.chapitreId);
-        })
-        .catch(error => {
-          console.error('Erreur lors du chargement du JSON :', error);
-        });
-    } else {
-      // Si déjà chargé, juste définir le chapitre actuel
-      this.storyStore.setCurrentChapter(this.chapitreId);
-    }
+    // Définir le chapitre actuel depuis le store (déjà chargé)
+    this.storyStore.setCurrentChapter(this.chapitreId);
   },
 
   methods: {
