@@ -57,7 +57,7 @@ export default {
     return {
       chapitreId: null,
       modal: false,
-      choiceSelected: null // track le choix selected (null ou 1 ou 2)
+      choiceSelected: null // null ou 1 ou 2
     }
   },
 
@@ -97,8 +97,6 @@ export default {
     handleChoice(choixNumber) {
       // choix dans le store pinia
       this.storyStore.saveChoice(this.chapitreId, choixNumber);
-      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${this.chapitreId}`);
-      
       this.choiceSelected = choixNumber; // mémorise quel choix est selected
     },
 
@@ -107,12 +105,17 @@ export default {
       
       // Convert l'id en int et rajoute 1
       const nextChapterId = parseInt(this.chapitreId) + 1;
-      
-      // Navigation programmatique vers chap suivant
-      this.$router.push({ 
-        name: 'chapitre', 
-        params: { id: nextChapterId } 
-      });
+
+      // si on arrive au chap 9 (une fin), navig a endingview
+      if (nextChapterId === 9) {
+        this.$router.push({ name: 'fin' });
+      } else {
+        // Navigation programmatique vers chap suivant
+        this.$router.push({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId } 
+        });
+      }
     }
   },
 
