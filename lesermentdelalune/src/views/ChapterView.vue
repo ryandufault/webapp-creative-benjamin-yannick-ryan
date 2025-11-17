@@ -9,7 +9,7 @@
 
       <div class="chapitre-contenu">
         <!-- afiche texte selon le state ; texte initial ou texte post-choix -->
-        <NarrativeText :texte="displayedText" />
+        <NarrativeText :texte="displayedText"/>
         
         <!-- affiche choicepanel si aucun choix n'a été fait -->
         <ChoicePanel 
@@ -32,7 +32,7 @@
       </button>
 
       <!-- ouvre le modal quand true, le ferme quand false dans la component modal -->
-      <Modal v-if="modal" @close="modal = false" />
+      <Modal v-if="modal" @close="modal = false"/>
     </div>
   </div>
 </template>
@@ -93,6 +93,8 @@ export default {
     this.storyStore.setCurrentChapter(this.chapitreId);
 
     this.choiceSelected = null; // réinitialise le choix selected
+
+    window.addEventListener('keydown', this.handleKeyDown); // event listener pour ouvrir/ferme le modal
   },
 
   methods: {
@@ -150,6 +152,13 @@ export default {
         console.log(`Métrique Aurore: ${this.playerStore.auroreValue} "("${consequences.aurore}")"`);
         console.log(`Métrique Soleil: ${this.playerStore.soleilValue} "("${consequences.soleil}")"`);
         console.log(`Métrique Royaume: ${this.playerStore.royaumeValue} "("${consequences.royaume}")"`);
+      }
+    },
+
+    handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        // si ouvert, le ferme ; si fermé, le ouvre
+        this.modal = !this.modal;
       }
     }
   },

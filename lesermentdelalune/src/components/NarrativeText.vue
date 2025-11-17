@@ -40,5 +40,6 @@ export default {
   font-size: 1.1rem;
   line-height: 1.8;
   text-align: justify;
+  white-space: pre-line;
 }
 </style>
