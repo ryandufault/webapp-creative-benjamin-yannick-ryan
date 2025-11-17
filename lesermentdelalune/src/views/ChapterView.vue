@@ -8,16 +8,26 @@
       </div>
 
       <div class="chapitre-contenu">
-        <NarrativeText :texte="storyStore.currentChapter.texte" />
+        <!-- afiche texte selon le state ; texte initial ou texte post-choix -->
+        <NarrativeText :texte="displayedText" />
+        
+        <!-- affiche choicepanel si aucun choix n'a été fait -->
         <ChoicePanel 
+          v-if="hasChoices && !choiceSelected"
           :choix1="storyStore.currentChapter.choix1" 
           :choix2="storyStore.currentChapter.choix2"
           @choice-selected="handleChoice"
         />
       </div>
+      
       <button class="btn-modal" @click="modal = true">MODAL</button>
-      <!-- affiche seulement si pas de choix -->
-      <button class="btn-continuer" v-if="!ChoicesPanel" @click="goToNextChapter">
+      
+      <!-- affiche si pas de choix ou choix sélectionné -->
+      <button 
+        class="btn-continuer" 
+        v-if="!hasChoices || choiceSelected"
+        @click="goToNextChapter"
+      >
         Continuer
       </button>
 
@@ -46,19 +56,32 @@ export default {
   data() {
     return {
       chapitreId: null,
-      modal: false
+      modal: false,
+      choiceSelected: null // track le choix selected (null ou 1 ou 2)
     }
   },
 
   computed: {
     // Mapper le store complet
-    ...mapStores(useStoryStore)
-  },
+    ...mapStores(useStoryStore),
 
     // Vérifie si le chapitre actuel a des choix
-    ChoicesPanel() {
+    hasChoices() {
       return this.storyStore.currentChapter?.choix1 || this.storyStore.currentChapter?.choix2;
     },
+
+    displayedText() { // texte a display selon le state
+      const chapter = this.storyStore.currentChapter;
+      
+      // si un choix est selected, afficher texte postchoix
+      if (this.choiceSelected === 1 && chapter?.textepostchoix1) {
+        return chapter.textepostchoix1;
+      } else if (this.choiceSelected === 2 && chapter?.textepostchoix2) {
+        return chapter.textepostchoix2;
+      }
+      return chapter?.texte || ''; // sinon afficher texte initial
+    }
+  },
 
   mounted() {
     // Récup l'id du chapitre avec l'url (paramètres)
@@ -66,16 +89,22 @@ export default {
     
     // Définir le chapitre actuel depuis le store (déjà chargé)
     this.storyStore.setCurrentChapter(this.chapitreId);
+
+    this.choiceSelected = null; // réinitialise le choix selected
   },
 
   methods: {
     handleChoice(choixNumber) {
-      // Enregistre le choix dans le store
+      // choix dans le store pinia
       this.storyStore.saveChoice(this.chapitreId, choixNumber);
-      this.goToNextChapter(); // navig vers le prochain chapitre
+      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${this.chapitreId}`);
+      
+      this.choiceSelected = choixNumber; // mémorise quel choix est selected
     },
 
     goToNextChapter() {
+      this.choiceSelected = null; // réinitialise choix pr prochain chap
+      
       // Convert l'id en int et rajoute 1
       const nextChapterId = parseInt(this.chapitreId) + 1;
       
@@ -84,7 +113,7 @@ export default {
         name: 'chapitre', 
         params: { id: nextChapterId } 
       });
-    },
+    }
   },
 
   watch: {
@@ -92,6 +121,7 @@ export default {
     '$route.params.id'(newId) {
       this.chapitreId = newId;
       this.storyStore.setCurrentChapter(newId);
+      this.choiceSelected = null; // réinitialise le choix
     }
   }
 }
