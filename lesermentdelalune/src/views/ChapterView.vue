@@ -16,7 +16,11 @@
         />
       </div>
       <button class="btn-modal" @click="modal = true">MODAL</button>
-      <button class="btn-continuer" @click="goToNextChapter">Continuer</button>
+      <!-- affiche seulement si pas de choix -->
+      <button class="btn-continuer" v-if="!ChoicesPanel" @click="goToNextChapter">
+        Continuer
+      </button>
+
       <!-- ouvre le modal quand true, le ferme quand false dans la component modal -->
       <Modal v-if="modal" @close="modal = false" />
     </div>
@@ -51,6 +55,11 @@ export default {
     ...mapStores(useStoryStore)
   },
 
+    // Vérifie si le chapitre actuel a des choix
+    ChoicesPanel() {
+      return this.storyStore.currentChapter?.choix1 || this.storyStore.currentChapter?.choix2;
+    },
+
   mounted() {
     // Récup l'id du chapitre avec l'url (paramètres)
     this.chapitreId = this.$route.params.id;
@@ -63,7 +72,7 @@ export default {
     handleChoice(choixNumber) {
       // Enregistre le choix dans le store
       this.storyStore.saveChoice(this.chapitreId, choixNumber);
-      console.log(`Choix ${choixNumber} enregistré pour le chapitre ${this.chapitreId}`);
+      this.goToNextChapter(); // navig vers le prochain chapitre
     },
 
     goToNextChapter() {
