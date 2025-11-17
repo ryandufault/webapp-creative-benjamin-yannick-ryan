@@ -42,6 +42,7 @@ import NarrativeText from '../components/NarrativeText.vue'
 import ChoicePanel from '../components/ChoicePanel.vue'
 import Modal from '../components/Modal.vue'
 import { useStoryStore } from '../stores/useStoryStore'
+import { usePlayerStore } from '../stores/usePlayerStore'
 import { mapStores } from 'pinia'
 
 export default {
@@ -64,6 +65,7 @@ export default {
   computed: {
     // Mapper le store complet
     ...mapStores(useStoryStore),
+    ...mapStores(usePlayerStore),
 
     // Vérifie si le chapitre actuel a des choix
     hasChoices() {
@@ -98,6 +100,7 @@ export default {
       // choix dans le store pinia
       this.storyStore.saveChoice(this.chapitreId, choixNumber);
       this.choiceSelected = choixNumber; // mémorise quel choix est selected
+      this.sysConsequence(choixNumber); // applique les conséquences du choix
     },
 
     goToNextChapter() {
@@ -115,6 +118,38 @@ export default {
           name: 'chapitre', 
           params: { id: nextChapterId } 
         });
+      }
+    },
+
+    sysConsequence(choixNumber) {
+      const chapter = this.storyStore.currentChapter;
+      
+      // recup consequences selon le choix
+      let consequences;
+      if (choixNumber === 1) { // si c'est le choix 1, fetch depuis le json les consequences du choix 1
+        consequences = chapter.consequences_choix1;
+      } else { // sinn c'est le 2
+        consequences = chapter.consequences_choix2;
+      }
+      
+      // applique les conséquences (si existent)
+      if (consequences) {
+        if (consequences.aurore !== undefined) {
+          this.playerStore.updateMetric('aurore', consequences.aurore);
+        }
+        if (consequences.soleil !== undefined) {
+          this.playerStore.updateMetric('soleil', consequences.soleil);
+        }
+        if (consequences.royaume !== undefined) {
+          this.playerStore.updateMetric('royaume', consequences.royaume);
+        }
+        
+        // log des nouvelles valeur
+        console.log("NB DU CHOIX", choixNumber);
+        console.log("===== AFFECTS : =====");
+        console.log(`Métrique Aurore: ${this.playerStore.auroreValue} "("${consequences.aurore}")"`);
+        console.log(`Métrique Soleil: ${this.playerStore.soleilValue} "("${consequences.soleil}")"`);
+        console.log(`Métrique Royaume: ${this.playerStore.royaumeValue} "("${consequences.royaume}")"`);
       }
     }
   },
