@@ -28,7 +28,7 @@ export default {
   min-width: 45vw;
   max-width: 75vw;
   min-height: 75vh;
-  max-height: 75vh;
+  max-height: 76vh;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
