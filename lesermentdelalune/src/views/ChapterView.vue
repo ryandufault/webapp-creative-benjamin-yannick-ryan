@@ -74,6 +74,7 @@ export default {
 
     displayedText() { // texte a display selon le state
       const chapter = this.storyStore.currentChapter;
+      const version = this.$route.query.version; // récup version depuis url
       
       // si un choix est selected, afficher texte postchoix
       if (this.choiceSelected === 1 && chapter?.textepostchoix1) {
@@ -81,7 +82,13 @@ export default {
       } else if (this.choiceSelected === 2 && chapter?.textepostchoix2) {
         return chapter.textepostchoix2;
       }
-      return chapter?.texte || ''; // sinon afficher texte initial
+
+      // si c'est un chapitre avec versions + version spécifiée
+      if (chapter?.versions && version && chapter.versions[version]) {
+        return chapter.versions[version].texte;
+      }
+
+      return chapter?.texte || ''; // sinon afficher texte initial (vide)
     }
   },
 
@@ -111,15 +118,49 @@ export default {
       // Convert l'id en int et rajoute 1
       const nextChapterId = parseInt(this.chapitreId) + 1;
 
-      // si on arrive au chap 9 (une fin), navig a endingview
-      if (nextChapterId === 9) {
-        this.$router.push({ name: 'fin' });
+      
+      if (nextChapterId === 7) { // si on arrive au chap 7, display version dépendement des choix précédents
+      const version = this.chapitre7versions();
+      this.$router.push({ 
+        name: 'chapitre', 
+        params: { id: nextChapterId },
+        query: { version: version } // passe la version en query
+      });
+    }
+      else if (nextChapterId === 9) { // si on arrive au chap 9 (une fin), navig a endingview
+        this.$router.push({ name: 'fin' }); 
       } else {
         // Navigation programmatique vers chap suivant
         this.$router.push({ 
           name: 'chapitre', 
           params: { id: nextChapterId } 
         });
+      }
+    },
+
+    chapitre7versions() {
+      // recup choix depuis le store
+      const choix5 = this.storyStore.playerChoices[5]; // choix au chap 5
+      const choix6 = this.storyStore.playerChoices[6]; // choix au chap 6
+
+      // version selon choix
+      if (choix6 === 2) { // Protéger Aurore
+        if (choix5 === 2) { // Avouer
+          return 'proteger_aurore_avouer'; // alors return la version c5 avouer + c6 proteger aurore
+        } else { // Mentir
+          return 'proteger_aurore_mentir';
+        }
+      } else { // Aider le peuple
+        if (choix5 === 1) { // Mentir
+          return 'aider_peuple_mentir';
+        } else { // Avouer
+          // determine si c'est la version qui vise fin roi cendre selon métriques
+          if (this.playerStore.royaumeValue >= 70) { // si le royaume a +/= de 70, alors version qui vise la fin sacrifice solaire (car à partir d'ici, la fin est déjà pas mal prédéterminée)
+            return 'aider_peuple_avouer_sacrifice';
+          } else {
+            return 'aider_peuple_avouer_roi_cendres';
+          }
+        }
       }
     },
 
@@ -190,6 +231,7 @@ export default {
   position: absolute;
   top: 20px;
   left: 30px;
+  z-index: 2;
 }
 
 .chapitre-header h1 {
@@ -210,6 +252,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  z-index: 1;
 }
 
 .btn-continuer {
@@ -222,6 +265,7 @@ export default {
   color: #333;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 2;
 }
 
 .btn-continuer:hover {

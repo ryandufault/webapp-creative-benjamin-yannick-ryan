@@ -25,19 +25,22 @@ export default {
 
 <style scoped>
 .narrative-container {
-  width: 50%;
-  height: 75%;
+  min-width: 45vw;
+  max-width: 75vw;
+  min-height: 75vh;
+  max-height: 75vh;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   padding: 30px;
+  z-index: 1;
 }
 
 .narrative-text {
   color: white;
-  font-size: 1.1rem;
+  font-size: 0.5vw;
   line-height: 1.8;
   text-align: justify;
   white-space: pre-line;
