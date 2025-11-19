@@ -57,8 +57,8 @@
       "titre": "Le Conseil du Roi",
       "texte": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » \n  Il obéit. Derrière lui, les membres du conseil se taisaient.",
       
-      "textepostchoix1chap3": "- « Des rumeurs circulent, dit le Roi. » - « On dit que la lumière décline depuis ta dernière chasse. » - « Que tu aurais menti. » - « Que quelque chose s'est passé dans la forêt. » \n  Le roi se retourna. - « Dis-moi la vérité, fils. Que s'est-il vraiment passé là-bas ? »",
-      "textepostchoix2chap3": "- « Des rumeurs circulent, dit le Roi. » - « Je crains bien que la lumière de notre Soleil s'affaiblit. » - « Nous cherchons toutes explications, en aurait-tu ? »",
+      "textepostchoix1chap3": "- « Des rumeurs circulent, dit le Roi. » \n - « On dit que la lumière décline depuis ta dernière chasse. » \n - « Que tu aurais menti. » \n - « Que quelque chose s'est passé dans la forêt. » \n  Le roi se retourna. \n - « Dis-moi la vérité, fils. Que s'est-il vraiment passé là-bas ? »",
+      "textepostchoix2chap3": "- « Des rumeurs circulent, dit le Roi. » \n - « Je crains bien que la lumière de notre Soleil s'affaiblit. » \n - « Nous cherchons toutes explications, en aurait-tu ? »",
 
       "choix1": "Mentir - Protéger le secret jusqu'au bout.",
       "choix2": "Avouer - Dire la vérité en espérant que le Roi soit compréhensif.",

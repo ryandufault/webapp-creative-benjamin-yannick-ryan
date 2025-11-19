@@ -88,6 +88,27 @@ export default {
         return chapter.versions[version].texte;
       }
 
+
+      // chapitre 5 =============
+      if (chapter?.id === 5) { // afficher texte selon choix du chapitre 3
+        const choix3 = this.storyStore.playerChoices[3];
+        if (choix3 === 1 && chapter?.textepostchoix1chap3) {
+          return chapter.texte + '\n\n' + chapter.textepostchoix1chap3;
+        } else if (choix3 === 2 && chapter?.textepostchoix2chap3) {
+          return chapter.texte + '\n\n' + chapter.textepostchoix2chap3;
+        }
+      }
+
+      // chapitre 6 =============
+      if (chapter?.id === 6) { // afficher texte selon choix du chapitre 5
+        const choix5 = this.storyStore.playerChoices[5];
+        if (choix5 === 1 && chapter?.textepostchoix1chap5) {
+          return chapter.texte + chapter.textepostchoix1chap5;
+        } else if (choix5 === 2 && chapter?.textepostchoix2chap5) {
+          return chapter.texte + chapter.textepostchoix2chap5;
+        }
+      }
+
       return chapter?.texte || ''; // sinon afficher texte initial (vide)
     }
   },
