@@ -39,8 +39,8 @@ export default {
 }
 
 .narrative-text {
-  color: white;
-  font-size: 1.5vw;
+  color: #E7DF8B;
+  font-size: 0.9vw;
   line-height: 1.8;
   text-align: justify;
   white-space: pre-line;

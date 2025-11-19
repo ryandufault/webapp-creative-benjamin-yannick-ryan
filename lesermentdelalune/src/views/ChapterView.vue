@@ -219,7 +219,7 @@ export default {
 .chapitre-container {
   width: 100%;
   height: 93vh;
-  background-color: white;
+  background-color: #1F1B33;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -237,13 +237,13 @@ export default {
 .chapitre-header h1 {
   font-size: 2rem;
   margin-bottom: 5px;
-  color: #333;
+  color: #E7DF8B;
 }
 
 .chapitre-header h2 {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #666;
+  color: #E7DF8B;
 }
 
 .chapitre-contenu {
@@ -262,7 +262,7 @@ export default {
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: #333;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
   z-index: 2;
