@@ -57,6 +57,20 @@ methods: {
 }
 </script>
   
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #090909;
+}
+</style>
+
 <style scoped>
 @font-face {
     font-family: Gothic;

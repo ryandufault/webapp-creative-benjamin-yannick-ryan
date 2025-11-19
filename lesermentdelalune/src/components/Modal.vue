@@ -58,6 +58,13 @@
   </script>
   
   <style scoped>
+  @font-face {
+    font-family: Gothic;
+    src: url(../assets/DidactGothic-Regular.ttf) format(truetype);
+    /*Ajout des fonts*/
+    font-family: Mostean;
+    src: url(../assets/Mostean.ttf) format(truetype);
+}
   .modal-container {
   position: fixed;
   top: 0;
@@ -81,9 +88,9 @@
 }
 
 .title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 3rem;
+  font-family: Mostean;
+  font-size: 3.33vw;
+  font-weight: 400;
   color: #fff6b3;
   text-shadow: 0 0 20px rgba(255, 246, 179, 0.15);
 }
@@ -99,8 +106,8 @@
 
 .btn {
   background: none;
-  border: 2px solid rgba(255, 246, 179, 0.2);
-  color: #fff6b3;
+  border: 0.1vw solid #303140;
+  color: #E7DF8B;
   font-size: 1.5rem;
   padding: 1rem 2rem;
   width: 340px;

@@ -316,11 +316,6 @@ body {
   height: 100%;
   background-color: #090909;
 }
-
-#app {
-  width: 100%;
-  height: 100vh;
-}
 </style>
 
 <style scoped>
@@ -408,18 +403,13 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 0.16vw solid rgba(0, 0, 0, 0);
+  border: 0.1vw solid rgba(0, 0, 0, 0);
   z-index: 2;
 }
 
 .btn-modal:hover {
   background-color: rgba(0, 0, 0, 0.7); 
   color: #f9f9f9;
-  transform: scale(1.1);
   border: 0.16vw solid #303140;
-}
-
-.btn-modal:active {
-  transform: scale(0.95);
 }
 </style>

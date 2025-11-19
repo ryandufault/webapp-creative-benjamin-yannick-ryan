@@ -37,14 +37,13 @@ export default {
   max-width: 75vw;
   min-height: 75vh;
   max-height: 76vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
   padding: 30px;
   z-index: 1;
-  border-width: 0.26vw;
+  border-width: 0.1vw;
   border-style: solid;
   border-color: #303140;
 }
