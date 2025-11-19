@@ -25,6 +25,8 @@
     },
     methods: {
     btnMenu() {
+      this.storyStore.resetChoices();
+      this.playerStore.resetSysCons();
       // navigation programmatique vers menu
       this.$router.push({ name: 'home' });
     },

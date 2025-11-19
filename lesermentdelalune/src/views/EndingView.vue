@@ -23,6 +23,10 @@ export default {
   },
   methods: {
     btnMenu() {
+      // reset les choix et sys de cons
+      this.storyStore.resetChoices();
+      this.playerStore.resetSysCons();
+      
       // navigation programmatique vers menu
       this.$router.push({ name: 'home' });
     }

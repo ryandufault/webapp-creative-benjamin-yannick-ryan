@@ -40,7 +40,7 @@ export default {
 
 .narrative-text {
   color: white;
-  font-size: 0.5vw;
+  font-size: 1.5vw;
   line-height: 1.8;
   text-align: justify;
   white-space: pre-line;

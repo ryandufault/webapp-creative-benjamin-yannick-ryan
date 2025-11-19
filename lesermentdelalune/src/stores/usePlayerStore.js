@@ -39,5 +39,13 @@ export const usePlayerStore = defineStore('player', {
         this.royaume = Math.max(0, Math.min(100, this.royaume + value));
       }
     },
+
+    // reset le sys de conséquences à 50 (lors d'un retour au menu, etc..)
+    resetSysCons() {
+      this.aurore = 50;
+      this.soleil = 50;
+      this.royaume = 50;
+    }
+
   }
 });
