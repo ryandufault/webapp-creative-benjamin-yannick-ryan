@@ -79,22 +79,21 @@ methods: {
   
 .ending-header {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 1vw;
+  right: 1.5vw;
 }
   
 .ending-header h1 {
-  font-size: 5rem;
-  margin-bottom: 1vw;
+  font-size: 4.1vw;
+  margin-bottom: -2vw;
   color: #E7DF8B;
   font-family: Mostean;
   font-weight: 400;
 }
   
 .ending-header h2 {
-  font-size: 2.3rem;
+  font-size: 1.9vw;
   font-weight: 400;
-  margin-top: -1.5vw;
   color: #E7DF8B;
   font-family: Mostean;
 }

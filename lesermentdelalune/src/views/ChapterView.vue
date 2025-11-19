@@ -20,7 +20,8 @@
         />
       </div>
       
-      <button class="btn-modal" @click="modal = true">MODAL</button>
+      <button class="btn-modal" @click="modal = true">☽
+      </button>
       
       <!-- affiche si pas de choix ou choix sélectionné -->
       <button 
@@ -303,6 +304,25 @@ export default {
 }
 </script>
 
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #090909;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+</style>
+
 <style scoped>
 @font-face {
     font-family: Gothic;
@@ -325,20 +345,21 @@ export default {
 
 .chapitre-header {
   position: absolute;
-  top: 20px;
-  left: 30px;
+  top: 1vw;
+  left: 1.5vw;
   z-index: 2;
 }
 
 .chapitre-header h1 {
-  font-size: 5rem;
-  margin-bottom: 5px;
+  font-size: 4.1vw;
+  margin-bottom: -2vw;
   color: #E7DF8B;
   font-family: Mostean;
+  font-weight: 400;
 }
 
 .chapitre-header h2 {
-  font-size: 2.3rem;
+  font-size: 1.9vw;
   font-weight: 400;
   color: #E7DF8B;
   font-family: Mostean;
@@ -355,12 +376,12 @@ export default {
 
 .btn-continuer {
   position: absolute;
-  bottom: 20px;
-  right: 30px;
+  bottom: 1vw;
+  right: 1.5vw;
   background: none;
   border: none;
-  font-size: 1.1rem;
-  color: white;
+  font-size: 1vw;
+  color: #F9F9F9;
   cursor: pointer;
   transition: 0.3s;
   z-index: 2;
@@ -369,5 +390,36 @@ export default {
 
 .btn-continuer:hover {
   color: rgb(255, 251, 171);
+}
+
+.btn-modal {
+  position: absolute;
+  top: 1vw;
+  right: 1.5vw;
+  height: 2vw;
+  width: 2vw;
+  aspect-ratio: 1 / 1;
+  font-size: 1.5vw;
+  background-color: rgba(0, 0, 0, 0.3); 
+  border-radius: 50%;
+  color: #E7DF8B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 0.16vw solid rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+
+.btn-modal:hover {
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: #f9f9f9;
+  transform: scale(1.1);
+  border: 0.16vw solid #303140;
+}
+
+.btn-modal:active {
+  transform: scale(0.95);
 }
 </style>

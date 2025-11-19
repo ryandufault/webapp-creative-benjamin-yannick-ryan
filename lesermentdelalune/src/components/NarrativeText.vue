@@ -44,7 +44,7 @@ export default {
   border-radius: 15px;
   padding: 30px;
   z-index: 1;
-  border-width: 5px;
+  border-width: 0.26vw;
   border-style: solid;
   border-color: #303140;
 }

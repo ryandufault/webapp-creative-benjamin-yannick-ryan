@@ -42,7 +42,7 @@ export default {
 }
 
 .choix {
-  color: white;
+  color: #F9F9F9;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 10px 20px;
