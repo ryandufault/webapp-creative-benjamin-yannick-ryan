@@ -30,6 +30,12 @@ export const useStoryStore = defineStore('story', {
     // Enregistre le choix du joueur
     saveChoice(chapitreId, choixNumber) {
       this.playerChoices[chapitreId] = choixNumber;
-    }
+    },
+
+    // Reset tous les choix
+    resetChoices() {
+      this.playerChoices = {};
+      this.currentChapter = null;
+    },
   }
 });

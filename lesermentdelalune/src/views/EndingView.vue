@@ -14,18 +14,26 @@
 </template>
   
 <script>
+  import { useStoryStore } from '../stores/useStoryStore'
+  import { usePlayerStore } from '../stores/usePlayerStore'
+  import { mapStores } from 'pinia'
 export default {
+
   name: 'EndingView',
   data() {
     return {
       
     }
   },
+  computed: {
+      ...mapStores(useStoryStore),
+      ...mapStores(usePlayerStore),
+    },
   methods: {
     btnMenu() {
       // reset les choix et sys de cons
       this.storyStore.resetChoices();
-      this.playerStore.resetSysCons();
+      this.playerStore.resetSysCons(); 
       
       // navigation programmatique vers menu
       this.$router.push({ name: 'home' });

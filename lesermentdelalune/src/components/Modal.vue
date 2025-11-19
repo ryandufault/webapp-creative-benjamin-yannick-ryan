@@ -15,7 +15,9 @@
   </template>
   
   <script>
-  
+  import { useStoryStore } from '../stores/useStoryStore'
+  import { usePlayerStore } from '../stores/usePlayerStore'
+  import { mapStores } from 'pinia'
   export default {
     name: 'Modal',
     data() {
@@ -23,8 +25,14 @@
         
       }
     },
+    computed: {
+      ...mapStores(useStoryStore),
+      ...mapStores(usePlayerStore),
+    },
     methods: {
     btnMenu() {
+      console.log('storyStore:', this.storyStore);  // Débug
+      console.log('playerStore:', this.playerStore); // Débug
       this.storyStore.resetChoices();
       this.playerStore.resetSysCons();
       // navigation programmatique vers menu
@@ -39,7 +47,11 @@
       this.$router.push({ name: 'chapitre', params: { id: currentChapterId } });*/
 
       //alternative
+      this.storyStore.resetChoices();
+      this.playerStore.resetSysCons();
       window.location.reload();
+
+
     }
   }
   }
