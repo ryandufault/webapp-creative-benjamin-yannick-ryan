@@ -44,6 +44,8 @@ h1 {
   text-align: center;
   color: #E7DF8B; 
   font-family: Mostean;
+  font-size: 5rem;
+  font-weight: 400;
 }
 
 .btn-container {
