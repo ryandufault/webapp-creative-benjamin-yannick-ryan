@@ -24,6 +24,14 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+    font-family: Gothic;
+    src: url(../assets/DidactGothic.ttf) format(truetype);
+    /*Ajout des fonts*/
+    font-family: Mostean;
+    src: url(../assets/Mostean.ttf) format(truetype);
+}
+
 .narrative-container {
   min-width: 45vw;
   max-width: 75vw;
@@ -44,5 +52,6 @@ export default {
   line-height: 1.8;
   text-align: justify;
   white-space: pre-line;
+  font-family: Gothic;
 }
 </style>
