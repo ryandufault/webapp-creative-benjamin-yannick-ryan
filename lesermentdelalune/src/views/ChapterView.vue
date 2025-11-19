@@ -119,15 +119,23 @@ export default {
       const nextChapterId = parseInt(this.chapitreId) + 1;
 
       
-      if (nextChapterId === 7) { // si on arrive au chap 7, display version dépendement des choix précédents
-      const version = this.chapitre7versions();
-      this.$router.push({ 
-        name: 'chapitre', 
-        params: { id: nextChapterId },
-        query: { version: version } // passe la version en query
-      });
-    }
-      else if (nextChapterId === 9) { // si on arrive au chap 9 (une fin), navig a endingview
+      if (nextChapterId === 7) { // si on arrive au chap 7
+        const version = this.chapitre7versions();
+        this.$router.push({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId },
+          query: { version: version }
+        });
+      }
+      else if (nextChapterId === 8) { // si on arrive au chap 8
+        const version = this.chapitre8versions();
+        this.$router.push({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId },
+          query: { version: version }
+        });
+      }
+      else if (nextChapterId === 9) { // si on arrive au chap 9 (une fin)
         this.$router.push({ name: 'fin' }); 
       } else {
         // Navigation programmatique vers chap suivant
@@ -159,6 +167,43 @@ export default {
             return 'aider_peuple_avouer_sacrifice';
           } else {
             return 'aider_peuple_avouer_roi_cendres';
+          }
+        }
+      }
+    },
+
+    chapitre8versions() {
+      // recup choix depuis le store
+      const choix5 = this.storyStore.playerChoices[5]; // choix au chap 5
+      const choix6 = this.storyStore.playerChoices[6]; // choix au chap 6
+      const choix7 = this.storyStore.playerChoices[7]; // choix au chap 7 (si existe)
+
+      // version selon choix
+      if (choix6 === 2) { // Protéger Aurore
+        if (choix5 === 2) { // Avouer
+          return 'proteger_aurore_avouer'; // sacrifice solaire
+        } else { // Mentir
+          // le chap 7 version proteger_aurore_mentir a des choix
+          if (choix7 === 1) { // Rester avec Aurore
+            return 'proteger_aurore_mentir_rester'; // la lune libérée
+          } else { // Sauver le royaume
+            return 'proteger_aurore_mentir_sauver'; // sacrifice solaire
+          }
+        }
+      } else { // Aider le peuple
+        if (choix5 === 1) { // Mentir
+          // determine si c'est roi de cendres selon métriques
+          if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+            return 'aider_peuple_mentir_roi_cendres'; // roi de cendres
+          } else {
+            return 'aider_peuple_mentir'; // sacrifice solaire
+          }
+        } else { // Avouer
+          // determine si c'est roi de cendres selon métriques
+          if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+            return 'aider_peuple_avouer_roi_cendres'; // roi de cendres
+          } else {
+            return 'aider_peuple_avouer_sacrifice'; // sacrifice solaire
           }
         }
       }
