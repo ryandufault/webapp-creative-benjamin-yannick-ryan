@@ -1,5 +1,6 @@
 <template>
   <div class="app-wrapper">
+    <img class="bg-img" src="../assets/img/home.png" />
      <h1>Le serment de la lune</h1>
      <div class="btn-container">
         <p class="btn" @click="startAdventure">Commencer</p>
@@ -12,7 +13,7 @@
            Bienvenue dans notre histoire interactive qui se déroule dans un royaume médiéval. <br> Dans cette aventure, tu incarnes Agnès, le fils du roi, et chacun de tes choix influence ton avenir et ton destin. <br>
            Ton parcours évolue selon tes décisions : chaque choix modifie la trajectoire de ton histoire. <br>
            En appuyant sur Échap, un petit menu apparaît et te permet de recommencer l'histoire, de modifier les réglages ou de retourner au menu principal. <br><br>
-           Découvre un monde où chacune de tes actions compte
+           Découvre un monde où chacune de tes actions compte.
         </p>
      </div>
   </div>
@@ -67,14 +68,25 @@ body {
   padding: 5vw 5vw;
 }
 
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 h1 {
   text-align: center;
   color: #E7DF8B; 
   font-family: Mostean;
-  font-size: 5rem;
+  font-size: 5vw;
   font-weight: 400;
   grid-column: 1 / -1;
   margin-bottom: 3vw;
+  z-index: 1;
 }
 
 .btn-container {
@@ -84,6 +96,7 @@ h1 {
   padding-left: 15vw;
   grid-column: 1;
   grid-row: 2;
+  z-index: 1;
 }
 
 .btn {
@@ -120,7 +133,8 @@ a.btn {
   border-color: #303140;
   grid-column: 2;
   grid-row: 2;
-  margin-top: -3vw
+  margin-top: -3vw;
+  z-index: 1;
 }
 
 .info-text {
