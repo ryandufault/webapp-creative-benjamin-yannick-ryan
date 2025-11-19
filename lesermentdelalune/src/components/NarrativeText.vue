@@ -39,7 +39,7 @@ export default {
 }
 
 .narrative-text {
-  color: white;
+  color: #E7DF8B;
   font-size: 0.9vw;
   line-height: 1.8;
   text-align: justify;

@@ -12,6 +12,10 @@ export default {
 </script>
 
 <style>
+html{
+  background-color: #1F1B33;
+}
+
   #app {
     width: 100%;
     height: 100vh;
