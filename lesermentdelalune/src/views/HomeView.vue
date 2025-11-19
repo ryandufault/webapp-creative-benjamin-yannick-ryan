@@ -62,6 +62,7 @@ h1 {
   cursor: pointer;
   padding: 10px 20px;
   transition: color 0.3s;
+  font-family: Gothic;
 }
 
 .btn:hover {

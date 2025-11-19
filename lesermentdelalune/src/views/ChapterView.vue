@@ -331,14 +331,14 @@ export default {
 }
 
 .chapitre-header h1 {
-  font-size: 2rem;
+  font-size: 5rem;
   margin-bottom: 5px;
   color: #E7DF8B;
   font-family: Mostean;
 }
 
 .chapitre-header h2 {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   font-weight: 400;
   color: #E7DF8B;
   font-family: Mostean;
