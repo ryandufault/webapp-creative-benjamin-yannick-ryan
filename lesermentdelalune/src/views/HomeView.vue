@@ -106,6 +106,7 @@ h1 {
   padding: 10px 30px;
   transition: color 0.3s;
   font-family: Gothic;
+  position: relative;
 }
 
 .btn:hover {
@@ -117,24 +118,70 @@ a.btn {
   font-family: Gothic;
 }
 
+.btn::before {
+  content: "-";
+  position: absolute;
+  left: -0.1vw;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.1s ease;
+  color: #E7DF8B;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  color: rgb(139, 139, 139);
+  transform: translateX(0);
+}
+
 .info-container {
   min-width: 35vw;
   max-width: 25vw;
   min-height: 45vh;
   max-height: 36vh;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
   z-index: 1;
-  border-width: 0.1vw;
+  border-width: 0.2vw;
   border-style: solid;
   border-color: #303140;
   grid-column: 2;
   grid-row: 2;
   margin-top: -3vw;
   z-index: 1;
+  clip-path: polygon( /* https://pixelcorners.lukeb.co.uk/?radius=8&multiplier=4 */
+    0px calc(100% - 32px),
+    8px calc(100% - 32px),
+    8px calc(100% - 16px),
+    16px calc(100% - 16px),
+    16px calc(100% - 8px),
+    32px calc(100% - 8px),
+    32px 100%,
+    calc(100% - 32px) 100%,
+    calc(100% - 32px) calc(100% - 8px),
+    calc(100% - 16px) calc(100% - 8px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 16px),
+    calc(100% - 8px) calc(100% - 32px),
+    100% calc(100% - 32px),
+    100% 32px,
+    calc(100% - 8px) 32px,
+    calc(100% - 8px) 16px,
+    calc(100% - 16px) 16px,
+    calc(100% - 16px) 8px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 0px,
+    32px 0px,
+    32px 8px,
+    16px 8px,
+    16px 16px,
+    8px 16px,
+    8px 32px,
+    0px 32px
+  );
 }
 
 .info-text {

@@ -1,5 +1,6 @@
 <template>
   <div class="chapitre-container">
+    <!-- <img class="bg-img" src="../assets/img/c1.png" /> -->
     <!-- Affichage du chapitre -->
     <div v-if="storyStore.currentChapter">
       <div class="chapitre-header">
@@ -338,6 +339,17 @@ body {
   align-items: center;
 }
 
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+}
+
 .chapitre-header {
   position: absolute;
   top: 1vw;
@@ -387,29 +399,66 @@ body {
   color: rgb(255, 251, 171);
 }
 
+.btn-continuer::before {
+  content: "-";
+  position: absolute;
+  left: -1vw;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.1s ease;
+  color: #F9F9F9;
+}
+
+.btn-continuer:hover::before {
+  opacity: 1;
+  color: #E7DF8B;
+  transform: translateX(0);
+}
+
 .btn-modal {
   position: absolute;
   top: 1vw;
-  right: 1.5vw;
-  height: 2vw;
-  width: 2vw;
+  right: 3.5vh;
+  height: 6vh;
+  width: 8vh;
   aspect-ratio: 1 / 1;
-  font-size: 1.5vw;
+  font-size: 4.5vh;
   background-color: rgba(0, 0, 0, 0.3); 
-  border-radius: 50%;
-  color: #E7DF8B;
+  color: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 0.1vw solid rgba(0, 0, 0, 0);
+  border: 0.1vh solid rgba(0, 0, 0, 0);
   z-index: 2;
+    clip-path: polygon(
+    0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px
+  );
 }
 
 .btn-modal:hover {
   background-color: rgba(0, 0, 0, 0.7); 
-  color: #f9f9f9;
+  color: #E7DF8B;
   border: 0.16vw solid #303140;
 }
 </style>

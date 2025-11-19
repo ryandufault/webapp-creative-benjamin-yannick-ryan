@@ -89,7 +89,7 @@
 
 .title {
   font-family: Mostean;
-  font-size: 3.33vw;
+  font-size: 6.33vw;
   font-weight: 400;
   color: #fff6b3;
   text-shadow: 0 0 20px rgba(255, 246, 179, 0.15);
@@ -115,6 +115,7 @@
   cursor: pointer;
   position: relative;
   transition: 0.3s ease;
+  font-family: Gothic;
 }
 
 .btn::before {
@@ -144,6 +145,7 @@
   cursor: pointer;
   text-align: left;
   transition: 0.3s;
+  font-family: Gothic;
 }
 
 .btn-menu::before {

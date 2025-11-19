@@ -39,6 +39,28 @@ export default {
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
+  clip-path: polygon(
+    0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px
+  );
 }
 
 .choix {
@@ -47,6 +69,7 @@ export default {
   cursor: pointer;
   padding: 10px 20px;
   transition: 0.3s;
+  position: relative;
 }
 
 .choix:hover {
