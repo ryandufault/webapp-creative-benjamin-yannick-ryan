@@ -261,6 +261,14 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+    font-family: Gothic;
+    src: url(../assets/DidactGothic-Regular.ttf) format(truetype);
+    /*Ajout des fonts*/
+    font-family: Mostean;
+    src: url(../assets/Mostean.ttf) format(truetype);
+}
+
 .chapitre-container {
   width: 100%;
   height: 93vh;
@@ -283,12 +291,14 @@ export default {
   font-size: 2rem;
   margin-bottom: 5px;
   color: #E7DF8B;
+  font-family: Mostean;
 }
 
 .chapitre-header h2 {
   font-size: 1.3rem;
   font-weight: 400;
   color: #E7DF8B;
+  font-family: Mostean;
 }
 
 .chapitre-contenu {
@@ -311,6 +321,7 @@ export default {
   cursor: pointer;
   transition: 0.3s;
   z-index: 2;
+  font-family: Gothic;
 }
 
 .btn-continuer:hover {
