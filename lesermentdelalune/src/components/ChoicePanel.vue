@@ -34,7 +34,7 @@ export default {
 .choice-panel {
   width: 33%;
   height: 16%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #303140;
   display: flex;
   justify-content: space-around;
   align-items: center;

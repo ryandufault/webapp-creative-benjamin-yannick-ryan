@@ -58,10 +58,18 @@ methods: {
 </script>
   
 <style scoped>
+@font-face {
+    font-family: Gothic;
+    src: url(../assets/DidactGothic-Regular.ttf) format(truetype);
+    /*Ajout des fonts*/
+    font-family: Mostean;
+    src: url(../assets/Mostean.ttf) format(truetype);
+}
+
 .ending-container {
   width: 100%;
   height: 93vh;
-  background-color: white;
+  background-color: #1F1B33;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -76,15 +84,19 @@ methods: {
 }
   
 .ending-header h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
-  color: #333;
+  font-size: 5rem;
+  margin-bottom: 1vw;
+  color: #E7DF8B;
+  font-family: Mostean;
+  font-weight: 400;
 }
   
 .ending-header h2 {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   font-weight: 400;
-  color: #666;
+  margin-top: -1.5vw;
+  color: #E7DF8B;
+  font-family: Mostean;
 }
   
 .fin-contenu {
@@ -102,7 +114,7 @@ methods: {
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: #333;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
