@@ -288,8 +288,8 @@ export default {
 }
 
 .chapitre-header h1 {
-  font-size: 4rem;
-  margin-bottom: 5px;
+  font-size: 5rem;
+  margin-bottom: 1vw;
   color: #E7DF8B;
   font-family: Mostean;
   font-weight: 400;
@@ -298,6 +298,7 @@ export default {
 .chapitre-header h2 {
   font-size: 2.3rem;
   font-weight: 400;
+  margin-top: -1.5vw;
   color: #E7DF8B;
   font-family: Mostean;
 }
