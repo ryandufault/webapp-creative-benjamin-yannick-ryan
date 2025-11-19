@@ -135,9 +135,18 @@ export default {
           query: { version: version }
         });
       }
-      else if (nextChapterId === 9) { // si on arrive au chap 9 (une fin)
-        this.$router.push({ name: 'fin' }); 
-      } else {
+      else if (nextChapterId >= 9) { // si on arrive à une fin
+        const endingId = this.finsSysCons(); // détermine quelle fin selon métriques
+        console.log(`Fin ID: ${endingId}`);
+        console.log(`Aurore: ${this.playerStore.auroreValue}`);
+        console.log(`Soleil: ${this.playerStore.soleilValue}`);
+        console.log(`Royaume: ${this.playerStore.royaumeValue}`);
+        this.$router.push({ 
+          name: 'fin',
+          params: { id: endingId }
+        });
+      } 
+      else {
         // Navigation programmatique vers chap suivant
         this.$router.push({ 
           name: 'chapitre', 
@@ -249,13 +258,13 @@ export default {
     },
 
     finsSysCons() {      
-      if (this.playerStore.auroreValue >= 70) {
+      if (this.playerStore.auroreValue >= 70) { // si aurore ­70+/100 = Fin La Lune libérée
         return 9; // id de la fin La Lune libérée
       }
-      if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+      if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) { // si soleil 60+/100 + Royaume 50+/100 = Fin Roi de cendres
         return 10; // id de la fin Le Roi de cendres
       }
-      if (this.playerStore.royaumeValue >= 70 && this.playerStore.soleilValue <= 59) {
+      if (this.playerStore.royaumeValue >= 70 && this.playerStore.soleilValue <= 59) { // si royaume 70+/100 + Soleil 59-/100 = Sacrifice solaire
         return 11; // id de la fin Sacrifice solaire
       }
       return 11;
@@ -301,17 +310,15 @@ export default {
 }
 
 .chapitre-header h1 {
-  font-size: 5rem;
-  margin-bottom: 1vw;
+  font-size: 2rem;
+  margin-bottom: 5px;
   color: #E7DF8B;
   font-family: Mostean;
-  font-weight: 400;
 }
 
 .chapitre-header h2 {
-  font-size: 2.3rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  margin-top: -1.5vw;
   color: #E7DF8B;
   font-family: Mostean;
 }

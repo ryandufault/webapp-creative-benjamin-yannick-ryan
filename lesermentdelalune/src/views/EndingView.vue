@@ -107,6 +107,16 @@ methods: {
   gap: 20px;
 }
   
+.fin-contenu p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #E7DF8B;
+  font-family: Gothic;
+  text-align: justify;
+  white-space: pre-line;
+  margin: 0;
+}
+
 .btn-menu {
   position: absolute;
   bottom: 20px;
