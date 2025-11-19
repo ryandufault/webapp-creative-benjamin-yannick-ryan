@@ -1,44 +1,59 @@
 <template>
-    <div class="ending-container">
-      <div class="ending-header">
-        <h1>Fin</h1>
-        <h2>Nom de la fin</h2>
-      </div>
-  
-      <div class="fin-contenu">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-  
-      <button class="btn-menu" @click="btnMenu">Retourner au menu</button>
+  <div class="ending-container">
+    <div class="ending-header" v-if="finActuelle">
+      <h1>Fin</h1>
+      <h2>{{ finActuelle.titre }}</h2>
     </div>
-</template>
-  
-<script>
-  import { useStoryStore } from '../stores/useStoryStore'
-  import { usePlayerStore } from '../stores/usePlayerStore'
-  import { mapStores } from 'pinia'
-export default {
 
-  name: 'EndingView',
-  data() {
-    return {
-      
-    }
-  },
-  computed: {
-      ...mapStores(useStoryStore),
-      ...mapStores(usePlayerStore),
-    },
-  methods: {
-    btnMenu() {
-      // reset les choix et sys de cons
-      this.storyStore.resetChoices();
-      this.playerStore.resetSysCons(); 
-      
-      // navigation programmatique vers menu
-      this.$router.push({ name: 'home' });
-    }
+    <div class="fin-contenu" v-if="finActuelle">
+      <p>{{ finActuelle.texte }}</p>
+    </div>
+
+    <button class="btn-menu" @click="btnMenu">Retourner au menu</button>
+  </div>
+</template>
+
+<script>
+import { useStoryStore } from '../stores/useStoryStore'
+import { usePlayerStore } from '../stores/usePlayerStore'
+import { mapStores } from 'pinia'
+
+export default {
+name: 'EndingView',
+
+data() {
+  return {
+    endingId: null
   }
+},
+
+computed: {
+  ...mapStores(useStoryStore),
+  ...mapStores(usePlayerStore),
+
+  finActuelle() {
+    return this.storyStore.getChapterById(this.endingId); // recup fin actuelle depuis le store
+  }
+},
+
+mounted() {
+  // recup id depuis url
+  this.endingId = this.$route.params.id;
+  
+  // load la fin depuis le store
+  this.storyStore.setCurrentChapter(this.endingId);
+},
+
+methods: {
+  btnMenu() {
+    // reset les choix et sys de cons
+    this.storyStore.resetChoices();
+    this.playerStore.resetSysCons(); 
+    
+    // navigation programmatique vers menu
+    this.$router.push({ name: 'home' });
+  }
+}
 }
 </script>
   

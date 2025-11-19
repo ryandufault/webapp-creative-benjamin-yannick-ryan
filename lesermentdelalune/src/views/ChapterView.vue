@@ -246,6 +246,19 @@ export default {
         // si ouvert, le ferme ; si fermé, le ouvre
         this.modal = !this.modal;
       }
+    },
+
+    finsSysCons() {      
+      if (this.playerStore.auroreValue >= 70) {
+        return 9; // id de la fin La Lune libérée
+      }
+      if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+        return 10; // id de la fin Le Roi de cendres
+      }
+      if (this.playerStore.royaumeValue >= 70 && this.playerStore.soleilValue <= 59) {
+        return 11; // id de la fin Sacrifice solaire
+      }
+      return 11;
     }
   },
 
