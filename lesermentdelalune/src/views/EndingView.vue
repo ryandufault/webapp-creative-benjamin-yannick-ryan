@@ -100,7 +100,7 @@ body {
 .ending-header h1 {
   font-size: 4.1vw;
   margin-bottom: -2vw;
-  color: #E7DF8B;
+  color: #fff6b3;
   font-family: Mostean;
   font-weight: 400;
 }
@@ -117,13 +117,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 65vw;
   gap: 20px;
 }
   
 .fin-contenu p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #E7DF8B;
+  color: #fff6b3;
   font-family: Gothic;
   text-align: justify;
   white-space: pre-line;

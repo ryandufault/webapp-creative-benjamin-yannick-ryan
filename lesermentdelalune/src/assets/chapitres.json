@@ -3,6 +3,7 @@
     {
       "id": 1,
       "titre": "L'aube parfaite",
+      "image": "/src/assets/img/c1.png",
       "texte": "Le soleil se levait sur Solaria comme chaque matin. Les rayons jaunâtres frappaient les tours du palais, les vitraux et les champs aux alentours. Depuis vingt ans, le jour ne s'était jamais couché. \n  Agnès, prince héritier, observait la plaine depuis la haute terrasse. En bas de celle-ci, le peuple s'activait déjà, priant le Soleil avant d'ouvrir les commerces. Tout semblait parfait, mais cette perfection pesait. L'air manquait de souffle. Les fleurs fanées depuis des années décoraient encore le sol. Le monde était figé. \n  Le Roi entra dans la salle du trône pour commencer la cérémonie du serment. Chaque matin, il récitait les mêmes paroles : « Que le Soleil règne, et que la lune demeure enchaînée, pour la gloire de Solaria. » \n  Agnès répéta les mots, le coeur serré. Depuis son enfance il n'avait jamais appris ce que ceux-ci signifiaient, seulement qu'ils étaient nécessaires. \n  - « Mon fils, dit le Roi d'une voix grave, souviens-toi que notre lumière est digne de force. La moindre ombre est un signe de faiblesse. » \n  - « Oui, père. Mais... et si la lumière nous brûlait? De telle sorte qu'elle le fait aux fleurs fanées du jardin… » \n  Le roi le fixa, surpris, avant de détourner le regard. \n  Agnès sentit encore une fois le poids du serment. Pourquoi craindre tant la nuit? Pourquoi ce silence par rapport à l'ombre? \n  Alors que le Soleil atteignait le sommet du ciel, des voix se firent entendre depuis le bas de la terrasse : dans les forêts environnantes les montagnes, on aurait aperçu des éclats de lumière inconnus...",
       "choix1": null,
       "choix2": null
@@ -10,6 +11,7 @@
     {
       "id": 2,
       "titre": "La tour oubliée",
+      "image": "/src/assets/img/c2.png",
       "texte": "Le vent se fait entendre parmi les arbres environnant les montagnes. Agnès avance, en quête de réponses en rapport aux paroles de son père. Une tour semble apparaître progressivement parmi les grands arbres. Aucune lumière ne semble y pénétrer, comme si le Soleil détournait les yeux. \n   À l'intérieur, tout sent l'abandon. Chaque pas fait écho dans le vide de la grande tour, tandis que Agnès approche les murs de celle-ci. Des dessins anciens révèlent ce qui semble être deux astres enlacés. Soudainement, une voix se fait entendre derrière une pile de pierres effondrées.  \n  - « Tu n'aurais pas dû venir » \n  Agnès recule. Une fille apparaît, le visage pâle, presque transparent sous la lueur. Ses cheveux ont la couleur de la nuit. \n  - Qui es-tu ? demanda Agnès \n  - On m'appelait Aurore, avant que la tour ne devienne oubliée. \n  Un silence s'installe. Aurore fixe la lanterne d'Agnès. \n  - Cette lumière te brûlera, elle brûle tout ce qu'elle touche. - Je ne comprends pas, répond Agnès. Que veux-tu dire? \n  - Le serment n'était pas une bénédiction des Dieux. C'était une chaîne. Le Soleil voulait être seul à briller. \n  Agnès sentit son cœur se resserrer. Le doute devient certitude. Son père, grand roi du royaume, lui a menti.",
       "choix1": null,
       "choix2": null
@@ -17,6 +19,7 @@
     {
       "id": 3,
       "titre": "Le premier secret",
+      "image": "/src/assets/img/c3.png",
       "texte": "Agnès, craignant pour la sécurité de Aurore, décida de converser avec elle pour quelques heures. La lumière du Soleil semble moins étincelante que d'habitude. La tour, gardant encore l'écho de leurs voix, semble plus vivante qu'elle l'était avant. Tout semble paisible jusqu'à ce qu'un craquement se fasse entendre derrière la porte. Agnès sursaute, la main sur la lanterne. \n  Un homme vêtu de cuir entre, son arc pendant à son épaule. - Par les dieux… qu'est-ce qui se passe? - Attendez ! Ce n'est pas ce que vous croyez, dit Agnès, visiblement nerveux. \n  Le chasseur le reconnaît aussitôt. \n  - Le prince de Solaria? Ici ? Avec… une ombre? Je pensais que nous nous étions débarrassés d'eux! Si ça se sache, le roi enverra les chevalier brûler cette tour. \n  Agnès, la gorge nouée, essaye de garder son calme. Si quelqu'un découvre Aurore, elle sera condamnée. Il faut agir.",
       "choix1": "Le supplier de garder le secret",
       "choix2": "Le convaincre avec une récompense",
@@ -30,12 +33,13 @@
         "soleil": 0,
         "royaume": 5
       },
-      "textepostchoix1" : "Agnès s'avance, la voix tremblante, suppliant l'homme de ne rien dire. Mais la peur du chasseur est trop forte. Il quitte la tour, décidé à rapporter ce qu'il a vu au Roi.",
-      "textepostchoix2" : "Agnès tente de garder son calme pour parler avec l'autorité du prince qu'il est. \n  « Si tu gardes le silence, je veillerai à ce que ta famille ne manque de rien. Tu auras ma reconnaissance, et celle de Solaria. » \n  Le chasseur hésite, puis hoche lentement la tête avant de disparaître dans la lumière blanche."
+      "textepostchoix1": "Agnès s'avance, la voix tremblante, suppliant l'homme de ne rien dire. Mais la peur du chasseur est trop forte. Il quitte la tour, décidé à rapporter ce qu'il a vu au Roi.",
+      "textepostchoix2": "Agnès tente de garder son calme pour parler avec l'autorité du prince qu'il est. \n  « Si tu gardes le silence, je veillerai à ce que ta famille ne manque de rien. Tu auras ma reconnaissance, et celle de Solaria. » \n  Le chasseur hésite, puis hoche lentement la tête avant de disparaître dans la lumière blanche."
     },
     {
       "id": 4,
       "titre": "L'ombre du serment",
+      "image": "/src/assets/img/c4.png",
       "texte": "Le Soleil est toujours haut, mais sa lumière semble vaciller pour la première fois. Agnès et Aurore sont encore dans la tour, leurs voix se perdent dans la poussière et la chaleur. \n  - « Quand la Lune fut enchaînée, dit Aurore, le Soleil promit de ne jamais faiblir. Mais il mentait. Chaque instant que je vis en contact avec une personne du serment affaiblit sa lueur. Le monde réclame son équilibre. » \n  Agnès se sentit trahis. Tout ce qu'on lui racontait depuis son enfance s'effondre : Le serment, la gloire du royaume, la lumière éternelle... Il sent pourtant une légère paix dans cette clarté qu'Aurore expliqua. \n  - « Si je reste ici, le royaume souffrira », murmure-t-il. - « Et si tu pars, le mensonge continuera. » répond Aurore. \n  Le silence retombe. Seule la lumière du Soleil, plus faible qu'avant, remplit la pièce. Agnès doit choisir : sauver ce qu'il est destiné ou ce qu'il ressent.",
       "choix1": "Rester auprès d'Aurore pour en apprendre davantage sur le serment",
       "choix2": "Quitter la tour pour vérifier l'état du royaume",
@@ -49,20 +53,18 @@
         "soleil": 10,
         "royaume": 10
       },
-      "textepostchoix1" : "Agnès s'assoit près d'elle. Leurs voix s'entremêlent, parlant du serment et du royaume. \n  Mais dehors, les oiseaux se taisent. \n  Des ombres surgissent pour la première fois depuis une décennie.",
-      "textepostchoix2" : "Agnès se lève. - « Je reviendrai. Je te le promets. » \n  La lumière du Soleil faiblit."
+      "textepostchoix1": "Agnès s'assoit près d'elle. Leurs voix s'entremêlent, parlant du serment et du royaume. \n  Mais dehors, les oiseaux se taisent. \n  Des ombres surgissent pour la première fois depuis une décennie.",
+      "textepostchoix2": "Agnès se lève. - « Je reviendrai. Je te le promets. » \n  La lumière du Soleil faiblit."
     },
     {
       "id": 5,
       "titre": "Le Conseil du Roi",
+      "image": "/src/assets/img/c5.png",
       "texte": "Après avoir conversé avec Aurore, le prince retourna au royaume de Solaria, sous un ciel de moins en moins lumineux. - « Approche, Agnès. » \n  Il obéit. Derrière lui, les membres du conseil se taisaient.",
-      
       "textepostchoix1chap3": "- « Des rumeurs circulent, dit le Roi. » \n - « On dit que la lumière décline depuis ta dernière chasse. » \n - « Que tu aurais menti. » \n - « Que quelque chose s'est passé dans la forêt. » \n  Le roi se retourna. \n - « Dis-moi la vérité, fils. Que s'est-il vraiment passé là-bas ? »",
       "textepostchoix2chap3": "- « Des rumeurs circulent, dit le Roi. » \n - « Je crains bien que la lumière de notre Soleil s'affaiblit. » \n - « Nous cherchons toutes explications, en aurait-tu ? »",
-
       "choix1": "Mentir - Protéger le secret jusqu'au bout.",
       "choix2": "Avouer - Dire la vérité en espérant que le Roi soit compréhensif.",
-
       "consequences_choix1": {
         "aurore": 10,
         "soleil": -5,
@@ -73,17 +75,16 @@
         "soleil": 15,
         "royaume": 5
       },
-      "textepostchoix1" : "- « Rien ne s'est produit, père. Nous avons chassé et ramené ce que nous pouvions. » \n  Le roi soupira. \n  - « Tu jures sur la flamme du Royaume ? » - « Je jure. » \n  Le silence est long. Le roi finit par hocher la tête. \n  - « Va. Mais souviens-toi : le Soleil ne ment jamais… et ce qui l'éteint finit toujours par brûler. »",
-      "textepostchoix2" : "Agnès baissa les yeux. \n  - « Père… un incident s'est produit. Je me suis lié d'amitié avec une ombre dans la vallée. J'ai voulu contenir le mal, mais… quelque chose s'est échappé. » \n  Les conseillers murmurèrent, paniqués. Le roi serra les poings. \n  - « Une ombre, dis-tu ? » - « Oui, elle se nourrit du Soleil, je crois. » Le roi resta immobile un moment, puis posa une main lourde sur son épaule. - « Tu as bien fait de parler. Garde cela pour nous seuls. Le peuple ne doit rien savoir… pas encore. » Le prince acquiesça. Dans son regard, la peur se ressentit. \n  Les voix de plus en plus fortes du peuple se firent entendre depuis l'extérieur. La panique semble s'installer progressivement. \n  Agnès décida de retourner voir Aurore trouver une solution."
+      "textepostchoix1": "- « Rien ne s'est produit, père. Nous avons chassé et ramené ce que nous pouvions. » \n  Le roi soupira. \n  - « Tu jures sur la flamme du Royaume ? » - « Je jure. » \n  Le silence est long. Le roi finit par hocher la tête. \n  - « Va. Mais souviens-toi : le Soleil ne ment jamais… et ce qui l'éteint finit toujours par brûler. »",
+      "textepostchoix2": "Agnès baissa les yeux. \n  - « Père… un incident s'est produit. Je me suis lié d'amitié avec une ombre dans la vallée. J'ai voulu contenir le mal, mais… quelque chose s'est échappé. » \n  Les conseillers murmurèrent, paniqués. Le roi serra les poings. \n  - « Une ombre, dis-tu ? » - « Oui, elle se nourrit du Soleil, je crois. » Le roi resta immobile un moment, puis posa une main lourde sur son épaule. - « Tu as bien fait de parler. Garde cela pour nous seuls. Le peuple ne doit rien savoir… pas encore. » Le prince acquiesça. Dans son regard, la peur se ressentit. \n  Les voix de plus en plus fortes du peuple se firent entendre depuis l'extérieur. La panique semble s'installer progressivement. \n  Agnès décida de retourner voir Aurore trouver une solution."
     },
     {
       "id": 6,
       "titre": "Les blessures du sol",
+      "image": "/src/assets/img/c6.png",
       "texte": "Depuis le retour d'Agnès, le ciel semblait s'alourdir chaque heure qui passait. Le soleil n'était plus qu'une sphère pâle vacillante. Ironiquement, sur les terres de Solaria, la sécheresse se fit encore plus ressentir, le tout à une vitesse surnaturelle. Les paysans creusaient la terre craquelée, priant pour qu'elle garde vie. Mais la lumière déclinait… \n  \n  Depuis la haute tour, Agnès observait la cité avec Aurore.",
-
       "textepostchoix1chap5": "- « Tout ça c'est ma faute, dit Agnès. » \n  - « Tu n'y es pour rien Agnès, répondit Aurore. » \n  - « Le peuple souffre, et moi je ne fais rien. » \n  - « Ce n'est pas ton mensonge qui cause souffrance, mais le serment que ton père à fait. » \n  - « Comment restaurer l'équilibre, se demanda Agnès. » \n  - « En rétablissant le lien entre le Soleil et la Lune, mais cela à un prix… » \n  Agnès la regarda, sans comprendre la gravité de ses mots. \n  Des étoiles commençaient à apparaître dans le ciel, comme un avertissement.",
       "textepostchoix2chap5": "- « Nous devons faire vite, dit Agnès. J'ai avoué au Roi, et les chevaliers arrivent. » \n  Aurore hocha la tête, ses yeux vide reflétant la pâle lumière du jour. \n  - « Ils ne comprendront pas, Agnès. Ils verront en moi une menace. » \n  - « Alors fuyons. Ensemble. » \n  - « Fuir ne sauvera pas ton peuple... est-tu conscient de la gravité de la chose. » \n  Agnès la regarda, sans comprendre la gravité de ses mots. \n  Des étoiles commençaient à apparaître dans le ciel, comme un avertissement.",
-
       "choix1": "Aider le peuple",
       "choix2": "Protéger Aurore",
       "consequences_choix1": {
@@ -96,12 +97,13 @@
         "soleil": -5,
         "royaume": -10
       },
-      "textepostchoix1" : "Agnès prit une grande inspiration. \n  - « Si le Soleil meurt, tout meurt avec lui. Je me dois de retourner au Royaume. » \n  - « Et moi? dit Aurore… » \n  - « Je reviendrai… je te le promets. »",
-      "textepostchoix2" : "- « Si je quitte la tour, ils te tueront. » \n  - « Et si tu restes, ils mourront. » \n  - « Alors je choisis de croire qu'il existe une autre façon » \n  Le soleil semblait perdre de sa luminosité face au poids des paroles d'Agnès."
+      "textepostchoix1": "Agnès prit une grande inspiration. \n  - « Si le Soleil meurt, tout meurt avec lui. Je me dois de retourner au Royaume. » \n  - « Et moi? dit Aurore… » \n  - « Je reviendrai… je te le promets. »",
+      "textepostchoix2": "- « Si je quitte la tour, ils te tueront. » \n  - « Et si tu restes, ils mourront. » \n  - « Alors je choisis de croire qu'il existe une autre façon » \n  Le soleil semblait perdre de sa luminosité face au poids des paroles d'Agnès."
     },
     {
       "id": 7,
       "titre": "Le jour de l'éclipse",
+      "image": "/src/assets/img/c7.png",
       "texte": "",
       "versions": {
         "proteger_aurore_avouer": {
@@ -138,6 +140,7 @@
     {
       "id": 8,
       "titre": "La nuit promise",
+      "image": "/src/assets/img/c8.png",
       "texte": "",
       "versions": {
         "proteger_aurore_avouer": {
@@ -166,16 +169,19 @@
     {
       "id": 9,
       "titre": "La Lune libérée",
+      "image": "/src/assets/img/e1.png",
       "texte": "La nuit tomba entièrement sur Solaria. \n Le Soleil ne revenu pas ni au matin suivant, ni les jours d'après. Les prières s'élevèrent, d'abord suppliantes, puis furieuses. Les récoltes moururent, les cloches sonnèrent l'alarme. On accusa les Dieux, puis le Roi, puis son fils disparu. Le serment solaire était brisé. \n Un matin sans lumière commença. \n Depuis la tour, coupés du monde, Agnès et Aurore apercevaient à l'horizon une lueur argentée. Non pas celle du Soleil… mais celle d'une Lune nouvelle. Avec elle, les étoiles reprirent leur place, une à une. Et pour la première fois depuis des décennies, le monde respira dans l'obscurité naturelle de la nuit. \n Agnès sentit sa main frôler celle d'Aurore. \n Le royaume brûlait peut-être, les trônes tomberaient, la colère divine s'abattrait probablement sur les rois. Mais quelque chose de plus juste, renaissait. Le cycle fut restauré. \n Et dans le silence des étoiles, ils restèrent là, ensemble, dans un monde détruit, mais enfin libéré."
     },
     {
       "id": 10,
       "titre": "Le Roi de cendres",
+      "image": "/src/assets/img/e2.png",
       "texte": "Les jours qui suivirent, Solaria célébra. Les enfants dansaient au son des cloches et on murmurait le nom d'Agnès comme celui d'un sauveur. Mais dans les couloirs du palais, on évitait son regard. Il avait changé. \n Le roi se reposait. Les précédents évènements l'avaient épuisé. On murmurait déjà que l'héritier avait sauvé sa couronne. \n La tour de fut scellée. Si Aurore respirait encore, elle n'était plus qu'une ombre derrière la pierre. Le peuple ignorait tout. On leur racontait qu'elle s'était sacrifiée pour le royaume. On chantait son nom… pendant qu'elle disparaissait. \n Agnès avança jusqu'à la salle du trône. Il resta immobile, le regard perdu dans les vitraux où le Soleil projetait ses éclats. Il n'éprouvait ni fierté, ni remords. Rien. Comme si tout ce qui faisait battre son cœur avait été laissé dans cette tour. \n Agnès monta sur le trône. Sa couronne sembla peser plus lourd que le poids sur ses épaules. Chaque jour, le Soleil brillait un peu plus fort, mais la chaleur qu'il apportait n'atteignait jamais son coeur. \n Il avait sauvé la lumière, mais en brûlant tout ce qu'il lui restait d'humain."
     },
     {
       "id": 11,
       "titre": "Sacrifice solaire",
+      "image": "/src/assets/img/e3.png",
       "texte": "Les jours passèrent, puis les mois. Solaria retrouva peu à peu ses couleurs. Le Soleil brillait, encore pâle. Les récoltes repoussaient et on murmurait dans les rues : \n « Le prince a sauvé le royaume. » \n Pourtant, dans les couloirs du palais, régnait un silence que personne ne remarquait vraiment. \n Aurore n'était plus mentionnée. Son nom n'apparaissait dans aucun livre, aucune prière. \n Certains disaient qu'elle n'avait jamais existé. \n Seul Agnès savait qu'elle vivait encore, quelque part, cachée dans une tour oubliée, ou perdue dans les montagnes, à l'abri d'un monde qui n'avait plus le droit de la voir. \n Le temps passa, et le peuple s'habitua à ce Soleil moins vif, comme s'il avait vieilli. \n On disait qu'il faudrait des années pour qu'il retrouve sa lumière. \n Agnès marchait souvent, Il observait l'horizon, là où, autrefois, se dessinait la silhouette de la tour. Il avait donné sa parole au roi et son silence au peuple. Mais par-dessus tout, il avait donné son âme à l'absence. \n Il avait sauvé Solaria. \n Mais chaque aurore lui rappelait que certaines lumières ne reviennent jamais."
     }
   ]

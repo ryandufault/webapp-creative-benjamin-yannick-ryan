@@ -37,7 +37,7 @@ export default {
   max-width: 75vw;
   min-height: 75vh;
   max-height: 76vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.55);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +46,7 @@ export default {
   border-width: 0.25vw;
   border-style: solid;
   border-color: #303140;
+  filter: drop-shadow(0px 0px 15rem rgb(47, 42, 56));
   clip-path: polygon( /* https://pixelcorners.lukeb.co.uk/?radius=8&multiplier=4 */
     0px calc(100% - 32px),
     8px calc(100% - 32px),
@@ -79,7 +80,7 @@ export default {
 }
 
 .narrative-text {
-  color: #E7DF8B;
+  color: #fff6b3;
   font-size: 1.2vw;
   line-height: 1.8;
   text-align: justify;

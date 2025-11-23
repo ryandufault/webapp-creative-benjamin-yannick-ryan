@@ -1,6 +1,7 @@
 <template>
   <div class="chapitre-container">
-    <!-- <img class="bg-img" src="../assets/img/c1.png" /> -->
+    <!-- bg img depuis le json -->
+    <img class="bg-img" :src="storyStore.currentChapter?.image" v-if="storyStore.currentChapter?.image"/>
     <!-- Affichage du chapitre -->
     <div v-if="storyStore.currentChapter">
       <div class="chapitre-header">
@@ -21,7 +22,7 @@
         />
       </div>
       
-      <button class="btn-modal" @click="modal = true">☽
+      <button class="btn-modal" @click="modal = true">⚙
       </button>
       
       <!-- affiche si pas de choix ou choix sélectionné -->
@@ -340,14 +341,14 @@ body {
 }
 
 .bg-img {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   z-index: 0;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .chapitre-header {
@@ -359,8 +360,8 @@ body {
 
 .chapitre-header h1 {
   font-size: 4.1vw;
-  margin-bottom: -2vw;
-  color: #E7DF8B;
+  margin-bottom: -1.6vw;
+  color: #fff6b3;
   font-family: Mostean;
   font-weight: 400;
 }
@@ -387,7 +388,7 @@ body {
   right: 1.5vw;
   background: none;
   border: none;
-  font-size: 1vw;
+  font-size: 1.1vw;
   color: #F9F9F9;
   cursor: pointer;
   transition: 0.3s;
@@ -431,6 +432,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 0.1vh solid rgba(0, 0, 0, 0);
+  filter: drop-shadow(0px 0px 0.75rem rgb(0, 0, 0));
   z-index: 2;
     clip-path: polygon(
     0px calc(100% - 8px),

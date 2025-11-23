@@ -82,10 +82,10 @@ h1 {
   text-align: center;
   color: #E7DF8B; 
   font-family: Mostean;
-  font-size: 5vw;
+  font-size: 7vw;
   font-weight: 400;
   grid-column: 1 / -1;
-  margin-bottom: 3vw;
+  margin-bottom: -3vw;
   z-index: 1;
 }
 
@@ -101,7 +101,7 @@ h1 {
 
 .btn {
   color: #E7DF8B;
-  font-size: 1vw;
+  font-size: 1.4vw;
   cursor: pointer;
   padding: 10px 30px;
   transition: color 0.3s;
@@ -150,7 +150,7 @@ a.btn {
   border-color: #303140;
   grid-column: 2;
   grid-row: 2;
-  margin-top: -3vw;
+  margin-top: -6vw;
   z-index: 1;
   clip-path: polygon( /* https://pixelcorners.lukeb.co.uk/?radius=8&multiplier=4 */
     0px calc(100% - 32px),
@@ -185,9 +185,8 @@ a.btn {
 }
 
 .info-text {
-  color: #E7DF8B;
-  font-size: 0.9vw;
-  line-height: 1.8;
+  color: #fff6b3;
+  font-size: 1.3vw;
   text-align: justify;
   white-space: pre-line;
   font-family: Gothic;
