@@ -29,8 +29,57 @@ export default {
         params: { id: '1' } 
       });
     }
+  },
+  mounted(){
+gsap.timeline()
+.from(".btn-container",{
+  y: "-1000px",
+  opacity: 0,
+  duration: 1
+})
+.from(".info-container",{
+  x: "10000px",
+  duration: 1,
+})
+.from(".info-text",{
+  opacity: 0,
+  duration: 0.5
+})
+.from(".bg-img",{
+  opacity: 0,
+  duration: 1
+})
+.from("h1",{
+  opacity: 0,
+  duration: 0.5
+})
   }
 }
+
+//Section animation gsap
+import { gsap } from 'gsap';
+gsap.timeline()
+.from(".btn-container",{
+  y: "-1000px",
+  opacity: 0,
+  duration: 1
+})
+.from(".info-container",{
+  x: "1000px",
+  duration: 1,
+})
+.from(".info-text",{
+  opacity: 0,
+  duration: 0.5
+})
+.from(".bg-img",{
+  opacity: 0,
+  duration: 1
+})
+.from("h1",{
+  opacity: 0,
+  duration: 0.5
+})
 </script>
 
 <style>
@@ -44,6 +93,7 @@ html,
 body {
   height: 100%;
   background-color: #090909;
+  overflow: hidden;
 }
 </style>
 
