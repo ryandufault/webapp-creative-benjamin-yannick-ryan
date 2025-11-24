@@ -23,6 +23,7 @@
 import StatIndicator from './StatIndicator.vue'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { mapStores } from 'pinia'
+import { gsap } from 'gsap';
 
 export default {
   name: 'StatsBar',
@@ -33,6 +34,15 @@ export default {
   
   computed: {
     ...mapStores(usePlayerStore)
+  },
+  mounted() {
+    this.$nextTick(() => {
+      gsap.timeline()
+        .from(".stats-bar", {
+          opacity: 0,
+          duration: 1
+        })
+    });
   }
 }
 </script>
