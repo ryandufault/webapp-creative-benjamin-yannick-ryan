@@ -163,4 +163,27 @@ body {
 .btn-menu:hover {
   color: rgb(255, 251, 171);
 }
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+ 
+ .fin-contenu p {
+ font-size: 1vw;
+ }
+
+ .ending-header h1 {
+  font-size: 6.1vw;
+  margin-bottom: -2vw;
+}
+  
+.ending-header h2 {
+  font-size: 1.9vw;
+}
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+ .fin-contenu p {
+ font-size: 2.2vw;
+ }
+}
 </style>

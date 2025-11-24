@@ -87,4 +87,28 @@ export default {
   white-space: pre-line;
   font-family: Gothic;
 }
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+ 
+ .narrative-text {
+   font-size: 1.1vw;
+}
+
+ .narrative-container {
+   min-width: 20vw;
+   min-height: 30vh;
+ }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+ .narrative-text {
+   font-size: 1.8vw;
+}
+
+ .narrative-container {
+   min-width: 10vw;
+   min-height: 20vh;
+ }
+}
 </style>
