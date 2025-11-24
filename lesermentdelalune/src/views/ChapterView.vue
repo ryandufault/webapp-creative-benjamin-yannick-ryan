@@ -3,6 +3,7 @@
     <!-- bg img depuis le json -->
     <img class="bg-img" :src="storyStore.currentChapter?.image" v-if="storyStore.currentChapter?.image"/>
     <!-- Affichage du chapitre -->
+    <StatsBar />
     <div v-if="storyStore.currentChapter">
       <div class="chapitre-header">
         <h1>Chapitre {{ storyStore.currentChapter.id }}</h1>
@@ -46,6 +47,7 @@ import ChoicePanel from '../components/ChoicePanel.vue'
 import Modal from '../components/Modal.vue'
 import { useStoryStore } from '../stores/useStoryStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
+import StatsBar from '../components/StatsBar.vue'
 import { mapStores } from 'pinia'
 
 export default {
@@ -54,7 +56,8 @@ export default {
   components: {
     Modal,
     NarrativeText,
-    ChoicePanel
+    ChoicePanel,
+    StatsBar
   },
   
   data() {
@@ -462,5 +465,11 @@ body {
   background-color: rgba(0, 0, 0, 0.7); 
   color: #E7DF8B;
   border: 0.16vw solid #303140;
+}
+
+.stats-bar {
+  position:fixed;
+  top: 0;
+  z-index: 2;
 }
 </style>
