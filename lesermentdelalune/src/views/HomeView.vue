@@ -40,18 +40,21 @@ gsap.timeline()
 .from(".info-container",{
   x: "10000px",
   duration: 1,
+  delay: -0.5
 })
 .from(".info-text",{
   opacity: 0,
-  duration: 0.5
+  duration: 0.5,
+  delay: -0.5
 })
 .from(".bg-img",{
   opacity: 0,
-  duration: 1
+  duration: 1,
+  delay: -0.5
 })
 .from("h1",{
   opacity: 0,
-  duration: 0.5
+  duration: 0.5,
 })
   }
 }
