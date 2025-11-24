@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
 export default {
   name: 'NarrativeText',
   props: {
@@ -19,6 +20,15 @@ export default {
     return {
       
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      gsap.timeline()
+        .from(".narrative-text", {
+          opacity: 0,
+          duration: 1
+        })
+    });
   }
 }
 </script>

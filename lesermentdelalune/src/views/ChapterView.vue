@@ -49,6 +49,7 @@ import { useStoryStore } from '../stores/useStoryStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import StatsBar from '../components/StatsBar.vue'
 import { mapStores } from 'pinia'
+import { gsap } from 'gsap';
 
 export default {
   name: 'ChapterView',
@@ -129,6 +130,22 @@ export default {
     this.choiceSelected = null; // réinitialise le choix selected
 
     window.addEventListener('keydown', this.handleKeyDown); // event listener pour ouvrir/ferme le modal
+
+    this.$nextTick(() => {
+      gsap.timeline()
+        .from("h1", {
+          opacity: 0,
+          duration: 0.5
+        })
+        .from("h2", {
+          x: "-100vw",
+          duration: 0.5,
+        })
+        .from(".bg-img", {
+          opacity: 0,
+          duration: 0.5
+        })
+    });
   },
 
   methods: {
