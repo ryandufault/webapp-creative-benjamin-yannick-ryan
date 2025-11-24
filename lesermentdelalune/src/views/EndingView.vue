@@ -17,6 +17,7 @@
 import { useStoryStore } from '../stores/useStoryStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { mapStores } from 'pinia'
+import { gsap } from "gsap";
 
 export default {
 name: 'EndingView',
@@ -42,6 +43,21 @@ mounted() {
   
   // load la fin depuis le store
   this.storyStore.setCurrentChapter(this.endingId);
+
+//Section animation
+gsap.timeline()
+.from("h1",{
+  opacity: 0,
+  duration: 1
+})
+.from("h2",{
+  x: "10000px",
+  duration: 1,
+})
+.from(".fin-contenu",{
+  opacity: 0,
+  duration: 0.5
+})
 },
 
 methods: {
