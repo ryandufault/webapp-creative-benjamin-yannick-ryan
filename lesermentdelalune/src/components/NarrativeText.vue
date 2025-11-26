@@ -1,8 +1,11 @@
 <template>
-  <div class="narrative-container">
-    <p class="narrative-text">
-      {{ texte }}
-    </p>
+  <div class="narrative-wrapper">
+    <div class="narrative-container">
+      <p class="narrative-text">
+        {{ texte }}
+      </p>
+    </div>
+    <button @click="scrollDown" class="scroll-btn">↓</button>
   </div>
 </template>
 
@@ -29,6 +32,17 @@ export default {
           duration: 1
         })
     });
+  },
+
+  methods: {
+    scrollDown() {
+      const container = document.getElementsByClassName('narrative-container')[0];
+      gsap.to(container, {
+        scrollTop: container.scrollTop + 200,
+        duration: 1,
+        ease: "power1.inOut"
+      });
+    }
   }
 }
 </script>
@@ -40,6 +54,11 @@ export default {
     /*Ajout des fonts*/
     font-family: Mostean;
     src: url(../assets/Mostean.ttf) format(truetype);
+}
+
+.narrative-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
 .narrative-container {
@@ -87,6 +106,10 @@ export default {
     8px 32px,
     0px 32px
   );
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .narrative-text {
@@ -96,6 +119,26 @@ export default {
   text-align: justify;
   white-space: pre-line;
   font-family: Gothic;
+}
+
+.narrative-container::-webkit-scrollbar {
+  display: none;
+}
+
+.narrative-container { /* disable la scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-btn {
+  all: unset;
+  position: absolute;
+  bottom: 1.5vw;
+  right: 3vw;
+  cursor: pointer;
+  font-size: 2vw;
+  color: #fff6b3;
+  z-index: 10;
 }
 
 @media (min-width: 1920px) and (max-width: 2560px) {

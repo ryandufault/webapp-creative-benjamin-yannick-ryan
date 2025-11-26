@@ -18,7 +18,6 @@
 ## 🎯 1. Présentation du Projet
 
 ### 1.1 Concept général
-Décrivez en 2-3 paragraphes le concept de votre histoire interactive:
 
 Le Serment de la Lune est une histoire interactive où le joueur incarne Agnès, un prince déchiré entre son devoir envers le royaume et son amour pour Aurore, une femme mystérieuse liée à une ancienne malédiction. Autrefois, les rois ont juré aux dieux de enchaîner la Lune pour que le Soleil règne à jamais. Mais cette promesse a transformé la Lune en humaine, condamnée à vivre cachée.
 
@@ -30,7 +29,7 @@ En rencontrant Aurore, Agnès découvre la vérité : chaque instant passé avec
 - *Âge:* [13-35 ans]
 - *Profil:* [Amateurs de récits intéractifs, de contes fantastiques, d'histoires tragico-romantiques et de dilemmes moraux.]
 - *Niveau technique:* [Utilisateurs grand public]
-- *Temps de lecture estimé:* [ex: 20-45 minutes pour une partie complète --- À voir selon architecture narrative]
+- *Temps de lecture estimé:* [5-10 minutes]
 
 ### 1.3 Objectifs du projet
 
@@ -39,8 +38,6 @@ En rencontrant Aurore, Agnès découvre la vérité : chaque instant passé avec
 - [ ] Implémenter un système de sauvegarde de progression
 - [ ] Démontrer la maîtrise de Vue.js, GSAP et Pinia
 - [ ] Créer une interface accessible et responsive
-- [ ] [Autre objectif spécifique]
-
 
 ## 📖 2. Architecture Narrative
 
@@ -50,25 +47,20 @@ Agnès, prince héritier d’un royaume éternellement ensoleillé, découvre Au
 
 Le joueur guide Agnès à travers 8–10 scènes où ses choix moraux et émotionnels pèsent sur l’équilibre du monde. Certains choix protègent le peuple au détriment de l’amour, d’autres sauvent Aurore mais accélèrent la chute du régime solaire. L’histoire mise sur dilemmes clairs, tension tragique et conséquences visibles, menant à plusieurs fins distinctes (sacrifice, libération, tyrannie, compromis).
 
-[Écrivez votre synopsis ici]
-
 ### 2.2 Arbre narratif
 
 Dessinez ou décrivez l'arbre de décisions de votre histoire:
 
 *Structure globale:*
 
-- *Acte 1* — Intro (chap. 1–2) : Mise en place du royaume, du serment, rencontre avec Aurore. Linéaire pour ancrer le contexte.
+- *Acte 1* Intro (chap. 1–2) : Mise en place du royaume, du serment, rencontre avec Aurore. Linéaire pour ancrer le contexte.
 
-- *Acte 2* — Développement (chap. 3–7) : Apparition de choix récurrents (2–3 options max), conséquences cumulatives visibles (mètre de Soleil / Loyauté / Secret). Branches convergent parfois mais conservent impacts.
+- *Acte 2* Développement (chap. 3–7) : Apparition de choix récurrents (2–3 options max), conséquences cumulatives visibles (mètre de Soleil / Aurore / Royaume).
 
-- *Acte 3* — Climax & résolution (chap. 8–10) : Choix finaux déterminant une des 3–5 fins. Dénouements émotionnels et symboliques.
+- *Acte 3* Climax & résolution (chap. 8–9) : Dénouements émotionnels et symboliques.
 
 ### 2.3 Liste des chapitres/scènes
 
-Minimum 8 niveaux (chapitres/scènes). Listez-les avec leurs informations:
-
-<small>(les noms des chapitres énoncés ici ne sont que des exemples)</small>
 
 | #  | Nom du chapitre              | Type           | Description courte                                                                | Choix proposés (2–3)                                                                                                      | Conséquences principales                                                 |
 | -- | ---------------------------- | -------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -84,8 +76,6 @@ Minimum 8 niveaux (chapitres/scènes). Listez-les avec leurs informations:
 
 
 ### 2.4 Fins possibles
-
-Listez toutes les fins de votre histoire (minimum 3, idéal 4-6):
 
 | # | Nom de la fin                  | Condition pour l'atteindre                                                                                           | Type                                                                        |
 | - | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -111,8 +101,6 @@ Chaque choix influence trois jauges (**Aurore**, **Soleil**, **Royaume**) qui d�
 - l’état du monde (climat, peuple, lumière),
 - et surtout l’une des trois fins possibles (chapitre 9 / épilogue).
 
----
-
 #### Les trois jauges principales (0 à 100)
 
 | Jauge      | Représentation                                                                                  | Ce qui l'augmente                                                                                   | Ce qui la diminue                                                                                 |
@@ -121,7 +109,6 @@ Chaque choix influence trois jauges (**Aurore**, **Soleil**, **Royaume**) qui d�
 | **Soleil** | Force du Soleil, stabilité du serment ancestral, bénédiction divine.                            | Respect du serment, obéissance au roi, éloignement d’Aurore.                                         | Rester avec Aurore, retarder les rituels, briser le serment.                                     |
 | **Royaume**| Santé du peuple, stabilité politique, confiance de la cour et des villageois envers Agnès.      | Protéger le peuple, dire la vérité au roi, accomplir son devoir.                                     | Mentir, chaos, famine, nuit prolongée, affaiblissement du Soleil.                               |
 
----
 **Effet immédiat**
 Chaque choix modifie l’une ou plusieurs jauges.  
 Exemples :
@@ -132,8 +119,6 @@ Les conséquences sont visibles par le joueur à travers :
 - les dialogues (méfiance, admiration, colère),
 - les réactions du peuple (émeutes, prières, silence).
 
----
-
 **Fins selon jauges**
 | # | Nom de la fin             | Condition                                                                 |
 | - |---------------------------|---------------------------------------------------------------------------|
@@ -141,15 +126,6 @@ Les conséquences sont visibles par le joueur à travers :
 | 2 | **La Lune libérée**       | **Aurore ≥ 70**                                                          |
 | 3 | **Le Roi de cendres**     | **Soleil ≥ 60** et **Royaume ≥ 50**                                      |
 
----
-
-**Exemples concrets**
-| Choix du joueur                                          | Aurore | Soleil | Royaume | Conséquence visible                                                            |
-|----------------------------------------------------------|--------|--------|---------|--------------------------------------------------------------------------------|
-| Rester auprès d’Aurore toute la nuit                    | +15    | -10    | -5      | Soleil vacille, murmures dans le château.                                      |
-| Mentir au roi                                            | +5     | 0      | -15     | Méfiance de la cour, rumeurs dans le peuple.                                   |
-| Aider le village affamé                                 | -5     | +5     | +20     | Peuple reconnaissant, Agnès épuisé.                                            |
-| Refuser le rituel du Soleil (chapitre 7)                | +20    | -25    | -20     | Début de l’effondrement du serment, colère divine.                             |
 
 ---
 
@@ -157,28 +133,11 @@ Les conséquences sont visibles par le joueur à travers :
 *Mécanisme choisi:*
 
 - [ ] Système de karma/moralité (points bons/mauvais)
-- [ ] Stats du personnage (courage, intelligence, empathie)
+- [] Stats du personnage (courage, intelligence, empathie)
 - [ ] Inventaire d'objets (collecte d'items)
 - [X] Relations avec personnages (affinités)
 - [ ] Flags de choix (choix X débloque scène Y)
 - [ ] Combinaison de plusieurs systèmes
-
-*Exemple de tracking:*
-```javascript
-playerState: {
-  karma: 0,  // -10 à +10
-  inventory: ['clé', 'journal'],
-  relationships: {
-    marcus: 5,  // 0 à 10
-    chronos: -3
-  },
-  flags: {
-    hasActivatedMachine: true,
-    knowsTheSecret: false
-  }
-}
-```
-
 
 ## 🎨 3. Design et Identité Visuelle
 
@@ -265,37 +224,30 @@ Listez vos composants Vue principaux:
 
 *Composants de layout:*
 
-- `AppHeader.vue` - Navigation et menu
 - `SaveSlotManager.vue` - Gestion des sauvegardes
-- `ProgressBar.vue` - Barre de progression dans l'histoire
+- `StatsSummary.vue` - Statistiques des métriques finales lors de la fin obtenue
+- `Choice History.vue` - Récapitulatif des choix faits par le joueur
 
 *Composants de contenu:*
 
-- `ChapterView.vue` - Vue d'un chapitre/scène
 - `NarrativeText.vue` - Affichage du texte narratif
 - `ChoicePanel.vue` - Panel contenant tous les choix
 
 *Composants système:*
-
-- `StatsPanel.vue` - Affichage des stats du joueur
-- `EndingScreen.vue` - Écran de fin avec récapitulatif
+- `StatsBar.vue` - Affichage des stats du joueur
 - `Modal.vue` - Fenêtre modale (sauvegarde, options)
-
-*Composants UI:*
-
-- `LoadingSpinner.vue` - Indicateur de chargement
-- `AudioController.vue` - Contrôle de la musique/sons
+- `StatIndicator.vue` - Barre représentante de chaque métrique différente
 
 ### 4.3 Routes (Vue Router)
+- `EndingScreen.vue` - Écran de fin avec récapitulatif
+- `ChapterView.vue` - Vue d'un chapitre/scène
+- `HomeView.vue` - Navigation et menu
 
-| Route | Composant | Description | Params |
+| Route | View | View | Description |
 |-------|-----------|-------------|--------|
-| `/` | `HomeView.vue` | Menu principal | - |
-| `/nouvelle-partie` | `CharacterSetupView.vue` | Config initiale (nom, etc.) | - |
-| `/chapitre/:id` | `ChapterView.vue` | Vue d'un chapitre | id du chapitre |
-| `/fin/:endingId` | `EndingView.vue` | Écran de fin | id de la fin |
-| `/sauvegardes` | `SavesView.vue` | Gestion des sauvegardes | - |
-| `/credits` | `CreditsView.vue` | Crédits | - |
+| / | home | HomeView | Page d'accueil |
+| /chapter/:id | chapitre | ChapterView | Début de l'histoire |
+| /ending/:id | fin | EndingView | Page de fin |
 
 ### 4.4 Gestion de l'état (Pinia)
 
