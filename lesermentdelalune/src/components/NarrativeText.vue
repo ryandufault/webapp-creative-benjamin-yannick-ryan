@@ -30,7 +30,16 @@ export default {
         .from(".narrative-text", {
           opacity: 0,
           duration: 1
-        })
+        }); 
+
+      gsap.to(".scroll-btn", {
+        y: 5,
+        duration: 0.8,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true
+      });
+
     });
   },
 
@@ -40,7 +49,14 @@ export default {
       gsap.to(container, {
         scrollTop: container.scrollTop + 200,
         duration: 1,
-        ease: "power1.inOut"
+        ease: "power1.out"
+      });
+
+      gsap.to(".scroll-btn", {
+        scale: 0.85,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1
       });
     }
   }
@@ -133,12 +149,24 @@ export default {
 .scroll-btn {
   all: unset;
   position: absolute;
-  bottom: 1.5vw;
+  bottom: 2vw;
   right: 3vw;
   cursor: pointer;
   font-size: 2vw;
   color: #fff6b3;
   z-index: 10;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0px 0px 0.75rem rgb(0, 0, 0));
+}
+
+.scroll-btn:hover {
+  color: rgba(255, 246, 179, 0.4);
+  transform: scale(1.2);
+}
+
+.scroll-btn:active {
+  color: rgba(255, 246, 179, 0.4);
+  transform: scale(0.9);
 }
 
 @media (min-width: 1920px) and (max-width: 2560px) {
