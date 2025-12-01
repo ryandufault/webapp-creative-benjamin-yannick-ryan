@@ -165,7 +165,7 @@ export default {
       
       if (nextChapterId === 7) { // si on arrive au chap 7
         const version = this.chapitre7versions();
-        this.$router.push({ 
+        this.$router.replace({ 
           name: 'chapitre', 
           params: { id: nextChapterId },
           query: { version: version }
@@ -173,7 +173,7 @@ export default {
       }
       else if (nextChapterId === 8) { // si on arrive au chap 8
         const version = this.chapitre8versions();
-        this.$router.push({ 
+        this.$router.replace({ 
           name: 'chapitre', 
           params: { id: nextChapterId },
           query: { version: version }
@@ -185,14 +185,14 @@ export default {
         console.log(`Aurore: ${this.playerStore.auroreValue}`);
         console.log(`Soleil: ${this.playerStore.soleilValue}`);
         console.log(`Royaume: ${this.playerStore.royaumeValue}`);
-        this.$router.push({ 
+        this.$router.replace({ 
           name: 'fin',
           params: { id: endingId }
         });
       } 
       else {
         // Navigation programmatique vers chap suivant
-        this.$router.push({ 
+        this.$router.replace({ 
           name: 'chapitre', 
           params: { id: nextChapterId } 
         });
