@@ -192,4 +192,28 @@ export default {
    min-height: 20vh;
  }
 }
+
+@media (min-width: 500px) and (max-width: 1024px) {
+
+.narrative-text {
+  font-size: 3vw;
+}
+
+.narrative-container {
+  min-width: 4vw;
+  min-height: 10vh;
+}
+}
+
+@media (min-width: 200px) and (max-width: 500px) {
+
+.narrative-text {
+  font-size: 5.5vw;
+}
+
+.narrative-container {
+  min-width: 5vw;
+  min-height: 10vh;
+}
+}
 </style>
