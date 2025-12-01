@@ -24,7 +24,7 @@ export default {
   name: 'HomeView',
   methods: {
     startAdventure() {
-      this.$router.push({ 
+      this.$router.replace({ 
         name: 'chapitre', 
         params: { id: '1' } 
       });

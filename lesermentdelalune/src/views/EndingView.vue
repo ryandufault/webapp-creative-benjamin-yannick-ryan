@@ -68,7 +68,7 @@ methods: {
     this.playerStore.resetSysCons(); 
     
     // navigation programmatique vers menu
-    this.$router.push({ name: 'home' });
+    this.$router.replace({ name: 'home' });
   }
 }
 }
