@@ -6,7 +6,6 @@
       <ul class="menu-options">
         <li><button class="btn" @click="btnContinuer">Continuer</button></li>
         <li><button class="btn" @click="btnRecommencer"> Recommencer</button></li>
-        <li><button class="btn">Paramètres</button></li>
       </ul>
 
       <button class="btn-menu" @click="btnMenu">Menu principal</button>

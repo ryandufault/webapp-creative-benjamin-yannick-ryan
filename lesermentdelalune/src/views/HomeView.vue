@@ -4,9 +4,6 @@
      <h1>Le serment de la lune</h1>
      <div class="btn-container">
         <p class="btn" @click="startAdventure">Commencer</p>
-        <p class="btn">Continuer</p>
-        <p class="btn">Sauvegardes</p>
-        <p class="btn">Options</p>
      </div>
      <div class="info-container">
         <p class="info-text">
