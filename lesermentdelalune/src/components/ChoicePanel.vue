@@ -75,4 +75,22 @@ export default {
 .choix:hover {
   color: rgb(251, 255, 146);
 }
+
+@media (min-width: 500px) and (max-width: 1024px) {
+
+.choice-panel {
+  width: 62%
+}
+}
+
+@media (min-width: 200px) and (max-width: 500px) {
+
+.choix {
+  font-size: 1rem
+}
+
+.choice-panel {
+  width: 74%
+}
+}
 </style>

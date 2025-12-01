@@ -85,7 +85,8 @@ p {
  @media (min-width: 200px) and (max-width: 500px) {
   
  p {
-   font-size: 4vw;
+   font-size: 3vw;
+   left: 30%;
  }
   
  .stat-indicator {

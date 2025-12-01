@@ -208,12 +208,14 @@ export default {
 @media (min-width: 200px) and (max-width: 500px) {
 
 .narrative-text {
-  font-size: 5.5vw;
+  font-size: 4.5vw;
 }
 
 .narrative-container {
   min-width: 5vw;
-  min-height: 10vh;
+  max-height: 1vh;
+  height: 1vh;
+  top: 3vw;
 }
 }
 </style>

@@ -520,11 +520,18 @@ body {
  @media (min-width: 200px) and (max-width: 500px) {
   
  .btn-continuer {
-   font-size: 6vw;
+  padding-right: 30px;
+  padding-bottom: 10px;
+   font-size: 4vw;
  }
   
+ .chapitre-header {
+  padding: 1.5vw;
+ }
+
  .chapitre-header h1 {
    font-size: 12.3vw;
+   margin-bottom: -1.6vw;
  }
   
  .chapitre-header h2 {
