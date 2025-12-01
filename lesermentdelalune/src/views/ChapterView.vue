@@ -489,18 +489,4 @@ body {
   top: 0;
   z-index: 2;
 }
-
-@media (min-width: 500px) and (max-width: 1024px) {
-
-.btn-continuer {
-  font-size: 3vw;
-}
-}
-
-@media (min-width: 200px) and (max-width: 500px) {
-
-.btn-continuer {
-  font-size: 6vw;
-}
-}
 </style>
