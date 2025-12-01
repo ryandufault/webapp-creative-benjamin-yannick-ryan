@@ -5,15 +5,20 @@
       <h2>{{ finActuelle.titre }}</h2>
     </div>
 
-    <div class="fin-contenu" v-if="finActuelle">
+    <!-- affiche fin ou le recap selon showChoiceHistory -->
+    <div class="fin-contenu" v-if="finActuelle && !showChoiceHistory">
       <p>{{ finActuelle.texte }}</p>
     </div>
-
+    <ChoiceHistory v-if="showChoiceHistory"/>
     <button class="btn-menu" @click="btnMenu">Retourner au menu</button>
+    <button class="btn-recap" @click="toggleRecap">
+      {{ showChoiceHistory ? 'Voir la fin' : 'Récapitulatif' }}
+    </button>
   </div>
 </template>
 
 <script>
+import ChoiceHistory from '../components/ChoiceHistory.vue'
 import { useStoryStore } from '../stores/useStoryStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { mapStores } from 'pinia'
@@ -22,9 +27,14 @@ import { gsap } from "gsap";
 export default {
 name: 'EndingView',
 
+components: {
+    ChoiceHistory
+  },
+
 data() {
   return {
-    endingId: null
+    endingId: null,
+    showChoiceHistory: false // affiche fin par défaut
   }
 },
 
@@ -69,6 +79,11 @@ methods: {
     
     // navigation programmatique vers menu
     this.$router.replace({ name: 'home' });
+  },
+
+  
+  toggleRecap() { // switch fin ou récapitulatif
+    this.showChoiceHistory = !this.showChoiceHistory;
   }
 }
 }
@@ -92,7 +107,6 @@ body {
 @font-face {
     font-family: Gothic;
     src: url(../assets/DidactGothic-Regular.ttf) format(truetype);
-    /*Ajout des fonts*/
     font-family: Mostean;
     src: url(../assets/Mostean.ttf) format(truetype);
 }
@@ -136,6 +150,7 @@ body {
   align-items: center;
   width: 65vw;
   gap: 20px;
+  font-family: Gothic;
 }
   
 .fin-contenu p {
@@ -151,17 +166,67 @@ body {
 .btn-menu {
   position: absolute;
   bottom: 20px;
-  left: 30px;
+  left: 4.5vw;
   background: none;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1vw;
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  font-family: Gothic;
 }
   
 .btn-menu:hover {
   color: rgb(255, 251, 171);
+}
+
+.btn-recap {
+  position: absolute;
+  bottom: 20px;
+  right: 4.5vw;
+  background: none;
+  border: none;
+  font-size: 1vw;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: Gothic;
+}
+
+.btn-recap:hover {
+  color: rgb(255, 251, 171);
+}
+
+.btn-menu::before {
+  content: "-";
+  position: absolute;
+  left: -0.5vw;
+  opacity: 0;
+  transform: translateX(4px);
+  transition: all 0.1s ease;
+  color: #F9F9F9;
+}
+
+.btn-menu:hover::before {
+  opacity: 1;
+  color: #E7DF8B;
+  transform: translateX(0);
+}
+
+.btn-recap::before {
+  content: "-";
+  position: absolute;
+  left: -0.5vw;
+  opacity: 0;
+  transform: translateX(4px);
+  transition: all 0.1s ease;
+  color: #F9F9F9;
+}
+
+.btn-recap:hover::before {
+  opacity: 1;
+  color: #E7DF8B;
+  transform: translateX(0);
 }
 
 @media (min-width: 1920px) and (max-width: 2560px) {
