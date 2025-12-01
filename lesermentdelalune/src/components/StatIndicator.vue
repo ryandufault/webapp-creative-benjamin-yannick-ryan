@@ -61,4 +61,37 @@ p {
   top: 0;
   left: 0;
 }
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+ 
+ p {
+     font-size: 1.5vw;
+ }
+ }
+  
+ @media (min-width: 500px) and (max-width: 1024px) {
+  
+ p {
+   font-size: 2vw;
+ }
+  
+ .stat-indicator {
+   width: 150px;
+   margin: 5px 0;
+   top: 0;
+ }
+ }
+  
+ @media (min-width: 200px) and (max-width: 500px) {
+  
+ p {
+   font-size: 4vw;
+ }
+  
+ .stat-indicator {
+   width: 100px;
+   margin: 5px 0;
+   top: 0;
+ }
+ }
 </style>

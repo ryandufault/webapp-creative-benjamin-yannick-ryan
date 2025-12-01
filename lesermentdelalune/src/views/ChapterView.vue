@@ -489,4 +489,46 @@ body {
   top: 0;
   z-index: 2;
 }
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+ 
+ .chapitre-header h1 {
+   font-size: 6.15vw;
+ }
+  
+ .chapitre-header h2 {
+   font-size: 2.85vw;
+ }
+ }
+  
+ @media (min-width: 500px) and (max-width: 1024px) {
+  
+ .btn-continuer {
+   font-size: 3vw;
+ }
+  
+ .chapitre-header h1 {
+   font-size: 8.2vw;
+ }
+  
+ .chapitre-header h2 {
+   font-size: 3.8vw;
+ }
+  
+ }
+  
+ @media (min-width: 200px) and (max-width: 500px) {
+  
+ .btn-continuer {
+   font-size: 6vw;
+ }
+  
+ .chapitre-header h1 {
+   font-size: 12.3vw;
+ }
+  
+ .chapitre-header h2 {
+   font-size: 5.7vw;
+ }
+ }
 </style>
