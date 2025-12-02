@@ -167,9 +167,22 @@ body {
   justify-content: center;
   align-items: center;
   width: 65vw;
+  max-height: 70vh;
+  overflow-y: auto;
   gap: 20px;
   font-family: Gothic;
   z-index: 2;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.fin-contenu::-webkit-scrollbar {
+  display: none;
+}
+
+.fin-contenu {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
   
 .fin-contenu p {
@@ -193,6 +206,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   font-family: Gothic;
+  z-index: 2;
 }
   
 .btn-menu:hover {
@@ -210,6 +224,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   font-family: Gothic;
+  z-index: 2;
 }
 
 .btn-recap:hover {
@@ -249,25 +264,145 @@ body {
 }
 
 @media (min-width: 1920px) and (max-width: 2560px) {
- 
- .fin-contenu p {
- font-size: 1vw;
- }
+  .fin-contenu p {
+    font-size: 1vw;
+  }
 
- .ending-header h1 {
-  font-size: 6.1vw;
-  margin-bottom: -2vw;
-}
+  .ending-header h1 {
+    font-size: 6.1vw;
+    margin-bottom: -2vw;
+  }
   
-.ending-header h2 {
-  font-size: 1.9vw;
-}
+  .ending-header h2 {
+    font-size: 1.9vw;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1920px) {
+  .ending-header h1 {
+    font-size: 6.5vw;
+    margin-bottom: -2.5vw;
+  }
+  
+  .ending-header h2 {
+    font-size: 3vw;
+  }
 
- .fin-contenu p {
- font-size: 2.2vw;
- }
+  .fin-contenu {
+    width: 75vw;
+  }
+
+  .fin-contenu p {
+    font-size: 2.2vw;
+  }
+
+  .btn-menu,
+  .btn-recap {
+    font-size: 1.8vw;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .ending-container {
+    height: 100vh;
+    padding: 3vw;
+  }
+
+  .ending-header {
+    top: 2vw;
+    right: 3vw;
+  }
+
+  .ending-header h1 {
+    font-size: 10vw;
+    margin-bottom: -3vw;
+  }
+  
+  .ending-header h2 {
+    font-size: 4.5vw;
+  }
+
+  .fin-contenu {
+    width: 85vw;
+    max-height: 65vh;
+    padding: 15px;
+  }
+
+  .fin-contenu p {
+    font-size: 3.5vw;
+    line-height: 1.6;
+  }
+
+  .btn-menu,
+  .btn-recap {
+    font-size: 3vw;
+    bottom: 15px;
+  }
+
+  .btn-menu {
+    left: 3vw;
+  }
+
+  .btn-recap {
+    right: 3vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .ending-container {
+    height: 100vh;
+    padding: 4vw;
+    overflow-y: auto;
+  }
+
+  .ending-header {
+    position: static;
+    text-align: center;
+    margin-bottom: 5vw;
+    width: 100%;
+  }
+
+  .ending-header h1 {
+    font-size: 15vw;
+    margin-bottom: -4vw;
+  }
+  
+  .ending-header h2 {
+    font-size: 6.5vw;
+  }
+
+  .fin-contenu {
+    width: 90vw;
+    max-height: none;
+    padding: 10px;
+    margin-bottom: 15vw;
+  }
+
+  .fin-contenu p {
+    font-size: 4.5vw;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .btn-menu,
+  .btn-recap {
+    font-size: 4.5vw;
+    bottom: 3vw;
+    padding: 10px;
+    z-index: 44;
+  }
+
+  .btn-menu {
+    left: 3vw;
+  }
+
+  .btn-recap {
+    right: 3vw;
+  }
+
+  .btn-menu::before,
+  .btn-recap::before {
+    left: -2vw;
+  }
 }
 </style>

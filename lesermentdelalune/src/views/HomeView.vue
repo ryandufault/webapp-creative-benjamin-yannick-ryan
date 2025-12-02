@@ -104,6 +104,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0.5;
 }
 
 h1 {
@@ -113,6 +114,7 @@ h1 {
   font-size: 7vw;
   font-weight: 400;
   grid-column: 1 / -1;
+  grid-row: 1;
   margin-bottom: -3vw;
   z-index: 1;
 }
@@ -142,7 +144,7 @@ h1 {
 }
 
 a.btn {
-  text-decoration: none; /* pour enlever les styles du router-link */
+  text-decoration: none;
   font-family: Gothic;
 }
 
@@ -172,7 +174,6 @@ a.btn {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  z-index: 1;
   border-width: 0.2vw;
   border-style: solid;
   border-color: #303140;
@@ -180,7 +181,7 @@ a.btn {
   grid-row: 2;
   margin-top: -6vw;
   z-index: 1;
-  clip-path: polygon( /* https://pixelcorners.lukeb.co.uk/?radius=8&multiplier=4 */
+  clip-path: polygon(
     0px calc(100% - 32px),
     8px calc(100% - 32px),
     8px calc(100% - 16px),
@@ -218,5 +219,98 @@ a.btn {
   text-align: justify;
   white-space: pre-line;
   font-family: Gothic;
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .app-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 4vw;
+    padding: 5vw;
+    justify-items: center;
+  }
+
+  h1 {
+    font-size: 10vw;
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .btn-container {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .btn {
+    font-size: 4vw;
+    padding: 15px 40px;
+  }
+
+  .info-container {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 70vw;
+    max-width: 80vw;
+    min-height: auto;
+    max-height: none;
+    margin-top: 0;
+    padding: 25px;
+  }
+
+  .info-text {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .app-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 5vw;
+    padding: 8vw 5vw;
+    justify-items: center;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100%;
+  }
+
+  h1 {
+    font-size: 13vw;
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .btn-container {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .btn {
+    font-size: 6vw;
+    padding: 15px 50px;
+  }
+
+  .info-container {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 85vw;
+    max-width: 90vw;
+    min-height: auto;
+    max-height: none;
+    margin-top: 0;
+    padding: 20px;
+    border-width: 2px;
+  }
+
+  .info-text {
+    font-size: 4vw;
+    line-height: 1.6;
+  }
 }
 </style>
