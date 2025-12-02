@@ -26,6 +26,8 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      this.resetScroll(); // ux fix; le container restait scrollé en bas au chargement
+
       gsap.timeline()
         .from(".narrative-text", {
           opacity: 0,
@@ -57,6 +59,21 @@ export default {
         duration: 0.1,
         yoyo: true,
         repeat: 1
+      });
+    },
+
+    resetScroll() {
+      const container = document.getElementsByClassName('narrative-container')[0];
+      if (container) {
+        container.scrollTop = 0; // remet le container tout en haut
+      }
+    }
+  },
+
+  watch: {
+    texte() { // reset le scroll qd texte change (changement de chapitre)
+      this.$nextTick(() => {
+        this.resetScroll();
       });
     }
   }
