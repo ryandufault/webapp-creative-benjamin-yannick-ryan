@@ -1,5 +1,7 @@
 <template>
   <div class="ending-container">
+    <!-- bg img depuis le json -->
+    <img class="bg-img" :src="finActuelle?.image" v-if="finActuelle?.image"/>
     <div class="ending-header" v-if="finActuelle">
       <h1>Fin</h1>
       <h2>{{ finActuelle.titre }}</h2>
@@ -12,7 +14,7 @@
     <ChoiceHistory v-if="showChoiceHistory"/>
     <button class="btn-menu" @click="btnMenu">Retourner au menu</button>
     <button class="btn-recap" @click="toggleRecap">
-      {{ showChoiceHistory ? 'Voir la fin' : 'Récapitulatif' }}
+      {{ showChoiceHistory ? 'Voir la fin' : 'Récapitulatif' }} <!-- condition selon state -->
     </button>
   </div>
 </template>
@@ -65,6 +67,10 @@ mounted() {
           duration: 0.5,
         })
         .from(".fin-contenu", {
+          opacity: 0,
+          duration: 0.5
+        })
+        .from(".bg-img", {
           opacity: 0,
           duration: 0.5
         })
@@ -121,11 +127,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
   
 .ending-header {
   position: absolute;
   top: 1vw;
   right: 1.5vw;
+  z-index: 1;
 }
   
 .ending-header h1 {
@@ -151,6 +169,7 @@ body {
   width: 65vw;
   gap: 20px;
   font-family: Gothic;
+  z-index: 2;
 }
   
 .fin-contenu p {
