@@ -265,16 +265,18 @@ a.btn {
   }
 }
 
+
 @media (max-width: 500px) {
   .app-wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 5vw;
-    padding: 8vw 5vw;
+    padding: 10vw 5vw;
+    padding-bottom: 8vw;
     justify-items: center;
     overflow-y: auto;
     height: auto;
-    min-height: 100%;
+    min-height: 100dvh; 
   }
 
   h1 {
@@ -304,13 +306,14 @@ a.btn {
     min-height: auto;
     max-height: none;
     margin-top: 0;
+    margin-bottom: 23vw; 
     padding: 20px;
     border-width: 2px;
   }
 
   .info-text {
     font-size: 4vw;
-    line-height: 1.6;
+    line-height: 1.4;
   }
 }
 </style>

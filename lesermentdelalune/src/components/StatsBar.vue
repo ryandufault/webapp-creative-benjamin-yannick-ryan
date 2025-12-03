@@ -53,4 +53,11 @@ export default {
   gap: 4vw;
   top: 0;
 }
+
+@media (min-width: 200px) and (max-width: 500px) {
+  
+.stats-bar {
+  z-index: 100;
+}
+}
 </style>

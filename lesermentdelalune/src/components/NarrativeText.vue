@@ -229,10 +229,8 @@ export default {
 }
 
 .narrative-container {
-  min-width: 5vw;
-  max-height: 1vh;
-  height: 1vh;
   top: 3vw;
+  z-index: 3;
 }
 }
 </style>

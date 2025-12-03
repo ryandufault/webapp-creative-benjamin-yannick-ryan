@@ -350,8 +350,11 @@ body {
 
 @media (max-width: 500px) {
   .ending-container {
-    height: 100vh;
+    min-height: 100dvh; 
+    height: auto;
     padding: 4vw;
+    padding-top: 6vw;
+    padding-bottom: 150px;
     overflow-y: auto;
   }
 
@@ -373,21 +376,19 @@ body {
 
   .fin-contenu {
     width: 90vw;
-    max-height: none;
+    max-height: 60dvh;
     padding: 10px;
-    margin-bottom: 15vw;
   }
 
   .fin-contenu p {
     font-size: 4.5vw;
     line-height: 1.5;
-    text-align: left;
   }
 
   .btn-menu,
   .btn-recap {
     font-size: 4.5vw;
-    bottom: 3vw;
+    bottom: 100px;
     padding: 10px;
     z-index: 44;
   }
@@ -396,8 +397,8 @@ body {
     left: 3vw;
   }
 
-  .btn-recap {
-    right: 3vw;
+  .btn-recap { /* disabled, trop compliqué à gérer en responsive */
+    display: none;
   }
 
   .btn-menu::before,

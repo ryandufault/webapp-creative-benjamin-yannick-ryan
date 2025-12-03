@@ -518,24 +518,35 @@ body {
  }
   
  @media (min-width: 200px) and (max-width: 500px) {
-  
- .btn-continuer {
-  padding-right: 30px;
-  padding-bottom: 10px;
-   font-size: 4vw;
- }
-  
- .chapitre-header {
-  padding: 1.5vw;
- }
+  .chapitre-container {
+    min-height: 100dvh;
+    height: auto;
+    padding-bottom: 80px;
+  }
 
- .chapitre-header h1 {
-   font-size: 12.3vw;
-   margin-bottom: -1.6vw;
- }
+  .btn-continuer {
+    padding-right: 30px;
+    padding-bottom: 20px;
+    font-size: 4vw;
+    bottom: 75px;
+  }
   
- .chapitre-header h2 {
-   font-size: 5.7vw;
- }
- }
+  .chapitre-header {
+    padding: 1.5vw;
+    padding-top: 3vw;
+  }
+
+  .chapitre-header h1 {
+    font-size: 12.3vw;
+    margin-bottom: -1.6vw;
+  }
+  
+  .chapitre-header h2 {
+    font-size: 5.7vw;
+  }
+
+  .btn-modal {
+    z-index: 4;
+  }
+}
 </style>
