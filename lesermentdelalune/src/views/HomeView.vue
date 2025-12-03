@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper">
-    <img class="bg-img" src="../assets/img/home.png" />
+    <img class="bg-img" src="/img/home.png" />
      <h1>Le serment de la lune</h1>
      <div class="btn-container">
         <p class="btn" @click="startAdventure">Commencer</p>

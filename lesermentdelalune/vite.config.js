@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/webapp-creative-benjamin-yannick-ryan/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
