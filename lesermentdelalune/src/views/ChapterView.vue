@@ -1,7 +1,7 @@
 <template>
   <div class="chapitre-container">
     <!-- bg img depuis le json -->
-    <img class="bg-img" :src="storyStore.currentChapter?.image" v-if="storyStore.currentChapter?.image"/>
+    <img class="bg-img" :src="storyStore.currentChapter?.image" v-if="storyStore.currentChapter?.image" alt="image de fond du chapitre"/>
     <!-- Affichage du chapitre -->
     <StatsBar />
     <div v-if="storyStore.currentChapter">

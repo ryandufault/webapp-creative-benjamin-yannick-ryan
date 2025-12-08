@@ -350,19 +350,19 @@ body {
 
 @media (max-width: 500px) {
   .ending-container {
-    min-height: 100dvh; 
-    height: auto;
-    padding: 4vw;
-    padding-top: 6vw;
-    padding-bottom: 150px;
-    overflow-y: auto;
+    height: 100dvh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .ending-header {
     position: static;
     text-align: center;
-    margin-bottom: 5vw;
+    padding: 4vw 4vw 2vw 4vw;
     width: 100%;
+    flex-shrink: 0;
   }
 
   .ending-header h1 {
@@ -375,29 +375,50 @@ body {
   }
 
   .fin-contenu {
-    width: 90vw;
-    max-height: 60dvh;
-    padding: 10px;
+    width: 100%;
+    padding: 4vw;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 0;
+    max-height: none;
   }
 
   .fin-contenu p {
     font-size: 4.5vw;
     line-height: 1.5;
+    padding-bottom: 80px;
+  }
+
+  /* Zone des boutons avec fond */
+  .ending-container::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(to top, rgba(31, 27, 51, 1) 60%, rgba(31, 27, 51, 0));
+    pointer-events: none;
+    z-index: 43;
   }
 
   .btn-menu,
   .btn-recap {
     font-size: 4.5vw;
-    bottom: 100px;
+    bottom: 15px;
     padding: 10px;
     z-index: 44;
+    position: fixed;
+    background-color: rgba(31, 27, 51, 0.95);
+    border-radius: 5px;
   }
 
   .btn-menu {
     left: 3vw;
   }
 
-  .btn-recap { /* disabled, trop compliqué à gérer en responsive */
+  .btn-recap {
     display: none;
   }
 

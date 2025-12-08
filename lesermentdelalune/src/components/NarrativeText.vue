@@ -1,5 +1,5 @@
 <template>
-  <div class="narrative-wrapper">
+  <div class="narrative-wrapper" :class="containerClass">
     <div class="narrative-container">
       <p class="narrative-text">
         {{ texte }}
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      
+      containerClass: '' // small-container ou vide
     }
   },
   mounted() {
@@ -67,7 +67,7 @@ export default {
       if (container) {
         container.scrollTop = 0; // remet le container tout en haut
       }
-    }
+    },
   },
 
   watch: {
@@ -97,8 +97,8 @@ export default {
 .narrative-container {
   min-width: 45vw;
   max-width: 75vw;
-  min-height: 75vh;
-  max-height: 76vh;
+  min-height: 50vh;
+  max-height: 60vh;
   background-color: rgba(0, 0, 0, 0.55);
   display: flex;
   justify-content: center;
@@ -220,6 +220,15 @@ export default {
   min-width: 4vw;
   min-height: 10vh;
 }
+
+.scroll-btn {
+    font-size: 8vw;
+    bottom: 5vw;
+    right: 6vw;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 500px) {
@@ -232,5 +241,14 @@ export default {
   top: 3vw;
   z-index: 3;
 }
+
+.scroll-btn {
+    font-size: 8vw;
+    bottom: 5vw;
+    right: 6vw;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+  }
 }
 </style>
