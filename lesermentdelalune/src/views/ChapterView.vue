@@ -1,0 +1,552 @@
+<template>
+  <div class="chapitre-container">
+    <!-- bg img depuis le json -->
+    <img class="bg-img" :src="storyStore.currentChapter?.image" v-if="storyStore.currentChapter?.image" alt="image de fond du chapitre"/>
+    <!-- Affichage du chapitre -->
+    <StatsBar />
+    <div v-if="storyStore.currentChapter">
+      <div class="chapitre-header">
+        <h1>Chapitre {{ storyStore.currentChapter.id }}</h1>
+        <h2>{{ storyStore.currentChapter.titre }}</h2>
+      </div>
+
+      <div class="chapitre-contenu">
+        <!-- afiche texte selon le state ; texte initial ou texte post-choix -->
+        <NarrativeText :texte="displayedText"/>
+        
+        <!-- affiche choicepanel si aucun choix n'a été fait -->
+        <ChoicePanel 
+          v-if="hasChoices && !choiceSelected"
+          :choix1="storyStore.currentChapter.choix1" 
+          :choix2="storyStore.currentChapter.choix2"
+          @choice-selected="handleChoice"
+        />
+      </div>
+      
+      <button class="btn-modal" @click="modal = true">⚙
+      </button>
+      
+      <!-- affiche si pas de choix ou choix sélectionné -->
+      <button 
+        class="btn-continuer" 
+        v-if="!hasChoices || choiceSelected"
+        @click="goToNextChapter"
+      >
+        Continuer
+      </button>
+
+      <!-- ouvre le modal quand true, le ferme quand false dans la component modal -->
+      <Modal v-if="modal" @close="modal = false"/>
+    </div>
+  </div>
+</template>
+
+<script>
+import NarrativeText from '../components/NarrativeText.vue'
+import ChoicePanel from '../components/ChoicePanel.vue'
+import Modal from '../components/Modal.vue'
+import { useStoryStore } from '../stores/useStoryStore'
+import { usePlayerStore } from '../stores/usePlayerStore'
+import StatsBar from '../components/StatsBar.vue'
+import { mapStores } from 'pinia'
+import { gsap } from 'gsap';
+
+export default {
+  name: 'ChapterView',
+  
+  components: {
+    Modal,
+    NarrativeText,
+    ChoicePanel,
+    StatsBar
+  },
+  
+  data() {
+    return {
+      chapitreId: null,
+      modal: false,
+      choiceSelected: null // null ou 1 ou 2
+    }
+  },
+
+  computed: {
+    // Mapper le store complet
+    ...mapStores(useStoryStore),
+    ...mapStores(usePlayerStore),
+
+    // Vérifie si le chapitre actuel a des choix
+    hasChoices() {
+      return this.storyStore.currentChapter?.choix1 || this.storyStore.currentChapter?.choix2;
+    },
+
+    displayedText() { // texte a display selon le state
+      const chapter = this.storyStore.currentChapter;
+      const version = this.$route.query.version; // récup version depuis url
+      
+      // si un choix est selected, afficher texte postchoix
+      if (this.choiceSelected === 1 && chapter?.textepostchoix1) {
+        return chapter.textepostchoix1;
+      } else if (this.choiceSelected === 2 && chapter?.textepostchoix2) {
+        return chapter.textepostchoix2;
+      }
+
+      // si c'est un chapitre avec versions + version spécifiée
+      if (chapter?.versions && version && chapter.versions[version]) {
+        return chapter.versions[version].texte;
+      }
+
+
+      // chapitre 5 =============
+      if (chapter?.id === 5) { // afficher texte selon choix du chapitre 3
+        const choix3 = this.storyStore.playerChoices[3];
+        if (choix3 === 1 && chapter?.textepostchoix1chap3) {
+          return chapter.texte + '\n\n' + chapter.textepostchoix1chap3;
+        } else if (choix3 === 2 && chapter?.textepostchoix2chap3) {
+          return chapter.texte + '\n\n' + chapter.textepostchoix2chap3;
+        }
+      }
+
+      // chapitre 6 =============
+      if (chapter?.id === 6) { // afficher texte selon choix du chapitre 5
+        const choix5 = this.storyStore.playerChoices[5];
+        if (choix5 === 1 && chapter?.textepostchoix1chap5) {
+          return chapter.texte + chapter.textepostchoix1chap5;
+        } else if (choix5 === 2 && chapter?.textepostchoix2chap5) {
+          return chapter.texte + chapter.textepostchoix2chap5;
+        }
+      }
+
+      return chapter?.texte || ''; // sinon afficher texte initial (vide)
+    }
+  },
+
+  mounted() {
+    // Récup l'id du chapitre avec l'url (paramètres)
+    this.chapitreId = this.$route.params.id;
+    
+    // Définir le chapitre actuel depuis le store (déjà chargé)
+    this.storyStore.setCurrentChapter(this.chapitreId);
+
+    this.choiceSelected = null; // réinitialise le choix selected
+
+    window.addEventListener('keydown', this.handleKeyDown); // event listener pour ouvrir/ferme le modal
+
+    this.$nextTick(() => {
+      gsap.timeline()
+        .from("h1", {
+          opacity: 0,
+          duration: 0.5
+        })
+        .from("h2", {
+          x: "-100vw",
+          duration: 0.5,
+        })
+        .from(".bg-img", {
+          opacity: 0,
+          duration: 0.5
+        })
+    });
+  },
+
+  methods: {
+    handleChoice(choixNumber) {
+      // choix dans le store pinia
+      this.storyStore.saveChoice(this.chapitreId, choixNumber);
+      this.choiceSelected = choixNumber; // mémorise quel choix est selected
+      this.sysConsequence(choixNumber); // applique les conséquences du choix
+    },
+
+    goToNextChapter() {
+      this.choiceSelected = null; // réinitialise choix pr prochain chap
+      
+      // Convert l'id en int et rajoute 1
+      const nextChapterId = parseInt(this.chapitreId) + 1;
+
+      
+      if (nextChapterId === 7) { // si on arrive au chap 7
+        const version = this.chapitre7versions();
+        this.$router.replace({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId },
+          query: { version: version }
+        });
+      }
+      else if (nextChapterId === 8) { // si on arrive au chap 8
+        const version = this.chapitre8versions();
+        this.$router.replace({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId },
+          query: { version: version }
+        });
+      }
+      else if (nextChapterId >= 9) { // si on arrive à une fin
+        const endingId = this.finsSysCons(); // détermine quelle fin selon métriques
+        console.log(`Fin ID: ${endingId}`);
+        console.log(`Aurore: ${this.playerStore.auroreValue}`);
+        console.log(`Soleil: ${this.playerStore.soleilValue}`);
+        console.log(`Royaume: ${this.playerStore.royaumeValue}`);
+        this.$router.replace({ 
+          name: 'fin',
+          params: { id: endingId }
+        });
+      } 
+      else {
+        // Navigation programmatique vers chap suivant
+        this.$router.replace({ 
+          name: 'chapitre', 
+          params: { id: nextChapterId } 
+        });
+      }
+    },
+
+    chapitre7versions() {
+      // recup choix depuis le store
+      const choix5 = this.storyStore.playerChoices[5]; // choix au chap 5
+      const choix6 = this.storyStore.playerChoices[6]; // choix au chap 6
+
+      // version selon choix
+      if (choix6 === 2) { // Protéger Aurore
+        if (choix5 === 2) { // Avouer
+          return 'proteger_aurore_avouer'; // alors return la version c5 avouer + c6 proteger aurore
+        } else { // Mentir
+          return 'proteger_aurore_mentir';
+        }
+      } else { // Aider le peuple
+        if (choix5 === 1) { // Mentir
+          return 'aider_peuple_mentir';
+        } else { // Avouer
+          // determine si c'est la version qui vise fin roi cendre selon métriques
+          if (this.playerStore.royaumeValue >= 70) { // si le royaume a +/= de 70, alors version qui vise la fin sacrifice solaire (car à partir d'ici, la fin est déjà pas mal prédéterminée)
+            return 'aider_peuple_avouer_sacrifice';
+          } else {
+            return 'aider_peuple_avouer_roi_cendres';
+          }
+        }
+      }
+    },
+
+    chapitre8versions() {
+      // recup choix depuis le store
+      const choix5 = this.storyStore.playerChoices[5]; // choix au chap 5
+      const choix6 = this.storyStore.playerChoices[6]; // choix au chap 6
+      const choix7 = this.storyStore.playerChoices[7]; // choix au chap 7 (si existe)
+
+      // version selon choix
+      if (choix6 === 2) { // Protéger Aurore
+        if (choix5 === 2) { // Avouer
+          return 'proteger_aurore_avouer'; // sacrifice solaire
+        } else { // Mentir
+          // le chap 7 version proteger_aurore_mentir a des choix
+          if (choix7 === 1) { // Rester avec Aurore
+            return 'proteger_aurore_mentir_rester'; // la lune libérée
+          } else { // Sauver le royaume
+            return 'proteger_aurore_mentir_sauver'; // sacrifice solaire
+          }
+        }
+      } else { // Aider le peuple
+        if (choix5 === 1) { // Mentir
+          // determine si c'est roi de cendres selon métriques
+          if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+            return 'aider_peuple_mentir_roi_cendres'; // roi de cendres
+          } else {
+            return 'aider_peuple_mentir'; // sacrifice solaire
+          }
+        } else { // Avouer
+          // determine si c'est roi de cendres selon métriques
+          if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) {
+            return 'aider_peuple_avouer_roi_cendres'; // roi de cendres
+          } else {
+            return 'aider_peuple_avouer_sacrifice'; // sacrifice solaire
+          }
+        }
+      }
+    },
+
+    sysConsequence(choixNumber) {
+      const chapter = this.storyStore.currentChapter;
+      
+      // recup consequences selon le choix
+      let consequences;
+      if (choixNumber === 1) { // si c'est le choix 1, fetch depuis le json les consequences du choix 1
+        consequences = chapter.consequences_choix1;
+      } else { // sinn c'est le 2
+        consequences = chapter.consequences_choix2;
+      }
+      
+      // applique les conséquences (si existent)
+      if (consequences) {
+        if (consequences.aurore !== undefined) {
+          this.playerStore.updateMetric('aurore', consequences.aurore);
+        }
+        if (consequences.soleil !== undefined) {
+          this.playerStore.updateMetric('soleil', consequences.soleil);
+        }
+        if (consequences.royaume !== undefined) {
+          this.playerStore.updateMetric('royaume', consequences.royaume);
+        }
+        
+        // log des nouvelles valeur
+        console.log("NB DU CHOIX", choixNumber);
+        console.log("===== AFFECTS : =====");
+        console.log(`Métrique Aurore: ${this.playerStore.auroreValue} "("${consequences.aurore}")"`);
+        console.log(`Métrique Soleil: ${this.playerStore.soleilValue} "("${consequences.soleil}")"`);
+        console.log(`Métrique Royaume: ${this.playerStore.royaumeValue} "("${consequences.royaume}")"`);
+      }
+    },
+
+    handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        // si ouvert, le ferme ; si fermé, le ouvre
+        this.modal = !this.modal;
+      }
+    },
+
+    finsSysCons() {      
+      if (this.playerStore.auroreValue >= 70) { // si aurore ­70+/100 = Fin La Lune libérée
+        return 9; // id de la fin La Lune libérée
+      }
+      if (this.playerStore.soleilValue >= 60 && this.playerStore.royaumeValue >= 50) { // si soleil 60+/100 + Royaume 50+/100 = Fin Roi de cendres
+        return 10; // id de la fin Le Roi de cendres
+      }
+      if (this.playerStore.royaumeValue >= 70 && this.playerStore.soleilValue <= 59) { // si royaume 70+/100 + Soleil 59-/100 = Sacrifice solaire
+        return 11; // id de la fin Sacrifice solaire
+      }
+      return 11;
+    }
+  },
+
+  watch: {
+    // Changement params url
+    '$route.params.id'(newId) {
+      this.chapitreId = newId;
+      this.storyStore.setCurrentChapter(newId);
+      this.choiceSelected = null; // réinitialise le choix
+    }
+  }
+}
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #090909;
+}
+</style>
+
+<style scoped>
+@font-face {
+    font-family: Gothic;
+    src: url(../assets/DidactGothic-Regular.ttf) format(truetype);
+    /*Ajout des fonts*/
+    font-family: Mostean;
+    src: url(../assets/Mostean.ttf) format(truetype);
+}
+
+.chapitre-container {
+  width: 100%;
+  height: 93vh;
+  background-color: #1F1B33;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.chapitre-header {
+  position: absolute;
+  top: 1vw;
+  left: 1.5vw;
+  z-index: 2;
+}
+
+.chapitre-header h1 {
+  font-size: 4.1vw;
+  margin-bottom: -1.6vw;
+  color: #fff6b3;
+  font-family: Mostean;
+  font-weight: 400;
+}
+
+.chapitre-header h2 {
+  font-size: 1.9vw;
+  font-weight: 400;
+  color: #E7DF8B;
+  font-family: Mostean;
+}
+
+.chapitre-contenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.btn-continuer {
+  position: absolute;
+  bottom: 1vw;
+  right: 1.5vw;
+  background: none;
+  border: none;
+  font-size: 1.1vw;
+  color: #F9F9F9;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2;
+  font-family: Gothic;
+}
+
+.btn-continuer:hover {
+  color: rgb(255, 251, 171);
+}
+
+.btn-continuer::before {
+  content: "-";
+  position: absolute;
+  left: -1vw;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.1s ease;
+  color: #F9F9F9;
+}
+
+.btn-continuer:hover::before {
+  opacity: 1;
+  color: #E7DF8B;
+  transform: translateX(0);
+}
+
+.btn-modal {
+  position: absolute;
+  top: 1vw;
+  right: 3.5vh;
+  height: 6vh;
+  width: 8vh;
+  aspect-ratio: 1 / 1;
+  font-size: 4.5vh;
+  background-color: rgba(0, 0, 0, 0.3); 
+  color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 0.1vh solid rgba(0, 0, 0, 0);
+  filter: drop-shadow(0px 0px 0.75rem rgb(0, 0, 0));
+  z-index: 2;
+    clip-path: polygon(
+    0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px
+  );
+}
+
+.btn-modal:hover {
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: #E7DF8B;
+  border: 0.16vw solid #303140;
+}
+
+.stats-bar {
+  position:fixed;
+  top: 0;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+ 
+ .chapitre-header h1 {
+   font-size: 6.15vw;
+ }
+  
+ .chapitre-header h2 {
+   font-size: 2.85vw;
+ }
+ }
+  
+ @media (min-width: 500px) and (max-width: 1024px) {
+  
+ .btn-continuer {
+   font-size: 3vw;
+ }
+  
+ .chapitre-header h1 {
+   font-size: 8.2vw;
+ }
+  
+ .chapitre-header h2 {
+   font-size: 3.8vw;
+ }
+  
+ }
+  
+ @media (min-width: 200px) and (max-width: 500px) {
+  .chapitre-container {
+    min-height: 100dvh;
+    height: auto;
+    padding-bottom: 80px;
+  }
+
+  .btn-continuer {
+    padding-right: 30px;
+    padding-bottom: 20px;
+    font-size: 4vw;
+    bottom: 75px;
+  }
+  
+  .chapitre-header {
+    padding: 1.5vw;
+    padding-top: 3vw;
+  }
+
+  .chapitre-header h1 {
+    font-size: 12.3vw;
+    margin-bottom: -1.6vw;
+  }
+  
+  .chapitre-header h2 {
+    font-size: 5.7vw;
+  }
+
+  .btn-modal {
+    z-index: 4;
+  }
+}
+</style>
