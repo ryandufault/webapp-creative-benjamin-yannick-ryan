@@ -1,51 +1,55 @@
 # Le serment de la Lune
-<br><br>
-**Option choisie :** Trace ton chemin (B)
-<br><br>
-**Membre de l'équipe et les rôles de chacun :**
-<br><br>
-**Ryan Dufault :** Chef de projet /Architecture
-<br><br>
-**Yannick Chamberland :** Données + système + animations
-<br><br>
-**Benjamin Ferland :** Narration + design
-<br><br>
-**Brainstorm :**
-<br><br>
-histoire médiévale classique chevalier avec princesse avec twist super originale + art abstrait "expérimental?"
-pour se dissocier de l'idée stéréotypée qu'on a quand on pense à un visuel sur le thème du "médiévale" "moyen age" 
 
-Nouveau brainstorm (follow up) : 
-chevalier + sorcière + malédiction
-blanche neige reconstruit original
-une histoire "disney" à l'ancienne princesse wow ou autre reconstruite
-s'inspirer d'une intrigue/histoire similaire à Le Cid
- 
-prince doit choisir entre devoir envers royaume et amour pour une femme maudite qui ne peut vivre qu’à la lumière de la lune (à déterminer?). chaque nuit qu’il passe avec elle accélère la chute de son empire. prophétie dit que seule “rupture du serment” apporte paix mais on ne sait pas si elle parle d’un sacrifice ou d’une trahison. 
- 
-Ajout d'une idée pour l'histoire :
-serment avec des dieux pour que la lune soie enchainée pour que le soleil reigne? 
-la lune pourrait être devenue humaine; la fille que le prince aime
-chaque moment avec le prince accélère chute royaume à cause du serment
+## À propos du projet
+- Projet scolaire réalisé dans le cadre du cours Web 5 (582-511MO) au Cégep de Montmorency, programme Techniques d'intégration multimédia.
+Le Serment de la Lune est une histoire interactive où le joueur incarne Agnès, un prince déchiré entre son devoir envers le royaume et son amour pour Aurore, une femme mystérieuse liée à une ancienne malédiction. Autrefois, les rois ont juré aux dieux de enchaîner la Lune pour que le Soleil règne à jamais. Mais cette promesse a transformé la Lune en humaine, condamnée à vivre cachée.
 
-idées nom perso princi :
-william
-jean
-dylan
-agnès
+## Équipe
 
-exemples d'images du brainstorm (filtre pixelisé) :
+- [Ryan Dufault] - Chef de projet / [Architecture]
+- [Yannick Chamberland] - [Données + système + animations]
+- [Benjamin Ferland] - [Narration + design]
 
-![Bladee Martyr Merch _ r_sadboys (1)](assets/brainstorm/Bladee%20Martyr%20Merch%20_%20r_sadboys%20(1).png)
-![Bladee Martyr Merch _ r_sadboys](assets/brainstorm/Bladee%20Martyr%20Merch%20_%20r_sadboys.png)
-![Bladee T-Shirt_ Drain Gang Fan Merch - Garment Dyed Comfort Colors](assets/brainstorm/Bladee%20T-Shirt_%20Drain%20Gang%20Fan%20Merch%20-%20Garment%20Dyed%20Comfort%20Colors.png)
-![Bladee_ “One in a Million” Track Review _ Pitchfork](assets/brainstorm/Bladee_%20“One%20in%20a%20Million”%20Track%20Review%20_%20Pitchfork.png)
-![EXwQ1v8U4AAsYar](assets/brainstorm/EXwQ1v8U4AAsYar.png)
+## Description
+
+- Agnès, prince héritier d’un royaume éternellement ensoleillé, découvre Aurore, une femme maudite : elle n’existe pleinement que sous la lumière de la lune. Autrefois, les rois ont juré aux dieux d’enchaîner la Lune pour assurer un soleil sans fin. Ce serment a transformé la Lune en humaine et assuré la prospérité du royaume, au prix d’un cycle naturel brisé. En la rencontrant, Agnès tombe amoureux, et chaque moments passé avec elle affaiblit le Soleil et menace la survie du royaume
+
+## Fonctionnalité principale
+
+- Plusieurs fins possibles selon les choix faits par l'utilisateur
+
+## Technologies utilisées
 
 
+- Vue.js 3 (Composition API ☐ / Options API ☐)
+- Vite
+- Vue Router
+- Pinia (state management)
+- CSS
+- GSAP + ScrollTrigger (optionnel selon style)
 
+## Démo en ligne
 
-[Fichier Figma](https://www.figma.com/design/ikszxBVEsDPQzowvWjxWxo/projet-integrateur-web-5?node-id=0-1&t=JprmHNREdA3jTDza-1)
-<br><br>
-[Fichier Trello](https://trello.com/invite/b/68e66eab99c6fadf2dfd0b0e/ATTI2f1b6b4e236c2f769e7b616f4fb3d2f352D6216C/projet-integrateur-web-5)
+- [Le serment de la Lune](https://ryandufault.github.io/webapp-creative-benjamin-yannick-ryan/)
 
+## Comment jouer
+
+- 1 : Ouvrir le site
+- 2 : Appuyer sur "Commencer" pour pouvoir jouer
+- 3 : Naviguer à travers les chapitres, comme une vraie histoire.
+- 4 : Faites de choix selon vos opinions, valeurs et plus.
+- 5 : Recevez une fin en correspondance avec vos choix précédents.
+
+## Installation en local pour développement
+```bash
+# Cloner le projet
+git clone [https://github.com/ryandufault/webapp-creative-benjamin-yannick-ryan.git]
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Builder pour la production
+npm run build
